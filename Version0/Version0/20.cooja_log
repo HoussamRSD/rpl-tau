@@ -1,0 +1,43 @@
+[12:03:32 - main] [Cooja.java:1315] [INFO] - > Starting Cooja
+[12:03:33 - main] [Cooja.java:2856] [INFO] - External tools default settings: /external_tools_linux.config
+[12:03:33 - main] [Cooja.java:2886] [INFO] - External tools user settings: /home/user/.cooja.user.properties
+[12:03:33 - main] [Simulation.java:422] [INFO] - Simulation random seed: 456783
+[12:03:33 - main] [CompileContiki.java:140] [INFO] - > make udp-sink.z1 TARGET=z1 
+[12:03:33 - main] [CompileContiki.java:140] [INFO] - > make udp-sender.z1 TARGET=z1 
+[12:03:33 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sink.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:34 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:35 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:35 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:35 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[12:03:35 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.SimControl
+[12:03:35 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.Visualizer
+[12:03:35 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.LogListener
+[12:03:35 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.TimeLine
+[12:03:35 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.Notes
+[12:03:35 - main] [Mobility.java:85] [INFO] - Mobility plugin started at (ms): 0
+[12:03:35 - main] [Mobility.java:117] [INFO] - Parsing position file: /home/user/contiki/tools/cooja/contiki_tests/PFE/Version0/20.dat
+[12:03:35 - main] [Mobility.java:142] [INFO] - Loaded 36020 positions
+[12:03:35 - main] [ScriptRunner.java:430] [INFO] - Test script deactivated
+[12:03:35 - main] [LogScriptEngine.java:265] [INFO] - Script timeout in 3600000 ms
+[12:03:35 - main] [ScriptRunner.java:387] [INFO] - Test script activated
+[12:03:35 - Thread-2] [Simulation.java:253] [INFO] - Simulation main loop started, system time: 1771758215811
+[12:03:46 - Thread-2] [Simulation.java:293] [FATAL] - Simulation stopped due to error: Next event is in the past: 0 < 19000000: org.contikios.cooja.plugins.Mobility$2@1fc37c4
+java.lang.RuntimeException: Next event is in the past: 0 < 19000000: org.contikios.cooja.plugins.Mobility$2@1fc37c4
+	at org.contikios.cooja.Simulation.run(Simulation.java:277)
+	at java.lang.Thread.run(Thread.java:748)

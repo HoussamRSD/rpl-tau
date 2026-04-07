@@ -1,0 +1,12 @@
+--- net/rpl/rpl.h	2026-02-17 13:53:42.000000000 +0000
++++ net/rpl/rpl.h	2026-02-19 12:24:42.445706031 +0000
+@@ -85,7 +85,8 @@
+ /* IANA Objective Code Point as defined in RFC6550 */
+ #define RPL_OCP_OF0     0
+ #define RPL_OCP_MRHOF   1
+-#define RPL_OCP_OF1     0xF1 /*....................................................................................................................................................OF1*/
++#define RPL_OCP_OF1     0xF1 /* Objective Function 1 */
++#define RPL_OCP_DRL     0xB7 /* Custom DRL-based OF */
+ 
+ struct rpl_metric_object_energy {
+   uint8_t flags;

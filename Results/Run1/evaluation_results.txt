@@ -1,0 +1,56 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\Run1
+Log files found: 8
+--------------------------------------------------
+File: TOPO-1-RS-1.log
+  Sent: 1180, Received: 339 -> PDR: 28.73%
+  Avg Latency: 22.43 ms
+  Parent Changes: 1414
+  Total Overhead: 12463 (DIO: 6284, DAO: 6166, DIS: 13)
+--------------------------------------------------
+File: TOPO-1-RS-10.log
+  Sent: 1180, Received: 301 -> PDR: 25.51%
+  Avg Latency: 20.50 ms
+  Parent Changes: 1573
+  Total Overhead: 13493 (DIO: 6673, DAO: 6777, DIS: 43)
+--------------------------------------------------
+File: TOPO-1-RS-2.log
+  Sent: 1180, Received: 368 -> PDR: 31.19%
+  Avg Latency: 20.77 ms
+  Parent Changes: 1417
+  Total Overhead: 12499 (DIO: 6197, DAO: 6289, DIS: 13)
+--------------------------------------------------
+File: TOPO-1-RS-3.log
+  Sent: 1180, Received: 301 -> PDR: 25.51%
+  Avg Latency: 20.19 ms
+  Parent Changes: 1533
+  Total Overhead: 13533 (DIO: 6715, DAO: 6804, DIS: 14)
+--------------------------------------------------
+File: TOPO-1-RS-4.log
+  Sent: 1180, Received: 335 -> PDR: 28.39%
+  Avg Latency: 22.10 ms
+  Parent Changes: 1554
+  Total Overhead: 13040 (DIO: 6470, DAO: 6556, DIS: 14)
+--------------------------------------------------
+File: TOPO-1-RS-5.log
+  Sent: 1180, Received: 329 -> PDR: 27.88%
+  Avg Latency: 21.98 ms
+  Parent Changes: 1550
+  Total Overhead: 13255 (DIO: 6535, DAO: 6707, DIS: 13)
+--------------------------------------------------
+File: TOPO-1-RS-8.log
+  Sent: 1180, Received: 326 -> PDR: 27.63%
+  Avg Latency: 22.10 ms
+  Parent Changes: 1315
+  Total Overhead: 11992 (DIO: 6149, DAO: 5831, DIS: 12)
+--------------------------------------------------
+File: TOPO-1-RS-9.log
+  Sent: 1180, Received: 324 -> PDR: 27.46%
+  Avg Latency: 21.71 ms
+  Parent Changes: 1528
+  Total Overhead: 13715 (DIO: 6753, DAO: 6948, DIS: 14)
+--------------------------------------------------
+=== OVERALL RESULTS ACROSS ALL 8 RUNS ===
+OVERALL PDR: 27.79% (2623/9440 packets)
+OVERALL Avg Latency: 21.49 ms
+Avg Parent Changes per Run: 1485.5
+Avg Control Overhead per Run: 12998.8 (DIO: 6472.0, DAO: 6509.8, DIS: 17.0)

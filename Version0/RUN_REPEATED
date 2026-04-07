@@ -1,0 +1,118 @@
+#!/bin/bash
+
+#introduce some random seeds for deffirent simulations max 10
+
+RandomSeed[1]=350000
+RandomSeed[2]=421563
+RandomSeed[3]=545673
+RandomSeed[4]=634256
+RandomSeed[5]=456783
+#RandomSeed[4]=980765
+#RandomSeed[5]=235426
+#RandomSeed[8]=780765
+#RandomSeed[9]=456372
+#RandomSeed[10]=235416
+
+REPEATS=5
+
+STRING_BEFORE='<randomseed>'
+STRING_AFTER='</randomseed>'
+
+# Usage
+
+REPEATS=$1
+TEST=$2
+
+echo "Usage: $0 <nr_repeats> <test>"
+echo "Example: $0 10 cooja_helloworld"
+echo ">>>>>>> repeats $REPEATS filename $TEST  "
+
+#changinf topologies
+#Mobility
+#TOPO[1]='NewScenarios/Final/S1'
+#TOPO[2]='NewScenarios/Final/S2'
+#TOPO[3]='NewScenarios/Final/S3'
+#TOPO[1]='NewScenarios/Final/S4'
+TOPO[1]='PFE/Version0/20'
+
+
+
+
+TOPOS=1
+
+# Locate Contiki/COOJA
+if [ -z "$CONTIKI" ]; then
+  if [ -z "$CONTIKI_HOME" ]; then
+   CONTIKI_HOME=../../..
+  fi
+  CONTIKI=$CONTIKI_HOME
+fi
+
+#clear all the previous log files 
+rm LOGs/*
+
+# Clean up
+rm -f *.log *.cooja_log
+rm -fr se obj_cooja
+rm -f symbols.c symbols.h
+ 
+dirsuf=${PWD##*/}  
+
+SRCDIR=$CONTIKI/examples/ipv6/rpl-collect
+DSTDIR=$CONTIKI/examples/ipv6/rpl-collect_$dirsuf
+
+PJDIR=rpl-collect_$dirsuf
+STRING_BEFORE_PATH='/examples/ipv6/'
+STRING_AFTER_PATH='/node-'
+
+#CDIRECTORY='/PFE_TEST'
+
+cp -rf $SRCDIR $DSTDIR
+
+PJCONF=$DSTDIR/project-conf
+# Clean up
+rm -f *.log *.cooja_log
+rm -fr se obj_cooja
+rm -f symbols.c symbols.h
+
+# Compile COOJA
+echo ">>>>>>> Building COOJA <<<<<<<<"
+(cd $CONTIKI/tools/cooja && ant clean && ant jar)
+if [ "$?" != "0" ]; then
+  echo "Compilation of COOJA failed"
+  exit 1
+fi
+
+# Run tests
+
+for T in `seq 1 $TOPOS`
+do
+           TEST=${TOPO[T]}
+          #changin project_path
+
+	  sed -e "s%$STRING_BEFORE_PATH.*$STRING_AFTER_PATH%$STRING_BEFORE_PATH$PJDIR$STRING_AFTER_PATH%g" $TEST.csc > $TEST.csc.tmp
+          mv $TEST.csc.tmp $TEST.csc
+
+		  for COUNTER in `seq 1 $REPEATS`
+		  do
+		      sed -e "s%$STRING_BEFORE.*$STRING_AFTER%$STRING_BEFORE${RandomSeed[$COUNTER]}$STRING_AFTER%g" $TEST.csc > $TEST.csc.tmp
+	              mv $TEST.csc.tmp $TEST.csc
+
+		      echo ">>>>>>> Test $COUNTER/$REPEATS: new generated random seed ${RandomSeed[$COUNTER]} <<<<<<<<"
+	   	      echo ">>>>>>> Test $COUNTER/$REPEATS: $TEST-$COUNTER.log <<<<<<<<"
+
+		      bash RUN_TEST $TEST 
+
+		      mv $TEST.log  LOGs/TOPO-$T-RS-$COUNTER.log
+
+		  done
+done
+
+
+ mv $TEST.cooja_log  LOGs/$TEST.cooja_log
+
+echo
+echo " >>>>>>> RUN_REPEATED DONE! <<<<<<<< "
+echo
+
+
