@@ -29,7 +29,7 @@
 
 /* Parameters */
 #ifndef RPL_OF_TAU_MAX_ETX
-#define RPL_OF_TAU_MAX_ETX (8 * LINK_STATS_ETX_DIVISOR) /* ETX <= 8 */
+#define RPL_OF_TAU_MAX_ETX (3 * LINK_STATS_ETX_DIVISOR) /* ETX <= 3 (Proactive rejection of weak links) */
 #endif
 
 #ifndef RPL_OF_TAU_INIT_ETX
