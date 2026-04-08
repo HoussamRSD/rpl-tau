@@ -68,17 +68,33 @@
 
 
 /* ──────────────────────────────────────────────────────── */
-/*  TAU weights  (a, b, c, d, e, f, g)                     */
-/*  τ_cand = a·RE + b·(1000-QL) + c·Deg + d·(1000-NPC)    */
-/*         + e·ETX_norm + f·RSSI_norm + g·τ_parent         */
+/*  DYNAMIQUE DU RÉSEAU (Mobility Optimizations)           */
 /* ──────────────────────────────────────────────────────── */
-#define W_RE    4   /* a: Residual Energy         */
-#define W_QL    2   /* b: Queue Load (inverted)   */
-#define W_DEG   1   /* c: Degree                  */
-#define W_NPC   2   /* d: Nb Parent Changes (inv) */
-#define W_ETX   4   /* e: Direct link ETX         */
-#define W_RSSI  2   /* f: Direct link RSSI        */
-#define W_TAU   5   /* g: Recursive τ from parent */
+
+/* Activer UNIQUEMENT le NUD Probing actif de RPL (sans accélérer le Trickle DIO) 
+   Cela permet de vite purger un voisin mort sans inonder le réseau de contrôle. */
+#undef RPL_CONF_PROBING_INTERVAL
+#define RPL_CONF_PROBING_INTERVAL (10 * CLOCK_SECOND) 
+
+/* ──────────────────────────────────────────────────────── */
+/*  POIDS DE LA FONCTION OBJECTIVE TAU (a, b, c, d, e, f, g) */
+/*
+ *  L'équation fondamentale de prise de décision pour devenir Parent :
+ *  τ_cand = (a·RE) + (b·[1000-QL]) + (c·Deg) + (d·[1000-NPC])
+ *         + (e·ETX_norm) + (f·RSSI_norm) + (g·τ_parent)
+ *
+ *  Ajustez ces poids (0 à 10+) pour modifier le comportement de la topologie :
+ *  Par exemple, augmenter `W_RE` forcera les nœuds à privilégier les parents 
+ *  qui ont le plus de batterie. Augmenter `W_ETX` privilégiera un bon signal WiFi.
+ */
+/* ──────────────────────────────────────────────────────── */
+#define W_RE    4   /* a: RE (Residual Energy) - Protège la durée de vie globale du réseau */
+#define W_QL    2   /* b: QL (Queue Load) - Inverse (1000-QL). Évite les nœuds goulots d'étranglement */
+#define W_DEG   1   /* c: Deg (Degree) - Pousse à rejoindre les nœuds hyper-centraux (bien connectés) */
+#define W_NPC   1   /* d: NPC (Node Parent Changes) - Très faible pour la Mobilité (on autorise le saut) ! */
+#define W_ETX   5   /* e: ETX (Couche MAC) - Forte valeur pour privilégier un lien très fiable (Anti ping-pong). */
+#define W_RSSI  3   /* f: RSSI (Radio) - Favorise la proximité spatiale de manière modérée */
+#define W_TAU   5   /* g: Tau Parent - Garantit que le "bonheur" d'un parent se propage récursivement aux enfants */
 
 /* ──────────────────────────────────────────────────────── */
 /*  Energest (needed for real energy measurement)           */

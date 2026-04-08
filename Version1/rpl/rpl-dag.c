@@ -137,6 +137,14 @@ extern rpl_instance_t *default_instance;
 #define LINK_STATS_ETX_DIVISOR 128
 #endif
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Estime l'énergie consommée par le nœud en NanoJoules.
+ * 
+ * Utilise le module Energest de Contiki pour sommer l'énergie dépensée 
+ * par le CPU (mode Actif et Low-Power) et le Transceiver (Radio TX/RX)
+ * en se basant sur le voltage et la consommation nominale.
+ */
 static uint64_t rpl_energy_used_nJ(void)
 {
   energest_flush();
@@ -148,6 +156,14 @@ static uint64_t rpl_energy_used_nJ(void)
   return nJ;
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Calcule l'énergie résiduelle normalisée (0-1000).
+ * 
+ * Compare l'énergie consommée à la capacité maximale de la batterie simulée (`RPL_ENERGY_INIT_MJ`).
+ * - Score = 1000 : Batterie pleine.
+ * - Score = 0 : Batterie vide ou épuisée.
+ */
 static uint16_t residual_energy_norm(void)
 {
 #if !ENERGEST_CONF_ON
@@ -161,6 +177,15 @@ static uint16_t residual_energy_norm(void)
 #endif
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Calcule l'encombrement logique du nœud (Queue Load / Load Balancing) normalisé.
+ * 
+ * Évalue le taux de remplissage de la table de routage (`uip_ds6_route_num_routes`).
+ * - Score = 1000 : Nœud saturé (ne peut plus accepter de routes d'enfants).
+ * - Score = 0 : Nœud libre.
+ * (NB: Cette pénalité est inversée mathématiquement dans la formule TAU globale).
+ */
 static uint16_t queue_load_norm(void)
 {
   uint16_t nr = uip_ds6_route_num_routes();
@@ -170,27 +195,54 @@ static uint16_t queue_load_norm(void)
   return (uint16_t)((uint32_t)nr * 1000UL / (uint32_t)mx);
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Calcule le degré de connectivité normalisé (0-1000).
+ * 
+ * Représente la densité du réseau autour du nœud en comptant ses parents/voisins valides.
+ * L'échelle sature à 20 voisins (Score 1000). Favorise les nœuds très connectés qui offrent
+ * une forte redondance radio.
+ */
 static uint16_t degree_norm(void)
 {
   uint16_t count = 0;
   rpl_parent_t *p;
-  for(p = nbr_table_head(rpl_parents); p != NULL;
-      p = nbr_table_next(rpl_parents, p)) {
+  for(p = nbr_table_head(rpl_parents); p != NULL; p = nbr_table_next(rpl_parents, p)) {
     if(p->dag != NULL && p->rank != INFINITE_RANK) count++;
   }
   if(count >= 20) return 1000;
   return (uint16_t)((uint32_t)count * 1000UL / 20UL);
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Calcule la valeur normalisée (0-1000) de l'instabilité du nœud (NPC)
+ * 
+ * Le Nombre de Changements de Parent (NPC) sert de pénalité propagée dans 
+ * l'arbre DODAG. Plus un nœud change souvent de parent, plus il devient
+ * "instable" et indésirable pour ses propres enfants.
+ * 
+ * Cette fonction convertit le compteur brut en un score sur 1000 afin de
+ * l'intégrer dans la fonction de coût linéaire `tau_cand`.
+ */
 static uint16_t npc_norm(void)
 {
-  /* Si 5 changements ou plus, le noeud est tres instable */
-  if(parent_switches >= 5) return 1000;
+  /* En mobilité, les changements de parents sont naturels.
+     Permettre jusqu'à 25 changements avant que le nœud sature à 1000. */
+  if(parent_switches >= 25) return 1000;
   
-  /* Chaque changement coute 200 points d'instabilite sur 1000 */
-  return (uint16_t)(parent_switches * 200);
+  /* Loi linéaire plus douce : 40 points de malus par saut. Evite la panique en cascade. */
+  return (uint16_t)(parent_switches * 40);
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Calcule la valeur normalisée (0-1000) de l'ETX (Expected Transmission Count).
+ * 
+ * Repose sur les statistiques MAC natives (link-stats).
+ * - Score = 1000 : Lien parfait (ETX = 1.0, 100% de succès).
+ * - Score = 0 : Lien exécrable (ETX >= 8.0, 8 tentatives requises).
+ */
 uint16_t rpl_etx_norm(rpl_parent_t *p)
 {
   if(p == NULL) return 0;
@@ -210,6 +262,14 @@ uint16_t rpl_etx_norm(rpl_parent_t *p)
 #define RPL_RSSI_MAX  (-40)
 #endif
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Calcule la valeur normalisée (0-1000) du Signal Radio RSSI (Entrant).
+ * 
+ * Extrait la puissance du signal depuis link-stats (sur la base des ACKs reçus).
+ * - Score = 1000 : Signal excellent (>= -40 dBm).
+ * - Score = 0 : Signal très faible (<= -100 dBm).
+ */
 uint16_t rpl_rssi_norm(rpl_parent_t *p)
 {
   if(p == NULL) return 0;
@@ -221,6 +281,16 @@ uint16_t rpl_rssi_norm(rpl_parent_t *p)
   return (uint16_t)(((int32_t)(r - RPL_RSSI_MIN) * 1000L) / (int32_t)(RPL_RSSI_MAX - RPL_RSSI_MIN));
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief MOTEUR OF-TAU : Détermine le Score Global d'un Parent Candidat
+ * 
+ * Calcule la désirabilité d'un voisin à devenir le "Preferred Parent" en réalisant
+ * une somme pondérée linéaire de ses capacités nodales (RE, QL, Deg, NPC) recues par DIO
+ * et des capacités locales du lien physique (ETX, RSSI).
+ * 
+ * @return Valeur `tau_cand` sur une échelle de 0 à 1000 (1000 étant le parent idéal).
+ */
 uint16_t rpl_tau_compute_cand(uint16_t RE, uint16_t QL, uint16_t Deg,
                               uint16_t NPC, uint16_t ETX_n,
                               uint16_t RSSI_n, uint16_t tau_parent)
@@ -245,6 +315,14 @@ uint16_t rpl_tau_compute_cand(uint16_t RE, uint16_t QL, uint16_t Deg,
 #define RPL_TAU_NPC_PERIOD (300 * CLOCK_SECOND) /* Reset frequency for NPC (3 minutes) */
 #endif
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Amnésie Temporelle pour l'Instabilité
+ * 
+ * Remet à zéro la pénalité d'instabilité du nœud (NPC). Permet au réseau
+ * de ne pas garder une rancune éternelle contre un nœud qui a été instable par le
+ * passé mais qui s'est stabilisé.
+ */
 void rpl_pe_npc_reset(void) { 
   parent_switches = 0; 
 }
@@ -258,6 +336,12 @@ static void handle_npc_reset_timer(void *ptr) {
   ctimer_set(&npc_reset_timer, RPL_TAU_NPC_PERIOD, handle_npc_reset_timer, NULL);
 }
 
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Callback interne appelé lors d'un "Parent Switch"
+ * 
+ * S'assure de démarrer le minuteur dynamique d'expiration au premier faux pas.
+ */
 void rpl_pe_on_parent_switch(void) { 
   parent_switches++;
   /* Start the dynamic period timer on the very first parent switch */
@@ -275,13 +359,20 @@ void rpl_pe_update_local(rpl_instance_t *instance)
   rpl_pe_Deg = clamp1000(degree_norm());
   rpl_pe_NPC = clamp1000(npc_norm());
   rpl_pe_Tau = 1000;
+  
+  uint16_t current_etx = 0;
+  uint16_t current_rssi = 0;
+
   if(dag != NULL && dag->rank != ROOT_RANK(instance)
      && dag->preferred_parent != NULL) {
     rpl_pe_Tau = dag->preferred_parent->tau_cand;
     if(rpl_pe_Tau > 1000) rpl_pe_Tau = 1000;
+    
+    current_etx = rpl_etx_norm(dag->preferred_parent);
+    current_rssi = rpl_rssi_norm(dag->preferred_parent);
   }
-  printf("[TAU] RE=%u QL=%u Deg=%u NPC=%u Tau=%u\n",
-         rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, rpl_pe_Tau);
+  printf("[TAU] RE=%u QL=%u Deg=%u NPC=%u ETX=%u RSSI=%u Tau=%u\n",
+         rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, current_etx, current_rssi, rpl_pe_Tau);
 }
 
 

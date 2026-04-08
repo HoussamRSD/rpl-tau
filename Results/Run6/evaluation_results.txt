@@ -1,0 +1,93 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\Run6
+Log files found: 12
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1179, Received: 599 -> PDR: 50.81%
+  Avg Latency: 19.97 ms
+  Parent Changes: 70
+  Total Overhead: 9101 (DIO: 8270, DAO: 817, DIS: 14)
+--------------------------------------------------
+File: TOPO-1-RS-2.log
+  Sent: 1179, Received: 481 -> PDR: 40.80%
+  Avg Latency: 18.08 ms
+  Parent Changes: 124
+  Total Overhead: 10131 (DIO: 8806, DAO: 1312, DIS: 13)
+--------------------------------------------------
+File: TOPO-1-RS-3.log
+  Sent: 1180, Received: 575 -> PDR: 48.73%
+  Avg Latency: 20.43 ms
+  Parent Changes: 90
+  Total Overhead: 9299 (DIO: 8351, DAO: 933, DIS: 15)
+--------------------------------------------------
+File: TOPO-1-RS-4.log
+  Sent: 1180, Received: 517 -> PDR: 43.81%
+  Avg Latency: 19.19 ms
+  Parent Changes: 99
+  Total Overhead: 9283 (DIO: 8332, DAO: 917, DIS: 34)
+--------------------------------------------------
+File: TOPO-1-RS-5.log
+  Sent: 1178, Received: 548 -> PDR: 46.52%
+  Avg Latency: 20.16 ms
+  Parent Changes: 91
+  Total Overhead: 9306 (DIO: 8220, DAO: 1040, DIS: 46)
+--------------------------------------------------
+File: TOPO-1-RS-6.log
+  Sent: 1178, Received: 561 -> PDR: 47.62%
+  Avg Latency: 20.65 ms
+  Parent Changes: 119
+  Total Overhead: 9457 (DIO: 8324, DAO: 1087, DIS: 46)
+--------------------------------------------------
+File: TOPO-1-RS-7.log
+  Sent: 1179, Received: 562 -> PDR: 47.67%
+  Avg Latency: 20.16 ms
+  Parent Changes: 74
+  Total Overhead: 8881 (DIO: 8014, DAO: 822, DIS: 45)
+--------------------------------------------------
+File: TOPO-1-RS-8.log
+  Sent: 1180, Received: 540 -> PDR: 45.76%
+  Avg Latency: 20.55 ms
+  Parent Changes: 103
+  Total Overhead: 9663 (DIO: 8473, DAO: 1145, DIS: 45)
+--------------------------------------------------
+File: TOPO-1-RS-9.log
+  Sent: 1180, Received: 516 -> PDR: 43.73%
+  Avg Latency: 19.88 ms
+  Parent Changes: 93
+  Total Overhead: 9371 (DIO: 8316, DAO: 1010, DIS: 45)
+--------------------------------------------------
+File: TOPO-1-RS-10.log
+  Sent: 1180, Received: 541 -> PDR: 45.85%
+  Avg Latency: 20.42 ms
+  Parent Changes: 84
+  Total Overhead: 9035 (DIO: 8109, DAO: 880, DIS: 46)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (10 simulations) ===
+Average PDR            : 46.13% ± 2.85
+Average Latency        : 19.95 ms ± 0.78
+Average Parent Changes : 94.7 ± 17.4
+Average Control Ovhd   : 9352.7 ± 351.2
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 1180, Received: 1106 -> PDR: 93.73%
+  Avg Latency: 18.47 ms
+  Parent Changes: 0
+  Total Overhead: 7277 (DIO: 6958, DAO: 249, DIS: 70)
+--------------------------------------------------
+File: TOPO-2-RS-2.log
+  Sent: 1180, Received: 1105 -> PDR: 93.64%
+  Avg Latency: 18.40 ms
+  Parent Changes: 0
+  Total Overhead: 7263 (DIO: 6946, DAO: 247, DIS: 70)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (2 simulations) ===
+Average PDR            : 93.69% ± 0.06
+Average Latency        : 18.44 ms ± 0.05
+Average Parent Changes : 0.0 ± 0.0
+Average Control Ovhd   : 7270.0 ± 9.9

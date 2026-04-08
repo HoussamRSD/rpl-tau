@@ -4,15 +4,29 @@ import glob
 import statistics
 
 def analyze_logs(directory):
+    """
+    Analyse les fichiers journaux (.log) d'une simulation Cooja.
+    Extrait les statistiques vitales de performance du réseau : PDR (Packet Delivery Ratio),
+    Latence moyenne (End-to-End Delay), Overhead de Contrôle (RPL DIO/DAO/DIS), et instabilité (Parent Changes).
+    Génère un rapport consolidé avec les moyennes et écart-types par topologie.
+    """
     log_files = glob.glob(os.path.join(directory, "*.log"))
     if not log_files:
         print("No log files found in directory:", directory)
         return
 
-    # Patterns
+    # ==============================================================================
+    # DÉCLARATION DES EXPRESSIONS RÉGULIÈRES (REGEX)
+    # Ces filtres extraient les événements du simulateur "texte"
+    # ==============================================================================
+    
+    # Trafic de Données Utilisateur (Couche Application)
+    # Match: "60000000:2:Client sending 1" -> t=60000000us, noeud=2, seq=1
     send_pattern = re.compile(r'^(\d+):(\d+):Client sending (\d+)')
+    # Match: "61500000:1:Server received 1 from 2" -> t=61500000us, seq=1, source=2
     recv_pattern = re.compile(r'^(\d+):1:Server received (\d+) from (\d+)')
     
+    # Trafic de Contrôle (Couche Routage RPL)
     dio_pattern = re.compile(r'Sending a multicast-DIO|Sending unicast-DIO')
     dao_pattern = re.compile(r'Sending a DAO|Sending a No-Path DAO')
     dis_pattern = re.compile(r'Sending a DIS')
@@ -51,6 +65,9 @@ def analyze_logs(directory):
         sent_dict = {} # (node_id, seq) -> time_sent
         npc_dict = {}  # node_id -> last_npc
         
+        # ----------------------------------------------------------------------
+        # Variables de comptage pour chaque fichier (File/Run = 'f_')
+        # ----------------------------------------------------------------------
         f_sent = 0
         f_recv = 0
         f_latency_sum = 0.0
@@ -60,52 +77,56 @@ def analyze_logs(directory):
         f_dis = 0
         f_parent_changes = 0
 
+        # Moteur de parsing Ligne-par-Ligne (Mémoire efficiente)
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             for line in f:
-                # Parent Changes based on [TAU] NPC
+                
+                # --- 1. DÉTECTION DE L'INSTABILITÉ (CHANGEMENTS DE PARENT) ---
+                # On utilise la trace customisée [TAU] ajoutée dans le code C
                 m_tau = tau_pattern.search(line)
                 if m_tau:
                     node_id = int(m_tau.group(2))
-                    npc_val = int(m_tau.group(3))
+                    npc_val = int(m_tau.group(3))  # Valeur brute pénalisée (accumulée)
                     last_npc = npc_dict.get(node_id, 0)
                     
                     if npc_val > last_npc:
-                        # User's recent code uses 50 points per switch (or 200, but logic applies linearly)
-                        # We use 50 because that was the value when logs were generated.
-                        # Wait, what if logs were from the new 200 value? The old run uses 50, new run uses 200.
-                        # Let's dynamically detect jump size or just use min jump!
-                        # Any positive jump is at least 1 switch.
+                        # Déduction heuristique : la pénalité fait un bond lors d'un "parent switch"
+                        # Historiquement = +50 ou +200 par saut. On vérifie le modulo pour déduire le nb de sauts nets.
                         diff = npc_val - last_npc
-                        # Determine if multiplier is 50 or 200. Usually it divides perfectly.
                         if diff % 200 == 0:
                             f_parent_changes += diff // 200
                         elif diff % 50 == 0:
                             f_parent_changes += diff // 50
                         else:
-                            f_parent_changes += 1 # safe fallback
+                            f_parent_changes += 1 # Règle de repli sécurisée
                     
                     npc_dict[node_id] = npc_val
                     continue
                 
-                # App Data Send
+                # --- 2. TRANSMISSION APPLICATION (UDP SENDER) ---
                 m_send = send_pattern.search(line)
                 if m_send:
                     time_us = int(m_send.group(1))
                     node_id = int(m_send.group(2))
                     seq = int(m_send.group(3))
+                    
+                    # On mémorise le Timestamp (Microsecondes) pour calculer la Latence plus tard
                     sent_dict[(node_id, seq)] = time_us
                     f_sent += 1
                     continue
                 
-                # App Data Recv
+                # --- 3. RECEPTION APPLICATION (UDP RECEIVER / SINK) ---
                 m_recv = recv_pattern.search(line)
                 if m_recv:
                     time_us = int(m_recv.group(1))
                     seq = int(m_recv.group(2))
                     node_id = int(m_recv.group(3))
                     
+                    # VÉRIFICATION : Si le paquet reçu était bien attendu (match Source + Numéro Séquence)
                     if (node_id, seq) in sent_dict:
                         time_sent = sent_dict[(node_id, seq)]
+                        
+                        # Calcul du Délai de Bout-en-Bout (End-to-end Latency) en Millisecondes
                         latency_ms = (time_us - time_sent) / 1000.0
                         if latency_ms >= 0:
                             f_latency_sum += latency_ms
@@ -114,7 +135,8 @@ def analyze_logs(directory):
                     f_recv += 1
                     continue
                 
-                # Control Packets
+                # --- 4. SURCOÛT DE CONTRÔLE (CONTROL OVERHEAD RPL) ---
+                # Chaque Node émet des paquets "fantômes" pour entretenir la topologie.
                 if "Sending a multicast-DIO" in line or "Sending unicast-DIO" in line:
                     f_dio += 1
                 elif "Sending a DAO" in line or "Sending a No-Path DAO" in line:
@@ -198,4 +220,4 @@ def analyze_logs(directory):
     print(f"\n[+] Results successfully saved to: {txt_path}")
 
 if __name__ == '__main__':
-    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run5")
+    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run6")

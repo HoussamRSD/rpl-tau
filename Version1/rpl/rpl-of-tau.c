@@ -27,17 +27,32 @@
 #define LINK_STATS_ETX_DIVISOR 128
 #endif
 
-/* Parameters */
+/* ==============================================================================
+   PARAMÈTRES DE CONTRÔLE DE MOBILITÉ & STABILITÉ RÉSEAU
+   ============================================================================== */
+
+/* 
+ * ETX Tolerance (Proactive Rejection).
+ * Définit à partir de combien d'échecs de transmission en moyenne un lien est déclaré
+ * "mort" et abandonné. Le réduire permet d'expulser précocement un parent qui s'éloigne (mobilité),
+ * évitant d'attendre l'effondrement total de la liaison MAC.
+ */
 #ifndef RPL_OF_TAU_MAX_ETX
-#define RPL_OF_TAU_MAX_ETX (8 * LINK_STATS_ETX_DIVISOR) /* ETX <= 3 (Proactive rejection of weak links) */
+#define RPL_OF_TAU_MAX_ETX (8 * LINK_STATS_ETX_DIVISOR) /* ETX <= 8 (Modéré: laisse RPL gérer l'ETX sans drop forcé) */
 #endif
 
 #ifndef RPL_OF_TAU_INIT_ETX
 #define RPL_OF_TAU_INIT_ETX (2 * LINK_STATS_ETX_DIVISOR) /* default ETX if stats absent */
 #endif
 
+/* 
+ * Switch Hysteresis Threshold (Ping-Pong Prevention).
+ * Limite la "volatilité" de l'arbre DODAG. Un nœud enfant ne switchera vers 
+ * un nouveau candidat que si le score TAU dépasse le parent actuel de cette valeur.
+ * Plus élevé = réseau très stable mais lourd. Plus bas = volatile (Ping-Pong fréquent).
+ */
 #ifndef RPL_OF_TAU_SWITCH_THRESHOLD
-#define RPL_OF_TAU_SWITCH_THRESHOLD 200 /* hysteresis in tau points (0..1000) */
+#define RPL_OF_TAU_SWITCH_THRESHOLD 300 /* Forte hystérésis (Anti Ping-Pong massif pour la mobilité) */
 #endif
 
 #ifndef RPL_OF_TAU_MIN_TAU
@@ -77,6 +92,16 @@ parent_link_metric(rpl_parent_t *p)
   return get_etx_or_default(p);
 }
 /*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Vérifie si un lien parent est physiquement exploitable.
+ * 
+ * Cette fonction est la validation de première ligne. Si un parent a une note ETX 
+ * pire que la tolérance maximale (RPL_OF_TAU_MAX_ETX), ou si sa qualité globale TAU
+ * est inférieure au minimum requis, il est d'emblée rejeté.
+ * Cela permet de rejeter proactivement les liens qui sont techniquement connectés
+ * mais trop faibles pour passer des données.
+ */
 static int
 parent_has_usable_link(rpl_parent_t *p)
 {
@@ -104,6 +129,17 @@ parent_path_cost(rpl_parent_t *p)
   return (uint16_t)(1000 - tau);
 }
 /*---------------------------------------------------------------------------*/
+/**
+ * \brief Détermine le "Rang" mathématique (Rank) du nœud via ce parent.
+ * 
+ * Dans RPL, le Rang (Rank) dicte la distance logique par rapport au nœud racine (Sink).
+ * La règle stricte de RPL est "Rank(enfant) > Rank(parent)".
+ * L'augmentation du rang à chaque saut est calculée ici proportionnellement 
+ * à l'ETX (qualité physique du lien direct). Plus le lien est mauvais, 
+ * plus le rang augmente vite.
+ * Cette fonction NE sélectionne PAS le parent, elle sécurise juste la création
+ * de l'arbre DODAG pour éviter toute boucle de routage (Loop-Free).
+ */
 static rpl_rank_t
 rank_via_parent(rpl_parent_t *p)
 {
@@ -137,17 +173,30 @@ rank_via_parent(rpl_parent_t *p)
   return (rpl_rank_t)(p->rank + inc);
 }
 /*---------------------------------------------------------------------------*/
+/**
+ * \brief Sélectionne le "Meilleur Parent" parmi deux candidats.
+ * 
+ * C'est le cœur de la prise de décision de routage dans notre méthode TAU.
+ * L'ordre de sélection se fait via plusieurs filtres successifs :
+ * 1. Le lien doit être utilisable (usable link).
+ * 2. Le parent ne doit pas créer de boucle de routage (Rank Constraint).
+ * 3. Hystérésis : Si l'actuel `preferred_parent` est très proche de son adversaire,
+ *    il garde sa place (pour éviter le Ping-Pong).
+ * 4. Sinon, on compare directement le score `tau_cand` (Plus grand = Meilleur).
+ * 5. En cas d'égalité Parfaite (Tie-Break), on choisit le plus proche en sauts (Rank)
+ *    puis le meilleur signal physique (ETX).
+ */
 static rpl_parent_t *
 best_parent(rpl_parent_t *p1, rpl_parent_t *p2)
 {
   if(p1 == NULL) return p2;
   if(p2 == NULL) return p1;
 
-  /* Discard parents with unusable links */
+  /* 1er filtre : Discard parents with unusable links */
   if(!parent_has_usable_link(p1)) return p2;
   if(!parent_has_usable_link(p2)) return p1;
 
-  /* --- Hop count / rank constraint ---
+  /* --- 2e filtre : Hop count / rank constraint ---
    * Reject parents whose rank would make us infinite.
    * This guarantees Rank(parent) < Rank(child) => loop-free DODAG. */
   rpl_rank_t r1 = rank_via_parent(p1);
@@ -160,7 +209,8 @@ best_parent(rpl_parent_t *p1, rpl_parent_t *p2)
   uint16_t t1 = clamp_tau(p1->tau_cand);
   uint16_t t2 = clamp_tau(p2->tau_cand);
 
-  /* Hysteresis: if current preferred parent is "close enough", keep it */
+  /* 3e filtre : Hysteresis (Protection Anti Ping-Pong)
+   * if current preferred parent is "close enough", keep it */
   if(dag != NULL && (p1 == dag->preferred_parent || p2 == dag->preferred_parent)) {
     rpl_parent_t *pref = dag->preferred_parent;
     if(pref == p1) {
@@ -174,7 +224,7 @@ best_parent(rpl_parent_t *p1, rpl_parent_t *p2)
     }
   }
 
-  /* Primary rule: max tau_cand */
+  /* 4e filtre (Règle d'or) : max tau_cand */
   if(t2 > t1) return p2;
   if(t1 > t2) return p1;
 

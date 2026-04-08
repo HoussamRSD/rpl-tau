@@ -454,19 +454,24 @@ dio_input(void)
         memcpy(&dio.prefix_info.prefix, &buffer[i + 16], 16);
         break;
       case RPL_OPTION_PE:
-  	if(len >= 2 + RPL_PE_MIN_LEN) {
-	   dio.pe_version = buffer[i + 2];
-    	   dio.pe_flags   = buffer[i + 3];
-    	   dio.pe_RE      = get16(buffer, i + 4);
-    	   dio.pe_QL      = get16(buffer, i + 6);
-	   dio.pe_Deg     = get16(buffer, i + 8);
-    	   dio.pe_NPC     = get16(buffer, i + 10);
-    	   dio.pe_Tau     = get16(buffer, i + 12);
-  	} 
- 	else {
-    	   PRINTF("RPL: PE option too short (len=%d)\n", len);
-  	}
-  	break;
+        /* 
+         * [DODAG Information Object] Parsing de l'Extension PE (Parameters Extension)
+         * C'est ici que l'enfant lit les 5 métriques OF-TAU (RE, QL, Deg, NPC, Tau) 
+         * incluses dans le paquet radio DIO envoyé par un Parent Candidat.
+         */
+        if(len >= 2 + RPL_PE_MIN_LEN) {
+          dio.pe_version = buffer[i + 2];
+          dio.pe_flags   = buffer[i + 3];
+          dio.pe_RE      = get16(buffer, i + 4); /* Énergie Résiduelle du parent */
+          dio.pe_QL      = get16(buffer, i + 6); /* Charge mémoire du parent */
+          dio.pe_Deg     = get16(buffer, i + 8); /* Nombre de voisins du parent */
+          dio.pe_NPC     = get16(buffer, i + 10); /* Pénalité d'instabilité du parent */
+          dio.pe_Tau     = get16(buffer, i + 12); /* Le score global du parent ! */
+        } 
+        else {
+           PRINTF("RPL: PE option too short (len=%d)\n", len);
+        }
+        break;
       default:
         PRINTF("RPL: Unsupported suboption type in DIO: %u\n",
                (unsigned)subopt_type);
@@ -571,20 +576,26 @@ dio_output(rpl_instance_t *instance, uip_ipaddr_t *uc_addr)
 #endif /* !RPL_LEAF_ONLY */
 
 
-  /* --- Custom option: PE (Parameters Extension) --- */
+  /* ==============================================================================
+   * [Custom Option: PE - Parameters Extension]
+   * C'est ici que la magie opère pour la transmission de OF-TAU.
+   * Avant de diffuser un DIO, le nœud évalue son propre état (Énergie, Charge, Connexions, etc.) 
+   * via `rpl_pe_update_local()`, puis il encapsule ces 5 valeurs à la suite dans 
+   * le Buffer (payload ICMPv6) pour les diffuser à tous ses voisins.
+   * ============================================================================== */
   rpl_pe_update_local(instance);
 
   buffer[pos++] = RPL_OPTION_PE;
-  buffer[pos++] = RPL_PE_MIN_LEN; /* 12 */
+  buffer[pos++] = RPL_PE_MIN_LEN; /* Longueur de l'option (12 octets) */
 
   buffer[pos++] = RPL_PE_VERSION;
-  buffer[pos++] = 0; /* flags (reserved) */
+  buffer[pos++] = 0; /* flags (réservé pour futur usage) */
 
-  set16(buffer, pos, rpl_pe_RE);    pos += 2;
-  set16(buffer, pos, rpl_pe_QL);    pos += 2;
-  set16(buffer, pos, rpl_pe_Deg);   pos += 2;
-  set16(buffer, pos, rpl_pe_NPC);   pos += 2;
-  set16(buffer, pos, rpl_pe_Tau);   pos += 2;
+  set16(buffer, pos, rpl_pe_RE);    pos += 2; /* 2 octets pour Residual Energy */
+  set16(buffer, pos, rpl_pe_QL);    pos += 2; /* 2 octets pour Queue Load */
+  set16(buffer, pos, rpl_pe_Deg);   pos += 2; /* 2 octets pour le Degré */
+  set16(buffer, pos, rpl_pe_NPC);   pos += 2; /* 2 octets pour les sauts (NPC) */
+  set16(buffer, pos, rpl_pe_Tau);   pos += 2; /* 2 octets pour le TAU absolu */
 
   PRINTF("PE-TX RE=%u QL=%u Deg=%u NPC=%u Tau=%u\n",
          rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, rpl_pe_Tau);
