@@ -32,13 +32,13 @@
    ============================================================================== */
 
 /* 
- * ETX Tolerance (Radio Rejection).
- * Définit à partir de combien d'échecs MAC un lien est abandonné de force.
- * Afin d'activer la "Proactivité Holistique", nous relâchons ce couperet (ETX=10).
- * C'est désormais la note `TAU` globale qui juge de la viabilité du parent !
+ * ETX Tolerance (Proactive Rejection).
+ * Définit à partir de combien d'échecs de transmission en moyenne un lien est déclaré
+ * "mort" et abandonné. Le réduire permet d'expulser précocement un parent qui s'éloigne (mobilité),
+ * évitant d'attendre l'effondrement total de la liaison MAC.
  */
 #ifndef RPL_OF_TAU_MAX_ETX
-#define RPL_OF_TAU_MAX_ETX (10 * LINK_STATS_ETX_DIVISOR) /* Tolérance forte : On ne juge plus PUREMENT sur la Radio */
+#define RPL_OF_TAU_MAX_ETX (8 * LINK_STATS_ETX_DIVISOR) /* ETX <= 8 (Modéré: laisse RPL gérer l'ETX sans drop forcé) */
 #endif
 
 #ifndef RPL_OF_TAU_INIT_ETX
@@ -49,18 +49,14 @@
  * Switch Hysteresis Threshold (Ping-Pong Prevention).
  * Limite la "volatilité" de l'arbre DODAG. Un nœud enfant ne switchera vers 
  * un nouveau candidat que si le score TAU dépasse le parent actuel de cette valeur.
+ * Plus élevé = réseau très stable mais lourd. Plus bas = volatile (Ping-Pong fréquent).
  */
 #ifndef RPL_OF_TAU_SWITCH_THRESHOLD
-#define RPL_OF_TAU_SWITCH_THRESHOLD 150 /* Semi-Perméable : autorise à rattraper un bon signal, bloque les micro-fluctuations */
+#define RPL_OF_TAU_SWITCH_THRESHOLD 300 /* Forte hystérésis (Anti Ping-Pong massif pour la mobilité) */
 #endif
 
-/*
- * TAU Survival Threshold (Holistic Proactive Dropping).
- * Si la note GLOBALE environnementale (Énergie, Charge, Mouvement) de mon Parent plonge sous
- * ce niveau, il devient radioactif et je m'en sépare de force sans attendre que le lien casse !
- */
 #ifndef RPL_OF_TAU_MIN_TAU
-#define RPL_OF_TAU_MIN_TAU 400 /* Un score TAU sous 400/1000 entraine une répudiation proactive ! */
+#define RPL_OF_TAU_MIN_TAU 1 /* minimal tau to accept a parent */
 #endif
 
 /*---------------------------------------------------------------------------*/
@@ -113,28 +109,10 @@ parent_has_usable_link(rpl_parent_t *p)
 
   uint16_t tau = clamp_tau(p->tau_cand);
   uint16_t etx = get_etx_or_default(p);
-  uint16_t rssi_norm = rpl_rssi_norm(p);
 
+  if(tau < RPL_OF_TAU_MIN_TAU) return 0;
   if(etx == 0xFFFF || etx == 0) return 0;
-
-  /* --- ALGORITHME SMART HANDOVER (Multi-Facteurs) --- */
-
-  /* Règle 1 : Catastrophe Globale (Défaut Batterie, Queue, etc.) */
-  if(tau < 300) {
-    return 0; /* Le score global est trop bas, le parent est toxique */
-  }
-
-  /* Règle 2 : Détection de Mobilité (ETX + RSSI combinés) 
-   * Si la liaison devient moyenne ET que le signal électrique plonge, 
-   * cela confirme que le parent s'éloigne physiquement ! */
-  if(etx > (5 * LINK_STATS_ETX_DIVISOR) && rssi_norm < 400) {
-    return 0; /* Basculement proactif pour anticiper la rupture */
-  }
-
-  /* Règle 3 : Crash Total de la radio (Sécurité ultime) */
-  if(etx > RPL_OF_TAU_MAX_ETX) {
-    return 0;
-  }
+  if(etx > RPL_OF_TAU_MAX_ETX) return 0;
 
   return 1;
 }
