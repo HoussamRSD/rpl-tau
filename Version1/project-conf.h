@@ -64,20 +64,8 @@
 #undef RPL_CONF_OF_OCP
 #define RPL_CONF_OF_OCP  RPL_OCP_TAU   /* 0xF2, defined in rpl.h */
 
-/* ──────────────────────────────────────────────────────── */
-/*  Mobility Optimization (Fast Trickle & Active Probing)   */
-/* ──────────────────────────────────────────────────────── */
 
-/* Accélérer le Trickle Timer (RPL réagit vite aux mouvements) */
-#undef RPL_CONF_DIO_INTERVAL_MIN
-#define RPL_CONF_DIO_INTERVAL_MIN 10  /* ~1 seconde au lieu de 4 sec */
 
-#undef RPL_CONF_DIO_INTERVAL_DOUBLINGS
-#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 6 /* La limite de silence de RPL passe de ~17 mins à ~1 minute */
-
-/* Activer le NUD Probing actif de RPL */
-#undef RPL_CONF_PROBING_INTERVAL
-#define RPL_CONF_PROBING_INTERVAL (10 * CLOCK_SECOND) /* Vérifier les liens cassés toutes les 10s */
 
 /* ──────────────────────────────────────────────────────── */
 /*  TAU weights  (a, b, c, d, e, f, g)                     */

@@ -1,0 +1,33 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\proactive
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1 : Mobile (20 nodes, mobility from 20.dat)
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1180, Received: 414 -> PDR: 35.08%
+  Avg Latency: 26.27 ms
+  Parent Changes: 356
+  Total Overhead: 14993 (DIO: 12208, DAO: 2779, DIS: 6)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 [Mobile (20 nodes, mobility from 20.dat)] (1 simulations) ===
+Average PDR            : 35.08% ± 0.00
+Average Latency        : 26.27 ms ± 0.00
+Average Parent Changes : 356.0 ± 0.0
+Average Control Ovhd   : 14993.0 ± 0.0
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2 : Static (20 nodes)
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 1179, Received: 1041 -> PDR: 88.30%
+  Avg Latency: 28.67 ms
+  Parent Changes: 112
+  Total Overhead: 10469 (DIO: 9056, DAO: 1348, DIS: 65)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 [Static (20 nodes)] (1 simulations) ===
+Average PDR            : 88.30% ± 0.00
+Average Latency        : 28.67 ms ± 0.00
+Average Parent Changes : 112.0 ± 0.0
+Average Control Ovhd   : 10469.0 ± 0.0

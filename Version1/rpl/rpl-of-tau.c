@@ -29,7 +29,7 @@
 
 /* Parameters */
 #ifndef RPL_OF_TAU_MAX_ETX
-#define RPL_OF_TAU_MAX_ETX (3 * LINK_STATS_ETX_DIVISOR) /* ETX <= 3 (Proactive rejection of weak links) */
+#define RPL_OF_TAU_MAX_ETX (8 * LINK_STATS_ETX_DIVISOR) /* ETX <= 3 (Proactive rejection of weak links) */
 #endif
 
 #ifndef RPL_OF_TAU_INIT_ETX
@@ -37,7 +37,7 @@
 #endif
 
 #ifndef RPL_OF_TAU_SWITCH_THRESHOLD
-#define RPL_OF_TAU_SWITCH_THRESHOLD 100 /* hysteresis in tau points (0..1000) */
+#define RPL_OF_TAU_SWITCH_THRESHOLD 200 /* hysteresis in tau points (0..1000) */
 #endif
 
 #ifndef RPL_OF_TAU_MIN_TAU

@@ -140,19 +140,14 @@ def analyze_logs(directory):
             'dis': f_dis
         })
 
-    # Topology names mapping based on user input
-    topo_names = {
-        1: "Mobile (20 nodes, mobility from 20.dat)",
-        2: "Static (20 nodes)"
-    }
+
 
     # Sort and evaluate per Topology
     sorted_topos = sorted(topo_data.keys())
     
     for topo_id in sorted_topos:
-        t_name = topo_names.get(topo_id, f"Unknown Topology {topo_id}")
         log_print(f"\n==================================================")
-        log_print(f"      EVALUATION FOR TOPOLOGY {topo_id} : {t_name}")
+        log_print(f"      EVALUATION FOR TOPOLOGY {topo_id}")
         log_print(f"==================================================")
         
         runs = topo_data[topo_id]
@@ -177,7 +172,7 @@ def analyze_logs(directory):
             overhead_list.append(r['overhead'])
             
         # Calculate Averages and STD
-        log_print(f"=== AVERAGE FOR TOPOLOGY {topo_id} [{t_name}] ({len(runs)} simulations) ===")
+        log_print(f"=== AVERAGE FOR TOPOLOGY {topo_id} ({len(runs)} simulations) ===")
         
         avg_pdr = statistics.mean(pdr_list) if pdr_list else 0
         std_pdr = statistics.stdev(pdr_list) if len(pdr_list) > 1 else 0
@@ -203,4 +198,4 @@ def analyze_logs(directory):
     print(f"\n[+] Results successfully saved to: {txt_path}")
 
 if __name__ == '__main__':
-    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run2")
+    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run5")
