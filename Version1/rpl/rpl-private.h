@@ -358,11 +358,14 @@ extern uint16_t rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, rpl_pe_Tau;
 /* Update local PE globals before sending DIO */
 void rpl_pe_update_local(rpl_instance_t *instance);
 
-/* Compute τ_cand = F(PE_u, τ_u, P_lien(i,u))  (0..1000)
- * All 7 parameters normalized 0..1000, higher = better */
-uint16_t rpl_tau_compute_cand(uint16_t RE, uint16_t QL, uint16_t Deg,
-                              uint16_t NPC, uint16_t ETX_norm,
-                              uint16_t RSSI_norm, uint16_t tau_parent);
+/* ==============================================================================
+   PROTOTYPES THEORIQUES POUR L'EXTENSION PE (OF-TAU)
+   ============================================================================== */
+
+/* Computes the Local Objective Function Candidate Score F(PE_u, tau_u, P_lien) */
+uint16_t rpl_tau_compute_cand(rpl_parent_t *p, uint16_t RE, uint16_t QL, uint16_t Deg,
+                              uint16_t NPC, uint16_t ETX_n,
+                              uint16_t RSSI_n, uint16_t tau_parent);
 
 /* Normalize ETX from link stats to 0..1000 (1000=best) */
 uint16_t rpl_etx_norm(rpl_parent_t *p);

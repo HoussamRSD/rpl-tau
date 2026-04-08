@@ -291,15 +291,19 @@ uint16_t rpl_rssi_norm(rpl_parent_t *p)
  * 
  * @return Valeur `tau_cand` sur une échelle de 0 à 1000 (1000 étant le parent idéal).
  */
-uint16_t rpl_tau_compute_cand(uint16_t RE, uint16_t QL, uint16_t Deg,
+uint16_t rpl_tau_compute_cand(rpl_parent_t *p, uint16_t RE, uint16_t QL, uint16_t Deg,
                               uint16_t NPC, uint16_t ETX_n,
                               uint16_t RSSI_n, uint16_t tau_parent)
 {
   RE = clamp1000(RE); QL = clamp1000(QL); Deg = clamp1000(Deg);
   NPC = clamp1000(NPC); ETX_n = clamp1000(ETX_n);
   RSSI_n = clamp1000(RSSI_n); tau_parent = clamp1000(tau_parent);
+
+  /* --- QUERA Q-LEARNING MDP MECHANISM --- */
+  
+  /* 1. Calculate Environmental State Reward */
   uint32_t wsum = (W_RE + W_QL + W_DEG + W_NPC + W_ETX + W_RSSI + W_TAU);
-  uint32_t num =
+  uint32_t current_env =
     (uint32_t)W_RE   * RE +
     (uint32_t)W_QL   * (1000 - QL) +
     (uint32_t)W_DEG  * Deg +
@@ -307,7 +311,27 @@ uint16_t rpl_tau_compute_cand(uint16_t RE, uint16_t QL, uint16_t Deg,
     (uint32_t)W_ETX  * ETX_n +
     (uint32_t)W_RSSI * RSSI_n +
     (uint32_t)W_TAU  * tau_parent;
-  return (uint16_t)(num / wsum);
+
+  uint16_t env_score = (uint16_t)(current_env / wsum);
+
+  /* 2. TTR Penalty (Time-To-Reside) based on RSSI */
+  if (p != NULL) {
+      if (p->last_rssi_norm != 0 && p->last_rssi_norm > RSSI_n + 150) {
+          /* Strong RSSI drop detected -> Node is abruptly moving away */
+          env_score = env_score / 2; /* Heavy Q-Reward Penalty */
+      }
+      p->last_rssi_norm = RSSI_n;
+  }
+
+  /* 3. BELLMAN EQUATION: Q = (1-alpha)*Q + alpha*(Reward_env)
+   * The Q-Value EMA update uses Alpha = 0.7 
+   * (70% weight to new environment, 30% to historical Q-Value) */
+  if (p == NULL || p->tau_cand == 0) {
+      return env_score; /* Initial Q-value */
+  }
+
+  uint16_t q_value = (uint16_t)( ((uint32_t)p->tau_cand * 3 + (uint32_t)env_score * 7) / 10 );
+  return q_value;
 }
 
 /* --- Dynamic Period Mechanism for NPC Reset --- */
@@ -1037,8 +1061,8 @@ rpl_add_parent(rpl_dag_t *dag, rpl_dio_t *dio, uip_ipaddr_t *addr)
       p->pe_NPC  = dio->pe_NPC;
       p->pe_Tau  = dio->pe_Tau;
 
-      /* τ_cand = F(PE_u, τ_u, P_lien(i,u)) — linear weighted sum */
-      p->tau_cand = rpl_tau_compute_cand(
+      /* τ_cand = Q-Learning Bellman Update */
+      p->tau_cand = rpl_tau_compute_cand(p,
         p->pe_RE, p->pe_QL, p->pe_Deg, p->pe_NPC,
         rpl_etx_norm(p), rpl_rssi_norm(p), p->pe_Tau);
 
@@ -1952,8 +1976,8 @@ rpl_process_dio(uip_ipaddr_t *from, rpl_dio_t *dio)
   p->pe_NPC  = dio->pe_NPC;
   p->pe_Tau  = dio->pe_Tau;
 
-  /* τ_cand = F(PE_u, τ_u, P_lien(i,u)) */
-  p->tau_cand = rpl_tau_compute_cand(
+  /* τ_cand = Q-Learning Bellman Update */
+  p->tau_cand = rpl_tau_compute_cand(p,
     p->pe_RE, p->pe_QL, p->pe_Deg, p->pe_NPC,
     rpl_etx_norm(p), rpl_rssi_norm(p), p->pe_Tau);
 

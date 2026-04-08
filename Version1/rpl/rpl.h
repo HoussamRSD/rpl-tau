@@ -132,7 +132,9 @@ struct rpl_parent {
 
   /* τ_cand = F(PE_u, τ_u, P_lien(i,u))  — computed locally */
   uint16_t tau_cand;
-
+  
+  /* QUERA Q-Learning / TTR state */
+  uint16_t last_rssi_norm;
 
 };
 typedef struct rpl_parent rpl_parent_t;

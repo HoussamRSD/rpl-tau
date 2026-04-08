@@ -67,14 +67,17 @@
 
 
 
-/* ──────────────────────────────────────────────────────── */
-/*  DYNAMIQUE DU RÉSEAU (Mobility Optimizations)           */
-/* ──────────────────────────────────────────────────────── */
-
-/* Activer UNIQUEMENT le NUD Probing actif de RPL (sans accélérer le Trickle DIO) 
-   Cela permet de vite purger un voisin mort sans inonder le réseau de contrôle. */
+/* Activer le NUD Probing actif de RPL et un routage dynamique rapide. 
+   Les intervalles sont abaissés (Standard Mobile-IoT) pour réagir vite au QUERA. */
 #undef RPL_CONF_PROBING_INTERVAL
-#define RPL_CONF_PROBING_INTERVAL (10 * CLOCK_SECOND) 
+#define RPL_CONF_PROBING_INTERVAL (2 * CLOCK_SECOND) 
+
+/* Accélération du Trickle Timer pour ne jamais rester aveugle trop longtemps */
+#undef RPL_CONF_DIO_INTERVAL_MIN
+#define RPL_CONF_DIO_INTERVAL_MIN 10 /* 2^10 = 1024 ms (~1 sec) Base d'émission rapide */
+
+#undef RPL_CONF_DIO_INTERVAL_DOUBLINGS
+#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 6 /* 10 + 6 = 16. 2^16 = ~1 min Max */
 
 /* ──────────────────────────────────────────────────────── */
 /*  POIDS DE LA FONCTION OBJECTIVE TAU (a, b, c, d, e, f, g) */

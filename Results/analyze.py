@@ -220,4 +220,4 @@ def analyze_logs(directory):
     print(f"\n[+] Results successfully saved to: {txt_path}")
 
 if __name__ == '__main__':
-    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run7")
+    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run9")
