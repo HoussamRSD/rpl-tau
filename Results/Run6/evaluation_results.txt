@@ -1,5 +1,5 @@
 Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\Run6
-Log files found: 12
+Log files found: 18
 --------------------------------------------------
 
 ==================================================
@@ -86,8 +86,44 @@ File: TOPO-2-RS-2.log
   Parent Changes: 0
   Total Overhead: 7263 (DIO: 6946, DAO: 247, DIS: 70)
 --------------------------------------------------
-=== AVERAGE FOR TOPOLOGY 2 (2 simulations) ===
-Average PDR            : 93.69% ± 0.06
-Average Latency        : 18.44 ms ± 0.05
+File: TOPO-2-RS-3.log
+  Sent: 1180, Received: 1100 -> PDR: 93.22%
+  Avg Latency: 18.55 ms
+  Parent Changes: 0
+  Total Overhead: 7309 (DIO: 6996, DAO: 243, DIS: 70)
+--------------------------------------------------
+File: TOPO-2-RS-4.log
+  Sent: 1179, Received: 1096 -> PDR: 92.96%
+  Avg Latency: 18.40 ms
+  Parent Changes: 0
+  Total Overhead: 7291 (DIO: 6970, DAO: 251, DIS: 70)
+--------------------------------------------------
+File: TOPO-2-RS-5.log
+  Sent: 1179, Received: 1098 -> PDR: 93.13%
+  Avg Latency: 18.61 ms
+  Parent Changes: 0
+  Total Overhead: 7316 (DIO: 6982, DAO: 264, DIS: 70)
+--------------------------------------------------
+File: TOPO-2-RS-6.log
+  Sent: 1180, Received: 1100 -> PDR: 93.22%
+  Avg Latency: 18.34 ms
+  Parent Changes: 0
+  Total Overhead: 7297 (DIO: 6993, DAO: 234, DIS: 70)
+--------------------------------------------------
+File: TOPO-2-RS-7.log
+  Sent: 1180, Received: 1101 -> PDR: 93.31%
+  Avg Latency: 18.42 ms
+  Parent Changes: 0
+  Total Overhead: 7274 (DIO: 6981, DAO: 223, DIS: 70)
+--------------------------------------------------
+File: TOPO-2-RS-8.log
+  Sent: 1180, Received: 1100 -> PDR: 93.22%
+  Avg Latency: 18.21 ms
+  Parent Changes: 0
+  Total Overhead: 7322 (DIO: 6990, DAO: 262, DIS: 70)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (8 simulations) ===
+Average PDR            : 93.30% ± 0.26
+Average Latency        : 18.43 ms ± 0.12
 Average Parent Changes : 0.0 ± 0.0
-Average Control Ovhd   : 7270.0 ± 9.9
+Average Control Ovhd   : 7293.6 ± 21.2
