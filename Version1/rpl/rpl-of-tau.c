@@ -113,25 +113,14 @@ parent_has_usable_link(rpl_parent_t *p)
 
   if(etx == 0xFFFF || etx == 0) return 0;
 
-  /* --- QUERA Neighbor Table Management (TTR) --- */
+  /* --- QUERA Neighbor Table Management --- */
   
-  /* Initialisation propre de la mémoire RSSI The */
+  /* Initialisation propre de la mémoire RSSI */
   if (p->last_rssi_norm == 0) {
       p->last_rssi_norm = current_rssi;
   }
 
-  /* Règle de stabilité: Expulsion Silencieuse de Mobilité 
-   * Si la qualité (ETX) est moyenne ET que la puissance (RSSI) s'est effondrée 
-   * de > 20% (soit 200 normalisé) -> Le noeud quitte physiquement la zone.
-   * => On retourne 0 silencieusement pour chercher meilleur The sans DIS-storm */
-  if(etx > (4 * LINK_STATS_ETX_DIVISOR)) {
-      if (p->last_rssi_norm > current_rssi + 200) {
-          /* Chute brutale = Cible mouvante inadaptée */
-          return 0;
-      }
-  }
-
-  /* Rupture Définitive Classique */
+  /* Rupture Définitive Classique UNIQUEMENT (Le lien est mort, pas juste atténué) */
   if(etx > RPL_OF_TAU_MAX_ETX) return 0;
 
   return 1;

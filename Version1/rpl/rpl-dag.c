@@ -314,23 +314,48 @@ uint16_t rpl_tau_compute_cand(rpl_parent_t *p, uint16_t RE, uint16_t QL, uint16_
 
   uint16_t env_score = (uint16_t)(current_env / wsum);
 
-  /* 2. TTR Penalty (Time-To-Reside) based on RSSI */
+  /* 2. ETX TREND DETECTION (replaces basic RSSI TTR)
+   * If ETX is improving  → boost env_score slightly (reward stable approach)
+   * If ETX is worsening  → apply penalty (punish link degradation fast)
+   * This is more reliable than raw RSSI comparison because ETX already
+   * integrates MAC-layer ACKs and retransmissions. */
   if (p != NULL) {
-      if (p->last_rssi_norm != 0 && p->last_rssi_norm > RSSI_n + 150) {
-          /* Strong RSSI drop detected -> Node is abruptly moving away */
-          env_score = env_score / 2; /* Heavy Q-Reward Penalty */
+      if (p->last_etx_norm > 0) {
+          if (ETX_n < p->last_etx_norm) {
+              /* ETX improving — reward: slight boost */
+              uint32_t boosted = (uint32_t)env_score * 11 / 10;
+              env_score = (boosted > 1000) ? 1000 : (uint16_t)boosted;
+          } else if (ETX_n > p->last_etx_norm + 100) {
+              /* ETX clearly worsening — penalty: reduce by 20% */
+              env_score = (uint16_t)((uint32_t)env_score * 8 / 10);
+          }
       }
-      p->last_rssi_norm = RSSI_n;
+      p->last_etx_norm = ETX_n;
   }
 
-  /* 3. BELLMAN EQUATION: Q = (1-alpha)*Q + alpha*(Reward_env)
-   * The Q-Value EMA update uses Alpha = 0.7 
-   * (70% weight to new environment, 30% to historical Q-Value) */
+  /* 3. BELLMAN EQUATION with ADAPTIVE ALPHA
+   * Alpha is dynamically tuned to link quality:
+   *   ETX <= 2 (excellent link) → Alpha = 0.1 (trust history 90%)
+   *   ETX <= 4 (fair link)      → Alpha = 0.2 (trust history 80%)
+   *   ETX >  4 (poor/mobile)    → Alpha = 0.5 (react fast, trust new state 50%)
+   * This balances stability on good links and reactivity on degraded/mobile links. */
   if (p == NULL || p->tau_cand == 0) {
-      return env_score; /* Initial Q-value */
+      return env_score; /* Initial Q-value: no history yet */
   }
 
-  uint16_t q_value = (uint16_t)( ((uint32_t)p->tau_cand * 3 + (uint32_t)env_score * 7) / 10 );
+  uint8_t alpha_num, alpha_den;
+  if (ETX_n < 256) {           /* ETX <= 2 : excellent link */
+      alpha_num = 1; alpha_den = 10;
+  } else if (ETX_n < 512) {    /* ETX <= 4 : fair link */
+      alpha_num = 2; alpha_den = 10;
+  } else {                     /* ETX >  4 : poor/mobile link */
+      alpha_num = 5; alpha_den = 10;
+  }
+
+  uint16_t q_value = (uint16_t)(
+      ((uint32_t)p->tau_cand * (alpha_den - alpha_num) +
+       (uint32_t)env_score  *  alpha_num) / alpha_den
+  );
   return q_value;
 }
 

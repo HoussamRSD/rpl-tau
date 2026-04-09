@@ -134,7 +134,8 @@ struct rpl_parent {
   uint16_t tau_cand;
   
   /* QUERA Q-Learning / TTR state */
-  uint16_t last_rssi_norm;
+  uint16_t last_rssi_norm;  /* RSSI memory for TTR penalty */
+  uint16_t last_etx_norm;   /* ETX memory for trend detection (improving/worsening) */
 
 };
 typedef struct rpl_parent rpl_parent_t;

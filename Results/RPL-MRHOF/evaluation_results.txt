@@ -1,0 +1,33 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\RPL-MRHOF
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1180, Received: 619 -> PDR: 52.46%
+  Avg Latency: 22.46 ms
+  Parent Changes: 0
+  Total Overhead: 4469 (DIO: 2831, DAO: 1626, DIS: 12)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 52.46% ± 0.00
+Average Latency        : 22.46 ms ± 0.00
+Average Parent Changes : 0.0 ± 0.0
+Average Control Ovhd   : 4469.0 ± 0.0
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 1180, Received: 1117 -> PDR: 94.66%
+  Avg Latency: 18.11 ms
+  Parent Changes: 0
+  Total Overhead: 1168 (DIO: 816, DAO: 282, DIS: 70)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 94.66% ± 0.00
+Average Latency        : 18.11 ms ± 0.00
+Average Parent Changes : 0.0 ± 0.0
+Average Control Ovhd   : 1168.0 ± 0.0

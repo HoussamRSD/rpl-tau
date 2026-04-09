@@ -72,12 +72,20 @@
 #undef RPL_CONF_PROBING_INTERVAL
 #define RPL_CONF_PROBING_INTERVAL (2 * CLOCK_SECOND) 
 
-/* Accélération du Trickle Timer pour ne jamais rester aveugle trop longtemps */
+/* DIO Trickle Timer — ralenti pour casser la boucle DIO/saturation MAC
+   Standard Contiki-NG : Imin=12 (4 sec), 8 doublements (max ~17 min).
+   Un Trickle trop rapide (Imin=10) provoque 40 000 DIOs et sature la couche MAC
+   après chaque changement de parent, ce qui étouffe les paquets UDP de données. */
 #undef RPL_CONF_DIO_INTERVAL_MIN
-#define RPL_CONF_DIO_INTERVAL_MIN 10 /* 2^10 = 1024 ms (~1 sec) Base d'émission rapide */
+#define RPL_CONF_DIO_INTERVAL_MIN 12 /* 2^12 = 4096 ms (~4 sec) */
 
 #undef RPL_CONF_DIO_INTERVAL_DOUBLINGS
-#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 6 /* 10 + 6 = 16. 2^16 = ~1 min Max */
+#define RPL_CONF_DIO_INTERVAL_DOUBLINGS 8 /* Max = 2^20 = ~17 min */
+
+/* Hystérésis : abaissée pour permettre un saut rapide si un meilleur parent est clairement
+   disponible (sans ping-pong, car l'Alpha EMA conserve la mémoire historique). */
+#undef RPL_OF_TAU_SWITCH_THRESHOLD
+#define RPL_OF_TAU_SWITCH_THRESHOLD 150
 
 /* ──────────────────────────────────────────────────────── */
 /*  POIDS DE LA FONCTION OBJECTIVE TAU (a, b, c, d, e, f, g) */
@@ -91,13 +99,19 @@
  *  qui ont le plus de batterie. Augmenter `W_ETX` privilégiera un bon signal WiFi.
  */
 /* ──────────────────────────────────────────────────────── */
-#define W_RE    4   /* a: RE (Residual Energy) - Protège la durée de vie globale du réseau */
-#define W_QL    2   /* b: QL (Queue Load) - Inverse (1000-QL). Évite les nœuds goulots d'étranglement */
-#define W_DEG   1   /* c: Deg (Degree) - Pousse à rejoindre les nœuds hyper-centraux (bien connectés) */
-#define W_NPC   1   /* d: NPC (Node Parent Changes) - Très faible pour la Mobilité (on autorise le saut) ! */
-#define W_ETX   5   /* e: ETX (Couche MAC) - Forte valeur pour privilégier un lien très fiable (Anti ping-pong). */
-#define W_RSSI  3   /* f: RSSI (Radio) - Favorise la proximité spatiale de manière modérée */
-#define W_TAU   5   /* g: Tau Parent - Garantit que le "bonheur" d'un parent se propage récursivement aux enfants */
+/*
+ * Poids calibrés pour la Mobilité IoT (Run 12) :
+ * On priorise fortement les métriques physiques de lien (ETX + RSSI) qui varient
+ * instantanément quand un nœud se déplace, plutôt que les métriques nodales (RE, QL)
+ * qui évoluent sur des dizaines de minutes.
+ */
+#define W_RE    2   /* a: Résiduel Énergie — peu discriminant en simulation courte */
+#define W_QL    1   /* b: Queue Load — secondaire */
+#define W_DEG   1   /* c: Degree — secondaire */
+#define W_NPC   1   /* d: NPC — faible pour autoriser les sauts de mobilité */
+#define W_ETX   8   /* e: ETX — priorité maximale : lien physique direct fiable */
+#define W_RSSI  5   /* f: RSSI — proximité radio = stabilité de lien */
+#define W_TAU   4   /* g: Tau Parent — héritage de qualité, modéré */
 
 /* ──────────────────────────────────────────────────────── */
 /*  Energest (needed for real energy measurement)           */

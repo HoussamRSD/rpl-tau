@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2026, Link-Predictability Objective Function (LP-OF) for RPL
+ */
+
+#ifndef RPL_OF_LP_H
+#define RPL_OF_LP_H
+
+#include "net/rpl/rpl.h"
+
+/* Déclaration de la fonction objective LP-OF */
+extern rpl_of_t rpl_of_lp;
+
+/* Fonctions d'initialisation */
+void rpl_of_lp_init(void);
+
+/* Configuration des paramètres */
+void rpl_of_lp_set_weights(uint8_t etx_weight, uint8_t hsm_weight, 
+                          uint8_t rcte_weight, uint8_t nli_weight);
+void rpl_of_lp_set_hsm_threshold(uint8_t threshold);
+void rpl_of_lp_set_rcte_max(uint16_t max_seconds);
+
+#endif /* RPL_OF_LP_H */
