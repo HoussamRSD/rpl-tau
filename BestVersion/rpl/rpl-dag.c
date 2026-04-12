@@ -344,6 +344,7 @@ static void handle_npc_reset_timer(void *ptr) {
  */
 void rpl_pe_on_parent_switch(void) { 
   parent_switches++;
+  printf("[Parent Switch] Nouveau parent sélectionné. NPC actuel : %u\n", parent_switches);
   /* Start the dynamic period timer on the very first parent switch */
   if(!npc_timer_started) {
     npc_timer_started = 1;
@@ -371,7 +372,7 @@ void rpl_pe_update_local(rpl_instance_t *instance)
     current_etx = rpl_etx_norm(dag->preferred_parent);
     current_rssi = rpl_rssi_norm(dag->preferred_parent);
   }
-  printf("[TAU] RE=%u QL=%u Deg=%u NPC=%u ETX=%u RSSI=%u Tau=%u\n",
+  printf("[Paramètres du noeud] RE=%u QL=%u Deg=%u NPC=%u ETX=%u RSSI=%u Tau=%u\n",
          rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, current_etx, current_rssi, rpl_pe_Tau);
 }
 

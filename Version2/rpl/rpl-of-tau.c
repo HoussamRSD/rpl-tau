@@ -59,6 +59,15 @@
 #define RPL_OF_TAU_MIN_TAU 1 /* minimal tau to accept a parent */
 #endif
 
+#ifndef RPL_OF_TAU_PANIC_THRESHOLD
+#define RPL_OF_TAU_PANIC_THRESHOLD 200 /* Seuil critique pour basculement immédiat */
+#endif
+
+static struct ctimer panic_monitor_timer;
+static int panic_timer_started = 0;
+
+static void handle_panic_monitor(void *ptr);
+
 /*---------------------------------------------------------------------------*/
 static uint16_t
 clamp_tau(uint16_t tau)
@@ -92,6 +101,51 @@ parent_link_metric(rpl_parent_t *p)
   return get_etx_or_default(p);
 }
 /*---------------------------------------------------------------------------*/
+/**
+ * \brief Actualise le score du parent courant avec des données MAC/PHY fraîches
+ */
+static uint16_t
+get_fresh_tau(rpl_parent_t *p)
+{
+  if(p == NULL) return 0;
+  
+  uint16_t fresh_etx = rpl_etx_norm(p);
+  uint16_t fresh_rssi = rpl_rssi_norm(p);
+  
+  return rpl_tau_compute_cand(
+    p->pe_RE, p->pe_QL, p->pe_Deg, p->pe_NPC,
+    fresh_etx, fresh_rssi, p->pe_Tau);
+}
+/*---------------------------------------------------------------------------*/
+/**
+ * \brief Callback périodique pour évaluer la santé en temps réel (Panic Monitor)
+ */
+static void
+handle_panic_monitor(void *ptr)
+{
+  rpl_instance_t *default_instance = rpl_get_default_instance();
+  if(default_instance != NULL && default_instance->current_dag != NULL) {
+    rpl_dag_t *dag = default_instance->current_dag;
+    rpl_parent_t *p = dag->preferred_parent;
+
+    if(p != NULL) {
+      /* Mise à jour en direct de la valeur τ indépendemment du Trickle Timer */
+      p->tau_cand = get_fresh_tau(p);
+      
+      /* Si la qualité s'effondre sous le seuil critique (Panique) */
+      if(p->tau_cand < RPL_OF_TAU_PANIC_THRESHOLD) {
+         PRINTF("RPL: OF-TAU PANIC! Parent tau=%u < %u. Forcing switch!\n",
+                p->tau_cand, RPL_OF_TAU_PANIC_THRESHOLD);
+         /* Force of re-evaluation of neighbors */
+         rpl_select_parent(dag); 
+      }
+    }
+  }
+  
+  /* On relance la surveillance toutes les 5 secondes */
+  ctimer_reset(&panic_monitor_timer);
+}
+/*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
 /**
  * \brief Vérifie si un lien parent est physiquement exploitable.
@@ -106,6 +160,12 @@ static int
 parent_has_usable_link(rpl_parent_t *p)
 {
   if(p == NULL) return 0;
+
+  /* Démarrage silencieux du Panic monitor (Lazy Init) au premier appel de l'OF */
+  if(!panic_timer_started) {
+     ctimer_set(&panic_monitor_timer, 5 * CLOCK_SECOND, handle_panic_monitor, NULL);
+     panic_timer_started = 1;
+  }
 
   uint16_t tau = clamp_tau(p->tau_cand);
   uint16_t etx = get_etx_or_default(p);
