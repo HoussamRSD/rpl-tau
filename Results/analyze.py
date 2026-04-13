@@ -31,8 +31,8 @@ def analyze_logs(directory):
     dao_pattern = re.compile(r'Sending a DAO|Sending a No-Path DAO')
     dis_pattern = re.compile(r'Sending a DIS')
     
-    # TAU debug pattern for parent switch deduction
-    tau_pattern = re.compile(r'^(\d+):(\d+):\[TAU\].*NPC=(\d+)')
+    # Exact pattern for parent switch deduction
+    switch_pattern = re.compile(r'^(\d+):(\d+):#A Parent Switch!')
     
     # Filename matching pattern
     fname_pattern = re.compile(r'TOPO-(\d+)-RS-(\d+)\.log')
@@ -82,25 +82,9 @@ def analyze_logs(directory):
             for line in f:
                 
                 # --- 1. DÉTECTION DE L'INSTABILITÉ (CHANGEMENTS DE PARENT) ---
-                # On utilise la trace customisée [TAU] ajoutée dans le code C
-                m_tau = tau_pattern.search(line)
-                if m_tau:
-                    node_id = int(m_tau.group(2))
-                    npc_val = int(m_tau.group(3))  # Valeur brute pénalisée (accumulée)
-                    last_npc = npc_dict.get(node_id, 0)
-                    
-                    if npc_val > last_npc:
-                        # Déduction heuristique : la pénalité fait un bond lors d'un "parent switch"
-                        # Historiquement = +50 ou +200 par saut. On vérifie le modulo pour déduire le nb de sauts nets.
-                        diff = npc_val - last_npc
-                        if diff % 200 == 0:
-                            f_parent_changes += diff // 200
-                        elif diff % 50 == 0:
-                            f_parent_changes += diff // 50
-                        else:
-                            f_parent_changes += 1 # Règle de repli sécurisée
-                    
-                    npc_dict[node_id] = npc_val
+                m_switch = switch_pattern.search(line)
+                if m_switch:
+                    f_parent_changes += 1
                     continue
                 
                 # --- 2. TRANSMISSION APPLICATION (UDP SENDER) ---
@@ -179,6 +163,9 @@ def analyze_logs(directory):
         latency_list = []
         pc_list = []
         overhead_list = []
+        dio_list = []
+        dao_list = []
+        dis_list = []
         
         for r in runs:
             log_print(f"File: {r['file']}")
@@ -192,6 +179,9 @@ def analyze_logs(directory):
             latency_list.append(r['avg_latency'])
             pc_list.append(r['parent_changes'])
             overhead_list.append(r['overhead'])
+            dio_list.append(r['dio'])
+            dao_list.append(r['dao'])
+            dis_list.append(r['dis'])
             
         # Calculate Averages and STD
         log_print(f"=== AVERAGE FOR TOPOLOGY {topo_id} ({len(runs)} simulations) ===")
@@ -207,11 +197,15 @@ def analyze_logs(directory):
         
         avg_ovh = statistics.mean(overhead_list) if overhead_list else 0
         std_ovh = statistics.stdev(overhead_list) if len(overhead_list) > 1 else 0
+
+        avg_dio = statistics.mean(dio_list) if dio_list else 0
+        avg_dao = statistics.mean(dao_list) if dao_list else 0
+        avg_dis = statistics.mean(dis_list) if dis_list else 0
         
         log_print(f"Average PDR            : {avg_pdr:.2f}% ± {std_pdr:.2f}")
         log_print(f"Average Latency        : {avg_lat:.2f} ms ± {std_lat:.2f}")
         log_print(f"Average Parent Changes : {avg_pc:.1f} ± {std_pc:.1f}")
-        log_print(f"Average Control Ovhd   : {avg_ovh:.1f} ± {std_ovh:.1f}")
+        log_print(f"Average Control Ovhd   : {avg_ovh:.1f} ± {std_ovh:.1f} (DIO: {avg_dio:.1f}, DAO: {avg_dao:.1f}, DIS: {avg_dis:.1f})")
 
     # Save to .txt file
     txt_path = os.path.join(directory, "evaluation_results.txt")
@@ -220,4 +214,4 @@ def analyze_logs(directory):
     print(f"\n[+] Results successfully saved to: {txt_path}")
 
 if __name__ == '__main__':
-    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run23")
+    analyze_logs(r"e:\3emeAnneeEMP\PFE\Implémentation\Results\Run25")

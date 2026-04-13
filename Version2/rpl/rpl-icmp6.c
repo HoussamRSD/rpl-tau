@@ -597,8 +597,8 @@ dio_output(rpl_instance_t *instance, uip_ipaddr_t *uc_addr)
   set16(buffer, pos, rpl_pe_NPC);   pos += 2; /* 2 octets pour les sauts (NPC) */
   set16(buffer, pos, rpl_pe_Tau);   pos += 2; /* 2 octets pour le TAU absolu */
 
-  PRINTF("PE-TX RE=%u QL=%u Deg=%u NPC=%u Tau=%u\n",
-         rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, rpl_pe_Tau);
+  /*PRINTF("PE-TX RE=%u QL=%u Deg=%u NPC=%u Tau=%u\n",
+         rpl_pe_RE, rpl_pe_QL, rpl_pe_Deg, rpl_pe_NPC, rpl_pe_Tau);*/
 
 
   /* Always add a DAG configuration option. */

@@ -259,6 +259,12 @@ rpl_set_preferred_parent(rpl_dag_t *dag, rpl_parent_t *p)
      * neighbor table. */
     nbr_table_unlock(rpl_parents, dag->preferred_parent);
     nbr_table_lock(rpl_parents, p);
+
+    /* Log parent changes for analysis (ignore initial join) */
+    if(dag->preferred_parent != NULL && p != NULL && dag->preferred_parent != p) {
+      printf("#A Parent Switch!\n");
+    }
+
     dag->preferred_parent = p;
   }
 }

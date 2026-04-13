@@ -52,7 +52,7 @@
  * Plus élevé = réseau très stable mais lourd. Plus bas = volatile (Ping-Pong fréquent).
  */
 #ifndef RPL_OF_TAU_SWITCH_THRESHOLD
-#define RPL_OF_TAU_SWITCH_THRESHOLD 300 /* Forte hystérésis (Anti Ping-Pong massif pour la mobilité) */
+#define RPL_OF_TAU_SWITCH_THRESHOLD 75 /* Forte hystérésis (Anti Ping-Pong massif pour la mobilité) */
 #endif
 
 #ifndef RPL_OF_TAU_MIN_TAU
@@ -129,13 +129,11 @@ handle_panic_monitor(void *ptr)
     rpl_parent_t *p = dag->preferred_parent;
 
     if(p != NULL) {
-      /* Mise à jour en direct de la valeur τ indépendemment du Trickle Timer */
-      p->tau_cand = get_fresh_tau(p);
-      
-      /* Si la qualité s'effondre sous le seuil critique (Panique) */
-      if(p->tau_cand < RPL_OF_TAU_PANIC_THRESHOLD) {
+      /* Read the real-time fresh tau_cand for the panic monitor */
+      uint16_t live_tau = get_fresh_tau(p);
+      if(live_tau < RPL_OF_TAU_PANIC_THRESHOLD) {
          PRINTF("RPL: OF-TAU PANIC! Parent tau=%u < %u. Forcing switch!\n",
-                p->tau_cand, RPL_OF_TAU_PANIC_THRESHOLD);
+                live_tau, RPL_OF_TAU_PANIC_THRESHOLD);
          /* Force of re-evaluation of neighbors */
          rpl_select_parent(dag); 
       }
@@ -143,7 +141,7 @@ handle_panic_monitor(void *ptr)
   }
   
   /* On relance la surveillance toutes les 5 secondes */
-  ctimer_reset(&panic_monitor_timer);
+  ctimer_set(&panic_monitor_timer, 5 * CLOCK_SECOND, handle_panic_monitor, NULL);
 }
 /*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
@@ -167,7 +165,7 @@ parent_has_usable_link(rpl_parent_t *p)
      panic_timer_started = 1;
   }
 
-  uint16_t tau = clamp_tau(p->tau_cand);
+  uint16_t tau = clamp_tau(get_fresh_tau(p));
   uint16_t etx = get_etx_or_default(p);
 
   if(tau < RPL_OF_TAU_MIN_TAU) return 0;
@@ -185,7 +183,7 @@ parent_path_cost(rpl_parent_t *p)
    * Path cost = inverse of tau. */
   if(p == NULL) return 0xFFFF;
 
-  uint16_t tau = clamp_tau(p->tau_cand);
+  uint16_t tau = clamp_tau(get_fresh_tau(p));
   return (uint16_t)(1000 - tau);
 }
 /*---------------------------------------------------------------------------*/
@@ -214,23 +212,15 @@ rank_via_parent(rpl_parent_t *p)
     return INFINITE_RANK;
   }
 
-  /* Rank increment based on ETX, guaranteed >= min_hoprankinc */
-  uint32_t inc = ((uint32_t)instance->min_hoprankinc * (uint32_t)etx) / LINK_STATS_ETX_DIVISOR;
-  if(inc < instance->min_hoprankinc) {
-    inc = instance->min_hoprankinc;
-  }
+  /* Stabilized rank computation mimicking MRHOF's hysteresis properties.
+   * Rather than purely scaling `etx`, we apply a strict lower bound of `min_hoprankinc`.
+   * This absorbs small fluctuations in the MAC ETX and prevents continuous DAG rank 
+   * flutter which was triggering false "Loop Detected" warnings and massive DIO Trickle resets. */
+  uint16_t min_hoprankinc = instance->min_hoprankinc;
+  uint16_t path_cost = p->rank + etx;
 
-  if(instance->max_rankinc != 0 && inc > instance->max_rankinc) {
-    inc = instance->max_rankinc;
-  }
-
-  if(p->rank == INFINITE_RANK) {
-    return INFINITE_RANK;
-  }
-  if((uint32_t)p->rank + inc >= 0xFFFF) {
-    return INFINITE_RANK;
-  }
-  return (rpl_rank_t)(p->rank + inc);
+  /* Rank lower-bound: parent rank + min_hoprankinc */
+  return MAX(MIN((uint32_t)p->rank + min_hoprankinc, 0xFFFF), path_cost);
 }
 /*---------------------------------------------------------------------------*/
 /**
@@ -266,8 +256,8 @@ best_parent(rpl_parent_t *p1, rpl_parent_t *p2)
   if(r2 == INFINITE_RANK) return p1;
 
   rpl_dag_t *dag = p1->dag; /* same DAG */
-  uint16_t t1 = clamp_tau(p1->tau_cand);
-  uint16_t t2 = clamp_tau(p2->tau_cand);
+  uint16_t t1 = clamp_tau(get_fresh_tau(p1));
+  uint16_t t2 = clamp_tau(get_fresh_tau(p2));
 
   /* 3e filtre : Hysteresis (Protection Anti Ping-Pong)
    * if current preferred parent is "close enough", keep it */

@@ -348,6 +348,7 @@ static uint8_t npc_timer_started = 0;
 static void handle_npc_reset_timer(void *ptr) {
   rpl_pe_npc_reset();
   /* Reschedule */
+  PRINTF("[TAU] NPC Reset (Amnesia) - Timer Rescheduled\n");
   ctimer_set(&npc_reset_timer, RPL_TAU_NPC_PERIOD, handle_npc_reset_timer, NULL);
 }
 
@@ -360,8 +361,10 @@ static void handle_npc_reset_timer(void *ptr) {
 void rpl_pe_on_parent_switch(void) { 
   parent_switches++;
   /* Start the dynamic period timer on the very first parent switch */
+  PRINTF("[TAU] Parent Switch detected. NPC=%u\n", parent_switches);
   if(!npc_timer_started) {
     npc_timer_started = 1;
+    PRINTF("[TAU] Starting NPC Reset Timer (Period: %d ticks)\n", RPL_TAU_NPC_PERIOD);
     ctimer_set(&npc_reset_timer, RPL_TAU_NPC_PERIOD, handle_npc_reset_timer, NULL);
   }
 }
@@ -597,6 +600,7 @@ rpl_set_preferred_parent(rpl_dag_t *dag, rpl_parent_t *p)
     /* Count parent changes for stability (ignore initial join) */
     if(dag->preferred_parent != NULL && p != NULL && dag->preferred_parent != p) {
       rpl_pe_on_parent_switch();
+      printf("#A Parent Switch!\n");
     }
 /*changement version 0*/
     dag->preferred_parent = p;
@@ -1056,6 +1060,13 @@ rpl_add_parent(rpl_dag_t *dag, rpl_dio_t *dio, uip_ipaddr_t *addr)
       p->tau_cand = rpl_tau_compute_cand(
         p->pe_RE, p->pe_QL, p->pe_Deg, p->pe_NPC,
         rpl_etx_norm(p), rpl_rssi_norm(p), p->pe_Tau);
+
+      /* Bootstrap guard: tau_cand can be 0 if PE option not yet received.
+       * A zero tau causes parent_has_usable_link() to reject ALL parents.
+       * Use a neutral mid-range value until real data arrives. */
+      if(p->tau_cand == 0) {
+        p->tau_cand = 500;
+      }
 
 
 #if RPL_WITH_MC
@@ -1971,6 +1982,10 @@ rpl_process_dio(uip_ipaddr_t *from, rpl_dio_t *dio)
   p->tau_cand = rpl_tau_compute_cand(
     p->pe_RE, p->pe_QL, p->pe_Deg, p->pe_NPC,
     rpl_etx_norm(p), rpl_rssi_norm(p), p->pe_Tau);
+
+  if(p->tau_cand == 0) {
+    p->tau_cand = 500;
+  }
 
 
   if(dio->rank == INFINITE_RANK && p == dag->preferred_parent) {

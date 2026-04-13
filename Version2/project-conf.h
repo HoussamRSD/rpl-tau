@@ -111,4 +111,9 @@
 /* MC: we propagate tau via custom PE option, MC not strictly needed */
 #define RPL_CONF_DAG_MC  RPL_DAG_MC_NONE
 
+/* ──────────────────────────────────────────────────────── */
+/* Hysteresis: challenger must beat current parent by this margin (0..1000 scale) */
+#undef  RPL_OF_TAU_SWITCH_THRESHOLD
+#define RPL_OF_TAU_SWITCH_THRESHOLD 75
+
 #endif /* PROJECT_CONF_H_ */
