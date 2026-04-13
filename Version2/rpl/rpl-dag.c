@@ -61,6 +61,8 @@
 /* --- MODIFICATION OF1 (Debut) --- */
 /* Nécessaire pour lire le RSSI des paquets entrants */
 #include "net/packetbuf.h"
+/* Nécessaire pour mesurer la vraie charge système (Load Balancing) */
+#include "net/queuebuf.h"
 /* --- MODIFICATION OF1 (Fin) --- */
 
 #define DEBUG DEBUG_NONE
@@ -188,11 +190,24 @@ static uint16_t residual_energy_norm(void)
  */
 static uint16_t queue_load_norm(void)
 {
-  uint16_t nr = uip_ds6_route_num_routes();
-  uint16_t mx = UIP_CONF_MAX_ROUTES;
-  if(mx == 0) return 0;
-  if(nr >= mx) return 1000;
-  return (uint16_t)((uint32_t)nr * 1000UL / (uint32_t)mx);
+  /* Récupération des statistiques systèmes de la mémoire Buffer (CSMA/MAC) */
+  uint16_t free_buffers = queuebuf_numfree();
+  
+  /* Fallback de sécurité si non défini localement dans project-conf.h */
+#ifndef QUEUEBUF_CONF_NUM
+#define QUEUEBUF_CONF_NUM 8 
+#endif
+
+  uint16_t max_buffers = QUEUEBUF_CONF_NUM;
+  if(max_buffers == 0) return 0;
+  
+  uint16_t used_buffers = max_buffers - free_buffers;
+  
+  /* Protection contre les dépassements improbables */
+  if(used_buffers >= max_buffers) return 1000;
+  
+  /* Normalisation : 0 (Vide) ---> 1000 (Saturé) */
+  return (uint16_t)((uint32_t)used_buffers * 1000UL / (uint32_t)max_buffers);
 }
 
 /*---------------------------------------------------------------------------*/
