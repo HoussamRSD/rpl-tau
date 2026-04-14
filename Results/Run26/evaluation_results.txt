@@ -1,0 +1,33 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\Run26
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1180, Received: 626 -> PDR: 53.05%
+  Avg Latency: 24.02 ms
+  Parent Changes: 704
+  Total Overhead: 13883 (DIO: 10250, DAO: 3614, DIS: 19)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 53.05% ± 0.00
+Average Latency        : 24.02 ms ± 0.00
+Average Parent Changes : 704.0 ± 0.0
+Average Control Ovhd   : 13883.0 ± 0.0 (DIO: 10250.0, DAO: 3614.0, DIS: 19.0)
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 1180, Received: 1051 -> PDR: 89.07%
+  Avg Latency: 26.47 ms
+  Parent Changes: 227
+  Total Overhead: 9296 (DIO: 7928, DAO: 1298, DIS: 70)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 89.07% ± 0.00
+Average Latency        : 26.47 ms ± 0.00
+Average Parent Changes : 227.0 ± 0.0
+Average Control Ovhd   : 9296.0 ± 0.0 (DIO: 7928.0, DAO: 1298.0, DIS: 70.0)

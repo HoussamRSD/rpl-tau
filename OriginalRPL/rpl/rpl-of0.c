@@ -47,7 +47,7 @@
 #include "net/nbr-table.h"
 #include "net/link-stats.h"
 
-#define DEBUG DEBUG_PRINT
+#define DEBUG DEBUG_NONE
 #include "net/ip/uip-debug.h"
 
 /* Constants from RFC6552. We use the default values. */

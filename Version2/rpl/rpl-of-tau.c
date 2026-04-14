@@ -19,7 +19,7 @@
 #include "net/link-stats.h"
 #include <limits.h>
 
-#define DEBUG DEBUG_PRINT
+#define DEBUG DEBUG_NONE
 #include "net/ip/uip-debug.h"
 
 /* Fallback if not defined by platform */
@@ -60,7 +60,7 @@
 #endif
 
 #ifndef RPL_OF_TAU_PANIC_THRESHOLD
-#define RPL_OF_TAU_PANIC_THRESHOLD 200 /* Seuil critique pour basculement immédiat */
+#define RPL_OF_TAU_PANIC_THRESHOLD 200 /* Seuil critique pour basculement immediat */
 #endif
 
 static struct ctimer panic_monitor_timer;
@@ -90,7 +90,7 @@ static void
 reset(rpl_dag_t *dag)
 {
   (void)dag;
-  PRINTF("RPL: Reset OF-TAU\n");
+  printf("RPL: Reset OF-TAU\n");
 }
 /*---------------------------------------------------------------------------*/
 static uint16_t
@@ -131,15 +131,16 @@ handle_panic_monitor(void *ptr)
     if(p != NULL) {
       /* Read the real-time fresh tau_cand for the panic monitor */
       uint16_t live_tau = get_fresh_tau(p);
+
       if(live_tau < RPL_OF_TAU_PANIC_THRESHOLD) {
-         PRINTF("RPL: OF-TAU PANIC! Parent tau=%u < %u. Forcing switch!\n",
+         printf("RPL: OF-TAU PANIC! Parent tau=%u < %u. Forcing switch!\n",
                 live_tau, RPL_OF_TAU_PANIC_THRESHOLD);
-         /* Force of re-evaluation of neighbors */
+         /* Force re-evaluation of neighbors */
          rpl_select_parent(dag); 
       }
     }
   }
-  
+
   /* On relance la surveillance toutes les 5 secondes */
   ctimer_set(&panic_monitor_timer, 5 * CLOCK_SECOND, handle_panic_monitor, NULL);
 }
@@ -258,6 +259,8 @@ best_parent(rpl_parent_t *p1, rpl_parent_t *p2)
   rpl_dag_t *dag = p1->dag; /* same DAG */
   uint16_t t1 = clamp_tau(get_fresh_tau(p1));
   uint16_t t2 = clamp_tau(get_fresh_tau(p2));
+  printf("RPL: OF-TAU comparing parents: tau1=%u vs tau2=%u\n", t1, t2);
+
 
   /* 3e filtre : Hysteresis (Protection Anti Ping-Pong)
    * if current preferred parent is "close enough", keep it */
@@ -283,11 +286,7 @@ best_parent(rpl_parent_t *p1, rpl_parent_t *p2)
   if(r1 < r2) return p1;
 
   /* Tie-break 2: prefer lower ETX (better direct link) */
-  {
-    uint16_t e1 = parent_link_metric(p1);
-    uint16_t e2 = parent_link_metric(p2);
-    return (e2 < e1) ? p2 : p1;
-  }
+  return (parent_link_metric(p2) < parent_link_metric(p1)) ? p2 : p1;
 }
 /*---------------------------------------------------------------------------*/
 static rpl_dag_t *

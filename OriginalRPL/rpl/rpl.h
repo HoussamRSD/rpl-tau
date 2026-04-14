@@ -6,13 +6,13 @@
  * modification, are permitted provided that the following conditions
  * are met:
  * 1. Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
+ *    notice, this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright
- * notice, this list of conditions and the following disclaimer in the
- * documentation and/or other materials provided with the distribution.
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the Institute nor the names of its contributors
- * may be used to endorse or promote products derived from this software
- * without specific prior written permission.
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE INSTITUTE AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -85,7 +85,6 @@ typedef uint16_t rpl_ocp_t;
 /* IANA Objective Code Point as defined in RFC6550 */
 #define RPL_OCP_OF0     0
 #define RPL_OCP_MRHOF   1
-#define RPL_OCP_OF1     0xF1 /*....................................................................................................................................................OF1*/
 
 struct rpl_metric_object_energy {
   uint8_t flags;
@@ -120,12 +119,6 @@ struct rpl_parent {
   rpl_rank_t rank;
   uint8_t dtsn;
   uint8_t flags;
-
-  /* --- MODIFICATION OF1 (Debut) --- */
-  /* Ajout des champs nécessaires pour calculer la stabilité et l'age */
-  clock_time_t first_seen;  /* Heure de la première rencontre */
-  int8_t rssi;              /* Dernier RSSI reçu */
-  /* --- MODIFICATION OF1 (Fin) --- */
 };
 typedef struct rpl_parent rpl_parent_t;
 /*---------------------------------------------------------------------------*/
@@ -156,50 +149,48 @@ struct rpl_dag {
 };
 typedef struct rpl_dag rpl_dag_t;
 typedef struct rpl_instance rpl_instance_t;
-
-
 /*---------------------------------------------------------------------------*/
 /*
  * API for RPL objective functions (OF)
  *
  * reset(dag)
  *
- * Resets the objective function state for a specific DAG. This function is
- * called when doing a global repair on the DAG.
+ *  Resets the objective function state for a specific DAG. This function is
+ *  called when doing a global repair on the DAG.
  *
  * parent_link_metric(parent)
  *
- * Returns the link metric of a parent
+ *  Returns the link metric of a parent
  *
  * parent_has_usable_link(parent)
  *
- * Returns 1 iff we have a usable link to this parent
+ *  Returns 1 iff we have a usable link to this parent
  *
  * parent_path_cost(parent)
  *
- * Returns the path cost of a parent
+ *  Returns the path cost of a parent
  *
  * rank_via_parent(parent)
  *
- * Returns our rank if we select a given parent as preferred parent
+ *  Returns our rank if we select a given parent as preferred parent
  *
  * parent_is_acceptable
  *
- * Returns 1 if a parent is usable as preferred parent, 0 otherwise
+ *  Returns 1 if a parent is usable as preferred parent, 0 otherwise
  *
  * best_parent(parent1, parent2)
  *
- * Compares two parents and returns the best one, according to the OF.
+ *  Compares two parents and returns the best one, according to the OF.
  *
  * best_dag(dag1, dag2)
  *
- * Compares two DAGs and returns the best one, according to the OF.
+ *  Compares two DAGs and returns the best one, according to the OF.
  *
  * update_metric_container(dag)
  *
- * Updates the metric container for outgoing DIOs in a certain DAG.
- * If the objective function of the DAG does not use metric containers,
- * the function should set the object type to RPL_DAG_MC_NONE.
+ *  Updates the metric container for outgoing DIOs in a certain DAG.
+ *  If the objective function of the DAG does not use metric containers,
+ *  the function should set the object type to RPL_DAG_MC_NONE.
  *
  * dao_ack_callback(parent, status)
  *
@@ -344,5 +335,6 @@ enum rpl_mode rpl_get_mode(void);
  * \retval 1 if we have a downward route from RPL Root, 0 if not.
  */
 int rpl_has_downward_route(void);
+
 /*---------------------------------------------------------------------------*/
 #endif /* RPL_H */

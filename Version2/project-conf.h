@@ -71,11 +71,6 @@
 /*  DYNAMIQUE DU RÉSEAU (Mobility Optimizations)           */
 /* ──────────────────────────────────────────────────────── */
 
-/* Activer UNIQUEMENT le NUD Probing actif de RPL (sans accélérer le Trickle DIO) 
-   Cela permet de vite purger un voisin mort sans inonder le réseau de contrôle. */
-#undef RPL_CONF_PROBING_INTERVAL
-#define RPL_CONF_PROBING_INTERVAL (10 * CLOCK_SECOND) 
-
 /* ──────────────────────────────────────────────────────── */
 /*  POIDS DE LA FONCTION OBJECTIVE TAU (a, b, c, d, e, f, g) */
 /*
@@ -88,13 +83,13 @@
  *  qui ont le plus de batterie. Augmenter `W_ETX` privilégiera un bon signal WiFi.
  */
 /* ──────────────────────────────────────────────────────── */
-#define W_RE    4   /* a: RE (Residual Energy) - Protège la durée de vie globale du réseau */
-#define W_QL    2   /* b: QL (Queue Load) - Inverse (1000-QL). Évite les nœuds goulots d'étranglement */
-#define W_DEG   1   /* c: Deg (Degree) - Pousse à rejoindre les nœuds hyper-centraux (bien connectés) */
-#define W_NPC   1   /* d: NPC (Node Parent Changes) - Très faible pour la Mobilité (on autorise le saut) ! */
-#define W_ETX   5   /* e: ETX (Couche MAC) - Forte valeur pour privilégier un lien très fiable (Anti ping-pong). */
-#define W_RSSI  3   /* f: RSSI (Radio) - Favorise la proximité spatiale de manière modérée */
-#define W_TAU   5   /* g: Tau Parent - Garantit que le "bonheur" d'un parent se propage récursivement aux enfants */
+#define W_RE    4   /* a: RE (Residual Energy) - Protege la duree de vie globale du reseau */
+#define W_QL    2   /* b: QL (Queue Load) - Inverse (1000-QL). Evite les noeuds goulots d etranglement */
+#define W_DEG   1   /* c: Deg (Degree) - Pousse a rejoindre les noeuds hyper-centraux (bien connectes) */
+#define W_NPC   1   /* d: NPC (Node Parent Changes) - Tres faible pour la Mobilite (on autorise le saut) ! */
+#define W_ETX   5   /* e: ETX (Couche MAC) - Forte valeur pour privilegier un lien tres fiable (Anti ping-pong). */
+#define W_RSSI  3   /* f: RSSI (Radio) - Favorise la proximite spatiale de maniere moderee */
+#define W_TAU   5   /* g: Tau Parent - Garantit que le "bonheur" d un parent se propage recursivement aux enfants */
 
 /* ──────────────────────────────────────────────────────── */
 /*  Energest (needed for real energy measurement)           */
