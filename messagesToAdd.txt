@@ -1,0 +1,7 @@
+RPL: Sending a DIS to 
+RPL: LEAF ONLY sending unicast-DIO from multicast-DIO\n
+RPL: Sending unicast-DIO with rank %u to 
+RPL: Sending a multicast-DIO with rank %u\n
+RPL: Sending unicast-DIO with rank %u to 
+RPL: Sending a %sDAO with sequence number %u, lifetime %u, prefix 
+RPL: Sending a DAO %s with sequence number %d to ", status < 128 ? "ACK" : "NACK", sequence

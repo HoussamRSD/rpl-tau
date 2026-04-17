@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+
+import random
+
+# =========================
+# Paramètres généraux
+# =========================
+N = 30                  # nombre de motes
+T = 3600                # durée totale : 1 heure (s)
+dt = 2                 # pas de temps (s)
+W, H = 200, 200         # espace global (m)
+step_low = 4            # mobilité faible (m par pas)
+seed = 42
+
+random.seed(seed)
+
+# =========================
+# Nœuds fixes imposés
+# =========================
+fixed_nodes = {
+    3: (70.0, 70.0),
+    5: (70.0, 130.0),
+    7: (130.0, 70.0),
+    9: (130.0, 130.0),
+}
+
+def clamp(v, vmin, vmax):
+    return max(vmin, min(v, vmax))
+
+# =========================
+# Initialisation positions
+# =========================
+positions = {}
+
+for mote in range(1, N + 1):
+    if mote in fixed_nodes:
+        positions[mote] = [fixed_nodes[mote][0], fixed_nodes[mote][1]]
+    else:
+        # init aléatoire dans l'espace 200x200
+        positions[mote] = [random.uniform(0, W), random.uniform(0, H)]
+
+# =========================
+# Génération du fichier .dat
+# =========================
+with open("S230.dat", "w") as f:
+    t = 0
+    while t <= T:
+        for mote in range(1, N + 1):
+            x, y = positions[mote]
+
+            if mote in fixed_nodes:
+                # --- nœuds fixes (positions imposées) ---
+                nx, ny = fixed_nodes[mote]
+
+            elif mote % 2 == 0:
+                # --- nœuds pairs : mobilité faible ---
+                dx = random.uniform(-step_low, step_low)
+                dy = random.uniform(-step_low, step_low)
+                nx = clamp(x + dx, 0, W)
+                ny = clamp(y + dy, 0, H)
+                positions[mote] = [nx, ny]
+
+            else:
+                # --- autres impairs : fixes à leur position initiale ---
+                nx, ny = x, y
+
+            # Format : mote time x y
+            f.write("%d %d %.2f %.2f\n" % (mote, t, nx, ny))
+
+        t += dt
+
+print("S210.dat généré : nœuds 3,5,7,9 fixes; pairs mobiles faiblement; espace 200x200")
+

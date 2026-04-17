@@ -1,0 +1,470 @@
+[22:55:40 - main] [Cooja.java:1315] [INFO] - > Starting Cooja
+[22:55:40 - main] [Cooja.java:2856] [INFO] - External tools default settings: /external_tools_linux.config
+[22:55:40 - main] [Cooja.java:2886] [INFO] - External tools user settings: /home/user/.cooja.user.properties
+[22:55:40 - main] [Simulation.java:422] [INFO] - Simulation random seed: 350000
+[22:55:40 - main] [CompileContiki.java:140] [INFO] - > make udp-sink.z1 TARGET=z1 
+[22:55:40 - main] [CompileContiki.java:140] [INFO] - > make udp-sender.z1 TARGET=z1 
+[22:55:40 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sink.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:41 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:42 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:43 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:44 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:45 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:46 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[22:55:47 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.SimControl
+[22:55:47 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.Visualizer
+[22:55:47 - main] [ScriptRunner.java:430] [INFO] - Test script deactivated
+[22:55:48 - main] [LogScriptEngine.java:265] [INFO] - Script timeout in 3600000 ms
+[22:55:48 - main] [ScriptRunner.java:387] [INFO] - Test script activated
+[22:55:48 - Thread-2] [Simulation.java:253] [INFO] - Simulation main loop started, system time: 1776290148034
+[22:55:48 - main] [Mobility.java:85] [INFO] - Mobility plugin started at (ms): 7
+[22:55:48 - main] [Mobility.java:117] [INFO] - Parsing position file: /home/user/contiki/tools/cooja/contiki_tests/mobility/miniPrj/S1_180.dat
+[22:55:50 - main] [Mobility.java:142] [INFO] - Loaded 324180 positions
+[23:11:32 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 5.00%, done in 17947.1 sec
+[23:25:05 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 10.00%, done in 15815.3 sec
+[23:38:38 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 15.00%, done in 14564.2 sec
+[23:53:38 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 20.00%, done in 13883.7 sec
+[00:06:51 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 25.00%, done in 12790.9 sec
+[00:17:42 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 30.00%, done in 11467.4 sec
+[00:29:07 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 35.00%, done in 10399.6 sec
+[00:39:33 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 40.00%, done in 9337.8 sec
+[00:49:19 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 45.00%, done in 8325.4 sec
+[01:01:18 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 50.00%, done in 7530.6 sec
+[01:11:09 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 55.00%, done in 6645.2 sec
+[01:23:30 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 60.00%, done in 5908.3 sec
+[01:34:40 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 65.00%, done in 5133.0 sec
+[01:47:45 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 70.00%, done in 4421.8 sec
+[01:59:13 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 75.00%, done in 3668.5 sec
+[02:09:55 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 80.00%, done in 2911.8 sec
+[02:19:18 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 85.00%, done in 2154.8 sec
+[02:31:24 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 90.00%, done in 1437.4 sec
+[02:43:02 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3375895396:180:RPL: OF-TAU comparing parents: tau1=951 vs tau2=755
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:359)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler.invoke(InterfaceImplementor.java:67)
+	at com.sun.proxy.$Proxy5.run(Unknown Source)
+	at org.contikios.cooja.plugins.LogScriptEngine$4.run(LogScriptEngine.java:300)
+	at java.lang.Thread.run(Thread.java:748)
+[02:43:02 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3375895529:150:RPL: OF-TAU comparing parents: tau1=893 vs tau2=864
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:359)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler.invoke(InterfaceImplementor.java:67)
+	at com.sun.proxy.$Proxy5.run(Unknown Source)
+	at org.contikios.cooja.plugins.LogScriptEngine$4.run(LogScriptEngine.java:300)
+	at java.lang.Thread.run(Thread.java:748)
+[02:43:02 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3375896576:22:RPL: OF-TAU comparing parents: tau1=929 vs tau2=791
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:359)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:359)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler.invoke(InterfaceImplementor.java:67)
+	at com.sun.proxy.$Proxy5.run(Unknown Source)
+	at org.contikios.cooja.plugins.LogScriptEngine$4.run(LogScriptEngine.java:300)
+	at java.lang.Thread.run(Thread.java:748)
+[02:43:14 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3376290775:71:RPL: OF-TAU comparing parents: tau1=719 vs tau2=745
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:359)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.ja
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler.invoke(InterfaceImplementor.java:67)
+	at com.sun.proxy.$Proxy5.run(Unknown Source)
+	at org.contikios.cooja.plugins.LogScriptEngine$4.run(LogScriptEngine.java:300)
+	at java.lang.Thread.run(Thread.java:748)
+[02:43:36 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3378203397:144:RPL: OF-TAU comparing parents: tau1=926 vs tau2=728
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.write(BufferedWriter.java:230)
+	at java.io.Writer.write(Writer.java:157)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:358)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler.invoke(InterfaceImplementor.java:67)
+	at com.sun.proxy.$Proxy5.run(Unknown Source)
+	at org.contikios.cooja.plugins.LogScriptEngine$4.run(LogScriptEngine.java:300)
+	at java.lang.Thread.run(Thread.java:748)
+[02:43:37 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3378204002:118:RPL: Sending unicast-DIO with rank 65535 to RPL: OF-TAU comparing parents: tau1=609 vs tau2=649
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.write(BufferedWriter.java:230)
+	at java.io.Writer.write(Writer.java:157)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:358)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler.invoke(InterfaceImplementor.java:67)
+	at com.sun.proxy.$Proxy5.run(Unknown Source)
+	at org.contikios.cooja.plugins.LogScriptEngine$4.run(LogScriptEngine.java:300)
+	at java.lang.Thread.run(Thread.java:748)
+[02:43:37 - Thread-1] [ScriptRunner.java:364] [FATAL] - Error when writing to test log file: 3378204006:81:RPL: OF-TAU comparing parents: tau1=941 vs tau2=745
+
+java.io.IOException: No space left on device
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:345)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.write(BufferedWriter.java:230)
+	at java.io.Writer.write(Writer.java:157)
+	at org.contikios.cooja.plugins.ScriptRunner$6.update(ScriptRunner.java:358)
+	at org.contikios.cooja.plugins.LogScriptEngine$10.log(LogScriptEngine.java:420)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.org.mozilla.javascript.MemberBox.invoke(MemberBox.java:126)
+	at sun.org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:225)
+	at sun.org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1473)
+	at sun.org.mozilla.javascript.Interpreter.interpret(Interpreter.java:815)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at sun.org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at com.sun.script.javascript.RhinoScriptEngine$1.superDoTopCall(RhinoScriptEngine.java:116)
+	at com.sun.script.javascript.RhinoScriptEngine$1.doTopCall(RhinoScriptEngine.java:109)
+	at sun.org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at sun.org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:107)
+	at com.sun.script.javascript.RhinoScriptEngine.invoke(RhinoScriptEngine.java:294)
+	at com.sun.script.javascript.RhinoScriptEngine.invokeFunction(RhinoScriptEngine.java:258)
+	at com.sun.script.util.InterfaceImplementor$InterfaceImplementorInvocationHandler$1.run(InterfaceImplementor.java:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun

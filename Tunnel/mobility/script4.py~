@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+
+import random
+
+# =========================
+# Paramètres généraux
+# =========================
+N = 30                  # nombre de motes
+T = 3600                # durée totale : 1 heure (s)
+dt = 2                  # pas de temps (s)
+W, H = 200, 200         # espace global (m)
+step_low = 3            # mobilité faible (m par pas)
+seed = 42
+
+random.seed(seed)
+
+def clamp(v, vmin, vmax):
+    return max(vmin, min(v, vmax))
+
+# =========================
+# Initialisation positions
+# =========================
+positions = {
+    mote: [random.uniform(0, W), random.uniform(0, H)]
+    for mote in range(1, N + 1)
+}
+
+# =========================
+# Génération du fichier .dat
+# =========================
+with open("S420.dat", "w") as f:
+    t = 0
+    while t <= T:
+        for mote in range(1, N + 1):
+            x, y = positions[mote]
+
+            # --- Tous les nœuds : mobilité faible ---
+            dx = random.uniform(-step_low, step_low)
+            dy = random.uniform(-step_low, step_low)
+
+            nx = clamp(x + dx, 0, W)
+            ny = clamp(y + dy, 0, H)
+
+            positions[mote] = [nx, ny]
+
+            # Format : mote time x y
+            f.write("%d %d %.2f %.2f\n" % (mote, t, nx, ny))
+
+        t += dt
+
+print("S210.dat généré : tous les nœuds mobiles (mobilité faible), espace 200x200")
+

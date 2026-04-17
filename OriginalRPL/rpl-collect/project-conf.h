@@ -76,4 +76,8 @@
 #define RPL_CONF_MOP RPL_MOP_NON_STORING /* Mode of operation*/
 #endif /* WITH_NON_STORING */
 
+/* Configure RPL to use OF0 instead of MRHOF */
+#define RPL_CONF_OF_OCP          RPL_OCP_OF0
+#define RPL_CONF_SUPPORTED_OFS  {&rpl_of0}
+
 #endif /* PROJECT_CONF_H_ */

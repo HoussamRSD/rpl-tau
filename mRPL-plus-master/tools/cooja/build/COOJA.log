@@ -1,0 +1,621 @@
+[15:28:06 - main] [GUI.java:3139] [WARN] - JAVA_HOME environment variable not set, Cooja motes may not compile
+[15:28:06 - AWT-EventQueue-0] [GUI.java:2826] [INFO] - External tools default settings: /external_tools_linux_64.config
+[15:28:06 - AWT-EventQueue-0] [GUI.java:2856] [INFO] - External tools user settings: /root/.cooja.user.properties
+[15:28:47 - Thread-0] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:28:47 - Thread-0] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:28:49 - Thread-0] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:28:49 - Thread-0] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:28:50 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:28:51 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:28:52 - Thread-0] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:29:01 - Thread-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:29:01 - Thread-0] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:29:01 - Thread-0] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:29:01 - Thread-0] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:29:01 - Thread-0] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/1m.s.pos
+[15:29:01 - Thread-0] [Mobility.java:138] [INFO] - Loaded 684 positions
+[15:29:39 - AWT-EventQueue-0] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:29:46 - AWT-EventQueue-0] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:29:46 - AWT-EventQueue-0] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:29:50 - Thread-3] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:29:50 - Thread-2] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:29:50 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:29:51 - Thread-3] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:29:51 - Thread-3] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:29:51 - Thread-3] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:29:52 - Thread-3] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:29:52 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:29:52 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:29:53 - Thread-3] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:29:56 - Thread-3] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:29:56 - Thread-3] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:29:56 - Thread-3] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:29:56 - Thread-3] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:29:56 - Thread-3] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:29:56 - Thread-3] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:29:58 - Thread-5] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406471398818
+[15:29:59 - Thread-5] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406471399169	Duration: 351 ms	Simulated time 83 ms	Ratio 0.23646723646723647
+[15:30:02 - Thread-6] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406471402921
+[15:30:06 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 200.7 sec
+[15:30:08 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 113.9 sec
+[15:30:18 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 125.2 sec
+[15:30:28 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 129.1 sec
+[15:30:36 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 121.3 sec
+[15:30:44 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 112.3 sec
+[15:30:52 - Thread-6] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 105.0 sec
+[15:30:59 - Thread-6] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406471459074	Duration: 56153 ms	Simulated time 47704 ms	Ratio 0.8495360888999697
+[15:31:03 - Thread-7] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406471463195
+[15:31:03 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 101.1 sec
+[15:31:12 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 93.6 sec
+[15:31:20 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 84.1 sec
+[15:31:28 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 75.2 sec
+[15:31:35 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 65.9 sec
+[15:31:42 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 57.1 sec
+[15:31:50 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 49.1 sec
+[15:31:55 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 39.7 sec
+[15:32:00 - Thread-7] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 31.2 sec
+[15:32:01 - Thread-7] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406471521965	Duration: 58770 ms	Simulated time 96702 ms	Ratio 1.6454313425216947
+[15:32:04 - Thread-8] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406471524915
+[15:32:11 - Thread-8] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 23.9 sec
+[15:32:20 - Thread-8] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 16.0 sec
+[15:32:28 - Thread-8] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 8.0 sec
+[15:32:35 - Thread-8] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[15:32:35 - Thread-4] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:32:35 - Thread-8] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406471555689	Duration: 30774 ms	Simulated time 120000 ms	Ratio 3.899395593682979
+[15:33:52 - Thread-9] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:33:52 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:33:53 - Thread-9] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:33:53 - Thread-9] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:33:56 - Thread-9] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:33:57 - Thread-9] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:33:58 - Thread-9] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:34:00 - Thread-9] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:34:00 - Thread-9] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:34:00 - Thread-9] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:34:00 - Thread-9] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:34:00 - Thread-9] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:34:00 - Thread-9] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:34:04 - Thread-11] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406471644315
+[15:34:04 - Thread-11] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406471644772	Duration: 457 ms	Simulated time 454 ms	Ratio 0.9934354485776805
+[15:34:12 - Thread-12] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406471652572
+[15:34:15 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 295.9 sec
+[15:34:18 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 168.6 sec
+[15:34:25 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 142.7 sec
+[15:34:34 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 135.6 sec
+[15:34:42 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 128.0 sec
+[15:34:50 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 116.3 sec
+[15:34:57 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 106.3 sec
+[15:35:01 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 91.5 sec
+[15:35:08 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 83.1 sec
+[15:35:16 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 76.5 sec
+[15:35:23 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 68.4 sec
+[15:35:31 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 61.0 sec
+[15:35:39 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 53.5 sec
+[15:35:46 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 45.4 sec
+[15:35:52 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 37.5 sec
+[15:35:57 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 29.4 sec
+[15:36:03 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 21.8 sec
+[15:36:13 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 14.8 sec
+[15:36:21 - Thread-12] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 7.5 sec
+[15:36:30 - Thread-12] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[15:36:30 - Thread-10] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:36:30 - Thread-12] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406471790988	Duration: 138416 ms	Simulated time 120000 ms	Ratio 0.8669517974800601
+[15:42:35 - Thread-13] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:42:36 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:42:36 - Thread-13] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:42:36 - Thread-13] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/net/rpl/rpl-mrhof.c: In function ‘post_parent_unreachable’:
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/net/rpl/rpl-mrhof.c:126:11: warning: implicit declaration of function ‘discard_all_dios’ [-Wimplicit-function-declaration]
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/net/rpl/rpl-mrhof.c: In function ‘neighbor_link_callback’:
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/net/rpl/rpl-mrhof.c:160:34: error: expected expression before ‘)’ token
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/net/rpl/rpl-mrhof.c:160:34: warning: passing argument 3 of ‘ctimer_set’ from incompatible pointer type [enabled by default]
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/./sys/ctimer.h:113:6: note: expected ‘void (*)(void *)’ but argument is of type ‘void (*)(void)’
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/net/rpl/rpl-mrhof.c: At top level:
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> ../../../core/./net/rpl/rpl-private.h:296:1: warning: ‘rpl_parents’ defined but not used [-Wunused-variable]
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> make: *** [obj_sky/rpl-mrhof.o] Error 1
+[15:42:36 - Thread-13] [SkyMoteType.java:172] [FATAL] - >> Process returned error code 2
+[15:42:36 - Thread-13] [SkyMoteType.java:175] [FATAL] - Compilation error: Bad return value
+[15:42:47 - Thread-13] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:42:47 - Thread-13] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:42:49 - Thread-13] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:42:51 - Thread-13] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:42:52 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:42:52 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:52 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:52 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:52 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:52 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:42:53 - Thread-13] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:42:55 - Thread-13] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:42:55 - Thread-13] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:42:55 - Thread-13] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:42:55 - Thread-13] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:42:55 - Thread-13] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:42:55 - Thread-13] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:43:00 - Thread-16] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406472180519
+[15:43:01 - Thread-16] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406472181493	Duration: 974 ms	Simulated time 656 ms	Ratio 0.6735112936344969
+[15:43:04 - Thread-17] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406472184343
+[15:43:08 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 241.0 sec
+[15:43:12 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 150.4 sec
+[15:43:18 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 129.2 sec
+[15:43:25 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 117.9 sec
+[15:43:31 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 107.8 sec
+[15:43:37 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 97.7 sec
+[15:43:42 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 86.7 sec
+[15:43:47 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 77.9 sec
+[15:43:53 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 71.2 sec
+[15:43:59 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 64.0 sec
+[15:44:07 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 59.0 sec
+[15:44:20 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 56.4 sec
+[15:44:28 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 50.2 sec
+[15:44:37 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 43.8 sec
+[15:44:42 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 35.5 sec
+[15:44:47 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 28.0 sec
+[15:44:56 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 21.3 sec
+[15:45:02 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 14.1 sec
+[15:45:09 - Thread-17] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 7.0 sec
+[15:45:16 - Thread-17] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[15:45:16 - Thread-15] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:45:16 - Thread-17] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406472316383	Duration: 132040 ms	Simulated time 120000 ms	Ratio 0.9088155104513783
+[15:48:40 - Thread-18] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:48:41 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:48:41 - Thread-18] [AbstractRadioMedium.java:191] [FATAL] - Connection source turned off radio: se.sics.cooja.mspmote.interfaces.Msp802154Radio@2c90862b
+[15:48:41 - Thread-18] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:48:41 - Thread-18] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:48:42 - Thread-18] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:48:43 - Thread-18] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:48:44 - Thread-18] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:48:46 - Thread-18] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:48:46 - Thread-18] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:48:46 - Thread-18] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:48:47 - Thread-18] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:48:47 - Thread-18] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:48:47 - Thread-18] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:48:50 - Thread-20] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406472530756
+[15:48:51 - Thread-20] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406472531081	Duration: 325 ms	Simulated time 391 ms	Ratio 1.2030769230769232
+[15:48:54 - Thread-21] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406472534265
+[15:48:56 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 173.8 sec
+[15:48:57 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 93.7 sec
+[15:49:02 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 85.4 sec
+[15:49:09 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 89.1 sec
+[15:49:16 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 89.0 sec
+[15:49:23 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 86.3 sec
+[15:49:29 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 78.9 sec
+[15:49:35 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 72.4 sec
+[15:49:44 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 69.7 sec
+[15:49:51 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 64.2 sec
+[15:49:58 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 58.9 sec
+[15:50:06 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 52.8 sec
+[15:50:13 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 46.8 sec
+[15:50:19 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 39.6 sec
+[15:50:26 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 33.0 sec
+[15:50:31 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 26.2 sec
+[15:50:39 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 19.8 sec
+[15:50:47 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 13.4 sec
+[15:50:55 - Thread-21] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 6.8 sec
+[15:51:03 - Thread-21] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[15:51:03 - Thread-19] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:51:03 - Thread-21] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406472663881	Duration: 129616 ms	Simulated time 120000 ms	Ratio 0.9258116281940502
+[15:53:33 - Thread-22] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:53:34 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:53:34 - Thread-22] [AbstractRadioMedium.java:191] [FATAL] - Connection source turned off radio: se.sics.cooja.mspmote.interfaces.Msp802154Radio@212c74c0
+[15:53:34 - Thread-22] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:53:34 - Thread-22] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:53:35 - Thread-22] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:53:35 - Thread-22] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:53:35 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:53:35 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:53:36 - Thread-22] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:53:37 - Thread-22] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:53:37 - Thread-22] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:53:37 - Thread-22] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:53:38 - Thread-22] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:53:38 - Thread-22] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:53:38 - Thread-22] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:53:41 - Thread-24] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406472821674
+[15:53:41 - Thread-24] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406472821961	Duration: 287 ms	Simulated time 347 ms	Ratio 1.2090592334494774
+[15:53:44 - Thread-25] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406472824420
+[15:53:46 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 158.6 sec
+[15:53:47 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 86.3 sec
+[15:53:50 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 69.5 sec
+[15:53:54 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 65.9 sec
+[15:53:59 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 63.6 sec
+[15:54:04 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 62.9 sec
+[15:54:08 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 57.6 sec
+[15:54:13 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 52.6 sec
+[15:54:17 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 48.3 sec
+[15:54:21 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 43.5 sec
+[15:54:25 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 39.1 sec
+[15:54:30 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 34.7 sec
+[15:54:33 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 30.1 sec
+[15:54:38 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 25.9 sec
+[15:54:43 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 21.8 sec
+[15:54:47 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 17.4 sec
+[15:54:51 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 12.9 sec
+[15:54:55 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 8.6 sec
+[15:54:59 - Thread-25] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 4.3 sec
+[15:55:03 - Thread-25] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[15:55:03 - Thread-23] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:55:03 - Thread-25] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406472903252	Duration: 78832 ms	Simulated time 120000 ms	Ratio 1.522224477369596
+[15:57:27 - Thread-26] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:57:28 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:57:28 - Thread-26] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[15:57:28 - Thread-26] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:57:30 - Thread-26] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[15:57:32 - Thread-26] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[15:57:33 - Thread-26] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[15:57:34 - Thread-26] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[15:57:34 - Thread-26] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[15:57:34 - Thread-26] [ScriptRunner.java:378] [INFO] - Test script activated
+[15:57:35 - Thread-26] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[15:57:35 - Thread-26] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[15:57:35 - Thread-26] [Mobility.java:138] [INFO] - Loaded 184 positions
+[15:57:40 - Thread-28] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473060201
+[15:57:40 - Thread-28] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473060444	Duration: 243 ms	Simulated time 349 ms	Ratio 1.4362139917695473
+[15:57:42 - Thread-29] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473062702
+[15:57:45 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 190.3 sec
+[15:57:46 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 101.6 sec
+[15:57:49 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 81.1 sec
+[15:57:51 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 65.3 sec
+[15:57:53 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 54.6 sec
+[15:57:56 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 50.6 sec
+[15:58:00 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 46.6 sec
+[15:58:02 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 41.8 sec
+[15:58:04 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 36.4 sec
+[15:58:06 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 31.9 sec
+[15:58:09 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 28.1 sec
+[15:58:11 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 24.5 sec
+[15:58:13 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 20.9 sec
+[15:58:16 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 17.8 sec
+[15:58:19 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 14.7 sec
+[15:58:21 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 11.6 sec
+[15:58:23 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 8.6 sec
+[15:58:25 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 5.6 sec
+[15:58:27 - Thread-29] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 2.8 sec
+[15:58:30 - Thread-29] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[15:58:30 - Thread-27] [LogScriptEngine.java:308] [INFO] - Test script finished
+[15:58:30 - Thread-29] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473110290	Duration: 47588 ms	Simulated time 120000 ms	Ratio 2.5216441119609985
+[16:00:34 - Thread-30] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:00:35 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:00:35 - Thread-30] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[16:00:35 - Thread-30] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[16:00:36 - Thread-30] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[16:00:37 - Thread-30] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[16:00:37 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[16:00:37 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:00:38 - Thread-30] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[16:00:40 - Thread-30] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:00:40 - Thread-30] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[16:00:40 - Thread-30] [ScriptRunner.java:378] [INFO] - Test script activated
+[16:00:40 - Thread-30] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[16:00:40 - Thread-30] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:00:40 - Thread-30] [Mobility.java:138] [INFO] - Loaded 184 positions
+[16:00:42 - Thread-32] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473242148
+[16:00:44 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 80.0 sec
+[16:00:45 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 48.5 sec
+[16:00:47 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 41.9 sec
+[16:00:50 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 40.0 sec
+[16:00:51 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 34.2 sec
+[16:00:54 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 32.5 sec
+[16:00:55 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 28.2 sec
+[16:00:57 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 26.0 sec
+[16:00:59 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 23.2 sec
+[16:01:01 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 21.0 sec
+[16:01:03 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 18.9 sec
+[16:01:04 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 16.4 sec
+[16:01:06 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 14.0 sec
+[16:01:08 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 12.3 sec
+[16:01:10 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 10.1 sec
+[16:01:11 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 8.0 sec
+[16:01:13 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 5.9 sec
+[16:01:14 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 3.9 sec
+[16:01:16 - Thread-32] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 1.9 sec
+[16:01:17 - Thread-32] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[16:01:17 - Thread-32] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473277286	Duration: 35138 ms	Simulated time 120000 ms	Ratio 3.415106152882919
+[16:01:17 - Thread-31] [LogScriptEngine.java:308] [INFO] - Test script finished
+[16:01:27 - Thread-33] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:01:27 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:01:27 - Thread-33] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[16:01:27 - Thread-33] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[16:01:28 - Thread-33] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[16:01:29 - Thread-33] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[16:01:29 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[16:01:29 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:01:30 - Thread-33] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[16:01:31 - Thread-33] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:01:32 - Thread-33] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[16:01:32 - Thread-33] [ScriptRunner.java:378] [INFO] - Test script activated
+[16:01:32 - Thread-33] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[16:01:32 - Thread-33] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:01:32 - Thread-33] [Mobility.java:138] [INFO] - Loaded 184 positions
+[16:01:37 - Thread-35] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473297043
+[16:01:37 - Thread-35] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473297466	Duration: 423 ms	Simulated time 456 ms	Ratio 1.0780141843971631
+[16:01:40 - Thread-36] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473300205
+[16:01:41 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 186.0 sec
+[16:01:42 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 96.2 sec
+[16:01:45 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 75.8 sec
+[16:01:46 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 59.1 sec
+[16:01:47 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 47.6 sec
+[16:01:50 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 41.9 sec
+[16:01:51 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 36.7 sec
+[16:01:53 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 32.6 sec
+[16:01:55 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 29.0 sec
+[16:01:57 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 25.0 sec
+[16:01:58 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 21.8 sec
+[16:02:00 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 18.7 sec
+[16:02:01 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 15.9 sec
+[16:02:04 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 14.0 sec
+[16:02:06 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 11.5 sec
+[16:02:08 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 9.0 sec
+[16:02:09 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 6.7 sec
+[16:02:11 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 4.4 sec
+[16:02:13 - Thread-36] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 2.2 sec
+[16:02:14 - Thread-36] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[16:02:14 - Thread-34] [LogScriptEngine.java:308] [INFO] - Test script finished
+[16:02:14 - Thread-36] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473334928	Duration: 34723 ms	Simulated time 120000 ms	Ratio 3.455922587334044
+[16:03:55 - Thread-37] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:03:55 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:03:55 - Thread-37] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[16:03:55 - Thread-37] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[16:03:56 - Thread-37] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[16:03:56 - Thread-37] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:56 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:57 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:57 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:57 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:57 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:57 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:03:57 - Thread-37] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[16:03:58 - Thread-37] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:03:58 - Thread-37] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[16:03:58 - Thread-37] [ScriptRunner.java:378] [INFO] - Test script activated
+[16:03:58 - Thread-37] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[16:03:58 - Thread-37] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:03:58 - Thread-37] [Mobility.java:138] [INFO] - Loaded 184 positions
+[16:05:25 - Thread-39] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:05:26 - Thread-38] [LogScriptEngine.java:308] [INFO] - Test script finished
+[16:05:26 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:05:26 - Thread-39] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[16:05:26 - Thread-39] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[16:05:27 - Thread-39] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[16:05:29 - Thread-39] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:05:30 - Thread-39] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[16:05:32 - Thread-39] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:05:32 - Thread-39] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[16:05:32 - Thread-39] [ScriptRunner.java:378] [INFO] - Test script activated
+[16:05:32 - Thread-39] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[16:05:32 - Thread-39] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:05:32 - Thread-39] [Mobility.java:138] [INFO] - Loaded 184 positions
+[16:05:38 - Thread-41] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473538555
+[16:05:38 - Thread-41] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473538797	Duration: 242 ms	Simulated time 410 ms	Ratio 1.6942148760330578
+[16:05:41 - Thread-42] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473541705
+[16:05:43 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 207.7 sec
+[16:05:44 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 107.1 sec
+[16:05:47 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 81.5 sec
+[16:05:48 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 63.0 sec
+[16:05:49 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 51.0 sec
+[16:05:52 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 45.8 sec
+[16:05:53 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 39.2 sec
+[16:05:56 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 35.6 sec
+[16:05:57 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 30.4 sec
+[16:05:58 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 26.0 sec
+[16:06:00 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 23.0 sec
+[16:06:02 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 19.8 sec
+[16:06:03 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 16.7 sec
+[16:06:08 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 15.1 sec
+[16:06:09 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 12.4 sec
+[16:06:11 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 9.8 sec
+[16:06:13 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 7.2 sec
+[16:06:15 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 4.7 sec
+[16:06:17 - Thread-42] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 2.4 sec
+[16:06:18 - Thread-42] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[16:06:18 - Thread-42] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473578817	Duration: 37112 ms	Simulated time 120000 ms	Ratio 3.2334554860961413
+[16:06:18 - Thread-40] [LogScriptEngine.java:308] [INFO] - Test script finished
+[16:08:16 - AWT-EventQueue-0] [GUI.java:2519] [WARN] - Memory usage is getting critical. Reboot Cooja to avoid out of memory error. Current memory usage is 84.804%.
+[16:08:19 - Thread-43] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:08:20 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:08:20 - Thread-43] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[16:08:21 - Thread-43] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[16:08:21 - Thread-43] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[16:08:22 - Thread-43] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:22 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:08:23 - Thread-43] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[16:08:24 - Thread-43] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:08:24 - Thread-43] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[16:08:25 - Thread-43] [ScriptRunner.java:378] [INFO] - Test script activated
+[16:08:25 - Thread-43] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[16:08:25 - Thread-43] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:08:25 - Thread-43] [Mobility.java:138] [INFO] - Loaded 184 positions
+[16:08:28 - Thread-45] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473708817
+[16:08:29 - Thread-45] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473709167	Duration: 350 ms	Simulated time 405 ms	Ratio 1.1571428571428573
+[16:08:49 - Thread-46] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473729083
+[16:08:50 - Thread-46] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 488.5 sec
+[16:08:51 - Thread-46] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 239.7 sec
+[16:08:54 - Thread-46] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 167.8 sec
+[16:08:56 - Thread-46] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473736115	Duration: 7032 ms	Simulated time 20725 ms	Ratio 2.947241183162685
+[16:09:28 - AWT-EventQueue-0] [GUI.java:2519] [WARN] - Memory usage is getting critical. Reboot Cooja to avoid out of memory error. Current memory usage is 81.819%.
+[16:09:31 - Thread-47] [GUI.java:4091] [WARN] - Path is not portable: '/home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:09:32 - Thread-44] [LogScriptEngine.java:308] [INFO] - Test script finished
+[16:09:32 - AWT-EventQueue-0] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:09:32 - Thread-47] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[16:09:32 - Thread-47] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[16:09:34 - Thread-47] [CompileContiki.java:131] [INFO] - > make udp-forwarder.sky TARGET=sky 
+[16:09:35 - Thread-47] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-client/udp-client.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:37 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:38 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:38 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-forwarder/udp-forwarder.sky
+[16:09:38 - Thread-47] [MspMote.java:217] [INFO] - Loading firmware from: /home/daniel/GIT_dadrm/contiki/examples/smart-HOP/rpl-udp-server/udp-server.sky
+[16:09:42 - Thread-47] [ScriptRunner.java:421] [INFO] - Test script deactivated
+[16:09:42 - Thread-47] [LogScriptEngine.java:264] [INFO] - Script timeout in 120000 ms
+[16:09:42 - Thread-47] [ScriptRunner.java:378] [INFO] - Test script activated
+[16:09:42 - Thread-47] [Mobility.java:81] [INFO] - Mobility plugin started at (ms): 0
+[16:09:42 - Thread-47] [Mobility.java:113] [INFO] - Parsing position file: /home/daniel/smart-HOP-master-2014/examples/smart-HOP-2/4m.s.pos
+[16:09:42 - Thread-47] [Mobility.java:138] [INFO] - Loaded 184 positions
+[16:09:45 - Thread-49] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473785280
+[16:09:46 - Thread-49] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473786267	Duration: 987 ms	Simulated time 405 ms	Ratio 0.41033434650455924
+[16:09:50 - Thread-50] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1406473790171
+[16:09:53 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 5.00%, done in 205.3 sec
+[16:09:54 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 10.00%, done in 110.4 sec
+[16:09:59 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 15.00%, done in 97.2 sec
+[16:10:01 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 20.00%, done in 77.6 sec
+[16:10:04 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 25.00%, done in 65.2 sec
+[16:10:06 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 30.00%, done in 56.8 sec
+[16:10:09 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 35.00%, done in 50.6 sec
+[16:10:11 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 40.00%, done in 44.3 sec
+[16:10:18 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 45.00%, done in 43.7 sec
+[16:10:21 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 50.00%, done in 38.8 sec
+[16:10:23 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 55.00%, done in 33.7 sec
+[16:10:26 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 60.00%, done in 29.5 sec
+[16:10:28 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 65.00%, done in 25.0 sec
+[16:10:32 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 70.00%, done in 21.6 sec
+[16:10:34 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 75.00%, done in 17.5 sec
+[16:10:38 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 80.00%, done in 14.1 sec
+[16:10:43 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 85.00%, done in 10.9 sec
+[16:10:47 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 90.00%, done in 7.3 sec
+[16:10:50 - Thread-50] [LogScriptEngine.java:386] [INFO] - Test script at 95.00%, done in 3.6 sec
+[16:10:52 - Thread-50] [LogScriptEngine.java:372] [INFO] - Timeout event @ 120000000
+[16:10:52 - Thread-48] [LogScriptEngine.java:308] [INFO] - Test script finished
+[16:10:52 - Thread-50] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1406473852814	Duration: 62643 ms	Simulated time 120000 ms	Ratio 1.9156170681480773

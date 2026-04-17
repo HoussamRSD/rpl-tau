@@ -1,0 +1,33 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\20nodeMobilitySmartcity\Run51
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1179, Received: 954 -> PDR: 80.92%
+  Avg Latency: 12.76 ms
+  Parent Changes: 30
+  Total Overhead: 931 (DIO: 791, DAO: 130, DIS: 10)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 80.92% ± 0.00
+Average Latency        : 12.76 ms ± 0.00
+Average Parent Changes : 30.0 ± 0.0
+Average Control Ovhd   : 931.0 ± 0.0 (DIO: 791.0, DAO: 130.0, DIS: 10.0)
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 1180, Received: 1111 -> PDR: 94.15%
+  Avg Latency: 17.64 ms
+  Parent Changes: 28
+  Total Overhead: 919 (DIO: 744, DAO: 165, DIS: 10)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 94.15% ± 0.00
+Average Latency        : 17.64 ms ± 0.00
+Average Parent Changes : 28.0 ± 0.0
+Average Control Ovhd   : 919.0 ± 0.0 (DIO: 744.0, DAO: 165.0, DIS: 10.0)

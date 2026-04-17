@@ -268,6 +268,7 @@ dis_output(uip_ipaddr_t *addr)
     addr = &tmpaddr;
   }
 
+  printf("Sending a DIS\n");
   PRINTF("RPL: Sending a DIS to ");
   PRINT6ADDR(addr);
   PRINTF("\n");
@@ -594,11 +595,12 @@ dio_output(rpl_instance_t *instance, uip_ipaddr_t *uc_addr)
   }
 
 #if RPL_LEAF_ONLY
-#if (DEBUG) & DEBUG_PRINT
+
   if(uc_addr == NULL) {
-    PRINTF("RPL: LEAF ONLY sending unicast-DIO from multicast-DIO\n");
+    printf("RPL: LEAF ONLY sending unicast-DIO from multicast-DIO\n");
   }
-#endif /* DEBUG_PRINT */
+
+  printf("Sending unicast-DIO\n");
   PRINTF("RPL: Sending unicast-DIO with rank %u to ",
          (unsigned)dag->rank);
   PRINT6ADDR(uc_addr);
@@ -607,11 +609,13 @@ dio_output(rpl_instance_t *instance, uip_ipaddr_t *uc_addr)
 #else /* RPL_LEAF_ONLY */
   /* Unicast requests get unicast replies! */
   if(uc_addr == NULL) {
+    printf("Sending a multicast-DIO\n");
     PRINTF("RPL: Sending a multicast-DIO with rank %u\n",
            (unsigned)instance->current_dag->rank);
     uip_create_linklocal_rplnodes_mcast(&addr);
     uip_icmp6_send(&addr, ICMP6_RPL, RPL_CODE_DIO, pos);
   } else {
+    printf("Sending unicast-DIO\n");
     PRINTF("RPL: Sending unicast-DIO with rank %u to ",
            (unsigned)instance->current_dag->rank);
     PRINT6ADDR(uc_addr);
@@ -1232,7 +1236,7 @@ dao_output_target_seq(rpl_parent_t *parent, uip_ipaddr_t *prefix,
     dest_ipaddr = &parent->dag->dag_id;
   }
 
-  PRINTF("RPL: Sending a %sDAO with sequence number %u, lifetime %u, prefix ",
+  printf("RPL: Sending a %sDAO with sequence number %u, lifetime %u, prefix ",
          lifetime == RPL_ZERO_LIFETIME ? "No-Path " : "", seq_no, lifetime);
 
   PRINT6ADDR(prefix);
@@ -1348,7 +1352,7 @@ dao_ack_output(rpl_instance_t *instance, uip_ipaddr_t *dest, uint8_t sequence,
 #if RPL_WITH_DAO_ACK
   unsigned char *buffer;
 
-  PRINTF("RPL: Sending a DAO %s with sequence number %d to ", status < 128 ? "ACK" : "NACK", sequence);
+  printf("RPL: Sending a DAO %s with sequence number %d to ", status < 128 ? "ACK" : "NACK", sequence);
   PRINT6ADDR(dest);
   PRINTF(" with status %d\n", status);
 

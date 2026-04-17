@@ -106,6 +106,7 @@ tcpip_handler(void)
     sender.u8[1] = UIP_IP_BUF->srcipaddr.u8[14];
     seqno = *appdata;
     hops = uip_ds6_if.cur_hop_limit - UIP_IP_BUF->ttl + 1;
+    printf("Server received %d from %d\n", seqno, UIP_IP_BUF->srcipaddr.u8[15]);
     collect_common_recv(&sender, seqno, hops,
                         appdata + 2, uip_datalen() - 2);
   }

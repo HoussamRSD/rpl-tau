@@ -1,0 +1,81 @@
+[14:25:58 - main] [Cooja.java:1315] [INFO] - > Starting Cooja
+[14:25:58 - main] [Cooja.java:2856] [INFO] - External tools default settings: /external_tools_linux.config
+[14:25:58 - main] [Cooja.java:2886] [INFO] - External tools user settings: /home/user/.cooja.user.properties
+[14:25:59 - main] [Simulation.java:422] [INFO] - Simulation random seed: 350000
+[14:25:59 - main] [CompileContiki.java:140] [INFO] - > make udp-sink.z1 TARGET=z1 
+[14:25:59 - main] [CompileContiki.java:140] [INFO] - > make udp-sender.z1 TARGET=z1 
+[14:26:00 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sink.z1
+[14:26:00 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:01 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:02 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:03 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [MspMote.java:235] [INFO] - Loading firmware from: /home/user/contiki/examples/ipv6/rpl-collect/udp-sender.z1
+[14:26:04 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.SimControl
+[14:26:04 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.Visualizer
+[14:26:04 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.LogListener
+[14:26:04 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.TimeLine
+[14:26:04 - main] [Cooja.java:1781] [INFO] - Visualized plugin was not started: class org.contikios.cooja.plugins.Notes
+[14:26:05 - main] [ScriptRunner.java:430] [INFO] - Test script deactivated
+[14:26:05 - main] [LogScriptEngine.java:265] [INFO] - Script timeout in 3600000 ms
+[14:26:05 - main] [ScriptRunner.java:387] [INFO] - Test script activated
+[14:26:05 - Thread-2] [Simulation.java:253] [INFO] - Simulation main loop started, system time: 1776259565965
+[14:26:06 - main] [Mobility.java:85] [INFO] - Mobility plugin started at (ms): 9
+[14:26:06 - main] [Mobility.java:117] [INFO] - Parsing position file: /home/user/contiki/tools/cooja/contiki_tests/mobility/PFE/40smartCity100-100.dat
+[14:26:06 - main] [Mobility.java:142] [INFO] - Loaded 72040 positions
+[14:28:43 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 5.00%, done in 2988.4 sec
+[14:30:01 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 10.00%, done in 2118.8 sec
+[14:30:57 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 15.00%, done in 1649.4 sec
+[14:31:37 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 20.00%, done in 1326.3 sec
+[14:32:39 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 25.00%, done in 1181.8 sec
+[14:33:52 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 30.00%, done in 1089.5 sec
+[14:35:22 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 35.00%, done in 1034.3 sec
+[14:36:10 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 40.00%, done in 906.5 sec
+[14:37:12 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 45.00%, done in 814.9 sec
+[14:37:52 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 50.00%, done in 706.7 sec
+[14:38:33 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 55.00%, done in 611.4 sec
+[14:39:14 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 60.00%, done in 525.6 sec
+[14:39:51 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 65.00%, done in 444.7 sec
+[14:40:30 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 70.00%, done in 370.6 sec
+[14:41:08 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 75.00%, done in 300.8 sec
+[14:41:49 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 80.00%, done in 235.8 sec
+[14:42:33 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 85.00%, done in 174.2 sec
+[14:43:19 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 90.00%, done in 114.8 sec
+[14:44:02 - Thread-2] [LogScriptEngine.java:389] [INFO] - Test script at 95.00%, done in 56.7 sec
+[14:44:42 - Thread-2] [LogScriptEngine.java:375] [INFO] - Timeout event @ 3600000000
+[14:44:42 - Thread-1] [LogScriptEngine.java:309] [INFO] - Test script finished
+[14:44:42 - Thread-2] [Simulation.java:312] [INFO] - Simulation main loop stopped, system time: 1776260682831	Duration: 1116866 ms	Simulated time 3600000 ms	Ratio 3.223305212979892
+[14:44:43 - AWT-EventQueue-0] [ScriptRunner.java:430] [INFO] - Test script deactivated

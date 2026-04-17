@@ -1,0 +1,18 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\TestVarrié
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 2299, Received: 2207 -> PDR: 96.00%
+  Avg Latency: 27.76 ms
+  Parent Changes: 116
+  Total Overhead: 3290 (DIO: 2324, DAO: 947, DIS: 19)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 96.00% ± 0.00
+Average Latency        : 27.76 ms ± 0.00
+Average Parent Changes : 116.0 ± 0.0
+Average Control Ovhd   : 3290.0 ± 0.0 (DIO: 2324.0, DAO: 947.0, DIS: 19.0)

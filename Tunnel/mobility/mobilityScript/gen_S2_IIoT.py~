@@ -1,0 +1,355 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+S2 - IIoT (Industrial) mobility for Cooja
+Format: <mote_id> <time> <x> <y>   where mote_id is the Cooja mote number (1..N)
+
+Scenario:
+- Sink (mote 1 by default): fixed (controller)
+- Senders:
+  - Fixed 65%: machine sensors (static)
+  - Mobile 35%: AGVs/robots
+AGV mobility:
+- speed: 1.2 m/s
+- pause: 5..60 s
+- model: waypoints on corridors (grid), constrained & semi-predictable
+
+Constraints:
+1) Sink fixed at deterministic position (center/side/corner/custom)
+2) No overlap at same time t (min distance MIN_DIST)
+3) Fixed nodes never move and never overwritten
+
+commande:
+python gen_S2_IIoT.py \
+  --nodes 100 --duration 3600 --dt 2 --w 200 --h 200 \
+  --out S2100.dat --seed 42 \
+  --sink_id 0 --sink_pos center \
+  --fixed_senders_ratio 0.65 \
+  --lane_lines 6 \
+  --agv_speed 1.2 --pause_min 5 --pause_max 60 \
+  --min_dist 1.0
+
+"""
+
+import argparse
+import random
+
+# -----------------------------
+# Utils
+# -----------------------------
+def clamp(v, vmin, vmax):
+    if v < vmin: return vmin
+    if v > vmax: return vmax
+    return v
+
+def fmt_line(mid, t, x, y):
+    return "%d %d %.2f %.2f\n" % (mid, t, x, y)
+
+def dist2(ax, ay, bx, by):
+    dx = ax - bx
+    dy = ay - by
+    return dx*dx + dy*dy
+
+def make_lines(n_lines, max_coord):
+    if n_lines < 2:
+        return [0.0, float(max_coord)]
+    step = float(max_coord) / float(n_lines - 1)
+    return [i * step for i in range(n_lines)]
+
+def nearest_line(v, lines):
+    best = lines[0]
+    bestd = abs(v - best)
+    for g in lines[1:]:
+        d = abs(v - g)
+        if d < bestd:
+            bestd = d
+            best = g
+    return best
+
+def is_free(x, y, occupied, min_dist2):
+    for (ox, oy) in occupied:
+        if dist2(x, y, ox, oy) < min_dist2:
+            return False
+    return True
+
+def sample_free_intersection(x_lines, y_lines, occupied, min_dist2, max_tries=20000):
+    for _ in range(max_tries):
+        x = random.choice(x_lines)
+        y = random.choice(y_lines)
+        if is_free(x, y, occupied, min_dist2):
+            return (x, y)
+    return (x, y)
+
+# -----------------------------
+# Main
+# -----------------------------
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--nodes", type=int, required=True, help="Total motes in Cooja (N)")
+    ap.add_argument("--duration", type=int, default=3600)
+    ap.add_argument("--dt", type=int, default=2)
+    ap.add_argument("--w", type=float, default=200.0)
+    ap.add_argument("--h", type=float, default=200.0)
+    ap.add_argument("--out", type=str, default="S2.dat")
+    ap.add_argument("--seed", type=int, default=42)
+
+    # Sink = Cooja mote number (1..N)
+    ap.add_argument("--sink_id", type=int, default=0)
+
+    ap.add_argument("--sink_pos", type=str, default="center",
+                    choices=["center","left","right","top","bottom",
+                             "topleft","topright","bottomleft","bottomright","custom"])
+    ap.add_argument("--sink_x", type=float, default=100.0)
+    ap.add_argument("--sink_y", type=float, default=100.0)
+
+    ap.add_argument("--fixed_senders_ratio", type=float, default=0.65)
+    ap.add_argument("--lane_lines", type=int, default=6)
+
+    ap.add_argument("--agv_speed", type=float, default=1.2)   # m/s
+    ap.add_argument("--pause_min", type=int, default=5)       # s
+    ap.add_argument("--pause_max", type=int, default=60)      # s
+    ap.add_argument("--agv_turn_prob", type=float, default=0.30)
+
+    ap.add_argument("--min_dist", type=float, default=1.0)
+
+    args = ap.parse_args()
+    random.seed(args.seed)
+
+    N = args.nodes
+    T = args.duration
+    dt = args.dt
+    W = args.w
+    H = args.h
+
+    if N < 2:
+        raise SystemExit("Error: --nodes must be >= 2")
+    if args.sink_id < 0 or args.sink_id > N-1:
+        raise SystemExit("Error: sink_id must be in [1..N] (Cooja mote numbers)")
+    if args.lane_lines < 2:
+        raise SystemExit("Error: lane_lines must be >= 2")
+    if args.min_dist < 0:
+        raise SystemExit("Error: min_dist must be >= 0")
+
+    min_dist2 = args.min_dist * args.min_dist
+
+    # Corridor grid lines
+    x_lines = make_lines(args.lane_lines, W)
+    y_lines = make_lines(args.lane_lines, H)
+
+    # Stations (loading points) at intersections
+    stations = []
+    corners = [(x_lines[0], y_lines[0]), (x_lines[0], y_lines[-1]),
+               (x_lines[-1], y_lines[0]), (x_lines[-1], y_lines[-1])]
+    stations.extend(corners)
+    midx = x_lines[len(x_lines)//2]
+    midy = y_lines[len(y_lines)//2]
+    stations.extend([(midx, y_lines[0]), (midx, y_lines[-1]),
+                     (x_lines[0], midy), (x_lines[-1], midy),
+                     (midx, midy)])
+
+    # Sink deterministic position (snap to intersection)
+    def sink_xy():
+        if args.sink_pos == "custom":
+            sx = clamp(args.sink_x, 0.0, W)
+            sy = clamp(args.sink_y, 0.0, H)
+            return (nearest_line(sx, x_lines), nearest_line(sy, y_lines))
+        if args.sink_pos == "center":
+            return (nearest_line(W/2.0, x_lines), nearest_line(H/2.0, y_lines))
+        if args.sink_pos == "left":
+            return (x_lines[0], nearest_line(H/2.0, y_lines))
+        if args.sink_pos == "right":
+            return (x_lines[-1], nearest_line(H/2.0, y_lines))
+        if args.sink_pos == "top":
+            return (nearest_line(W/2.0, x_lines), y_lines[-1])
+        if args.sink_pos == "bottom":
+            return (nearest_line(W/2.0, x_lines), y_lines[0])
+        if args.sink_pos == "topleft":
+            return (x_lines[0], y_lines[-1])
+        if args.sink_pos == "topright":
+            return (x_lines[-1], y_lines[-1])
+        if args.sink_pos == "bottomleft":
+            return (x_lines[0], y_lines[0])
+        if args.sink_pos == "bottomright":
+            return (x_lines[-1], y_lines[0])
+        return (nearest_line(W/2.0, x_lines), nearest_line(H/2.0, y_lines))
+
+    sx, sy = sink_xy()
+
+    # Assign roles among senders (exclude sink)
+    motes = list(range(0, N))
+    motes.remove(args.sink_id)
+    random.shuffle(motes)
+
+    sender_count = N - 1
+    n_fixed = int(round(sender_count * args.fixed_senders_ratio))
+    n_fixed = max(0, min(sender_count, n_fixed))
+    n_agv = sender_count - n_fixed
+
+    fixed_ids = set(motes[:n_fixed])
+    agv_ids = set(motes[n_fixed:])
+
+    nodes = {}
+    nodes[args.sink_id] = {"type": "sink", "x": sx, "y": sy}
+
+    # Avoid overlap at t=0
+    occupied0 = [(sx, sy)]
+
+    # Fixed sensors on intersections (factory layout)
+    for mid in fixed_ids:
+        fx, fy = sample_free_intersection(x_lines, y_lines, occupied0, min_dist2)
+        occupied0.append((fx, fy))
+        nodes[mid] = {"type": "fixed", "x": fx, "y": fy}
+
+    # AGVs start on free stations; movement is continuous along corridors
+    for mid in agv_ids:
+        ax, ay = sample_free_intersection(x_lines, y_lines, occupied0, min_dist2)
+        occupied0.append((ax, ay))
+
+        tx, ty = random.choice(stations)
+        while abs(tx-ax) < 1e-6 and abs(ty-ay) < 1e-6 and len(stations) > 1:
+            tx, ty = random.choice(stations)
+
+        nodes[mid] = {
+            "type": "agv",
+            "x": ax, "y": ay,
+            "tx": tx, "ty": ty,
+            # choose axis to start (semi-predictable)
+            "axis": "x" if random.random() < 0.5 else "y",
+            "pause_steps": random.randint(args.pause_min, args.pause_max) // max(1, dt)
+        }
+
+    step = max(0.0, args.agv_speed * dt)  # meters per tick
+
+    def pick_new_target(n):
+        tx, ty = random.choice(stations)
+        while abs(tx - n["x"]) < 1e-6 and abs(ty - n["y"]) < 1e-6 and len(stations) > 1:
+            tx, ty = random.choice(stations)
+        n["tx"], n["ty"] = tx, ty
+        # choose an axis ordering again
+        n["axis"] = "x" if random.random() < 0.5 else "y"
+
+    def propose_agv_move(n):
+        """
+        Correct corridor model:
+        - When moving along X: Y stays fixed on a corridor line (y_line), X moves continuously.
+        - When moving along Y: X stays fixed on a corridor line (x_line), Y moves continuously.
+        - Snap to intersection only when close enough to target line.
+        """
+        x = n["x"]; y = n["y"]
+        tx = n["tx"]; ty = n["ty"]
+
+        # reached waypoint (intersection)
+        if abs(x - tx) < 1e-6 and abs(y - ty) < 1e-6:
+            n["pause_steps"] = random.randint(args.pause_min, args.pause_max) // max(1, dt)
+            pick_new_target(n)
+            return (x, y)
+
+        # Decide if we should switch axis (at an intersection / after reaching line)
+        # Semi-predictable: sometimes swap axis priority
+        if random.random() < args.agv_turn_prob:
+            n["axis"] = "y" if n["axis"] == "x" else "x"
+
+        # Move along the chosen axis
+        if n["axis"] == "x" and abs(x - tx) > 1e-6:
+            # keep y on its corridor line
+            y = nearest_line(y, y_lines)
+            # move x continuously towards tx
+            if x < tx:
+                x = clamp(x + step, 0.0, W)
+                if x > tx: x = tx
+            else:
+                x = clamp(x - step, 0.0, W)
+                if x < tx: x = tx
+            # when close to target x line, snap exactly
+            if abs(x - tx) < 0.5:
+                x = tx
+            return (x, y)
+
+        if n["axis"] == "y" and abs(y - ty) > 1e-6:
+            # keep x on its corridor line
+            x = nearest_line(x, x_lines)
+            # move y continuously towards ty
+            if y < ty:
+                y = clamp(y + step, 0.0, H)
+                if y > ty: y = ty
+            else:
+                y = clamp(y - step, 0.0, H)
+                if y < ty: y = ty
+            if abs(y - ty) < 0.5:
+                y = ty
+            return (x, y)
+
+        # If chosen axis already aligned, move along the other axis
+        if abs(x - tx) > 1e-6:
+            n["axis"] = "x"
+        elif abs(y - ty) > 1e-6:
+            n["axis"] = "y"
+        return (x, y)
+
+    # -----------------------------
+    # Simulation loop (no overlap + fixed preserved)
+    # -----------------------------
+    with open(args.out, "w") as f:
+        t = 0
+        while t <= T:
+            for mid in range(0, N):
+                n = nodes[mid]
+                f.write(fmt_line(mid, t, n["x"], n["y"]))
+
+            if t == T:
+                break
+
+            # Reserve sink + fixed positions (cannot be overwritten)
+            occupied_next = []
+            for mid in range(0, N):
+                if nodes[mid]["type"] in ("sink", "fixed"):
+                    occupied_next.append((nodes[mid]["x"], nodes[mid]["y"]))
+
+            # Update AGVs with strict no-overlap
+            agv_list = list(agv_ids)
+            random.shuffle(agv_list)
+
+            for mid in agv_list:
+                n = nodes[mid]
+
+                if n["pause_steps"] > 0:
+                    n["pause_steps"] -= 1
+                    occupied_next.append((n["x"], n["y"]))
+                    continue
+
+                nx, ny = propose_agv_move(n)
+
+                # If collision -> try a few alternatives, else wait
+                if not is_free(nx, ny, occupied_next, min_dist2):
+                    ox, oy = n["x"], n["y"]
+                    moved = False
+                    for _ in range(8):
+                        # try flipping axis / changing target sometimes
+                        if random.random() < 0.3:
+                            n["axis"] = "y" if n["axis"] == "x" else "x"
+                        if random.random() < 0.2:
+                            pick_new_target(n)
+                        tx, ty = propose_agv_move(n)
+                        if is_free(tx, ty, occupied_next, min_dist2):
+                            nx, ny = tx, ty
+                            moved = True
+                            break
+                    if not moved:
+                        nx, ny = ox, oy
+
+                n["x"], n["y"] = nx, ny
+                occupied_next.append((nx, ny))
+
+            t += dt
+
+    print("[OK] Generated:", args.out)
+    print("  Cooja motes: 1..%d, sink=%d at (%.2f, %.2f) %s" % (N, args.sink_id, sx, sy, args.sink_pos))
+    print("  Fixed=%d (65%%), AGV=%d (35%%)" % (n_fixed, n_agv))
+    print("  AGV speed=%.2f m/s, pause=%d..%d s, lane_lines=%d" %
+          (args.agv_speed, args.pause_min, args.pause_max, args.lane_lines))
+    print("  MIN_DIST=%.2f m" % (args.min_dist))
+
+if __name__ == "__main__":
+    main()
+

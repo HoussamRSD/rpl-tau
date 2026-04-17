@@ -1,0 +1,20 @@
+Directory: e:\3emeAnneeEMP\PFE\Implémentation\Results\mRPL\20smartCity
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 13661, Received: 9394 -> PDR: 68.77%
+  Avg Latency: 43.24 ms
+  NPC (Parent Changes): 1
+  Total Overhead: 523 (DIO: 10, DAO: 138, DIS: 375)
+  Avg Energy/Node: 203569.56 mJ
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 68.77% ± 0.00
+Average Latency        : 43.24 ms ± 0.00
+Average NPC            : 1.0 ± 0.0
+Average Control Ovhd   : 523.0 ± 0.0 (DIO: 10.0, DAO: 138.0, DIS: 375.0)
+Average Energy/Node    : 203569.56 mJ ± 0.00

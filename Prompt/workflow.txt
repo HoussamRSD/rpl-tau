@@ -1,0 +1,8 @@
+voici comment j'execute:
+1. J'ai une machine virtuel sur vmware qui contient contiki et cooja.
+2. Je copie le dossier rpl de user\contiki\core\net et le project-conf.h d'apres user\contiki\examples\ipv6\rpl-collect  vers le dossier @contextScopeItemMention 
+3. je porte des modefication
+4. et puis je recopie les deux: rpl et project-conf.h vers leurs propre emplacement dans le dosier contiki de la vm
+5. je supprime les ficher .z1 dans rpl-collect 
+6. j'execute la commande : bash RUN_REPEATED pour une simulation no-gui
+7. quand la simulation termine je recupere les logs et je les copie dans le urs emplacement pour executer le script @contextScopeItemMention pour evaluer les resultas
