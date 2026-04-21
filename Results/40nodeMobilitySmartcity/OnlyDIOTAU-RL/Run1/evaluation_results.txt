@@ -1,0 +1,85 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\40nodeMobilitySmartcity\OnlyDIOTAU-RL\Run1
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 2300, Received: 2281 -> PDR: 99.17%
+  Avg Latency: 15.83 ms
+  NPC (Parent Changes): 57
+  Total Overhead: 2465 (DIO: 1875, DAO: 571, DIS: 19)
+  Avg Energy/Node: 203852.18 mJ
+  [RL] Updates: 27963  Decisions: 74599
+  [RL] LAYER1: STAY=73342 SWITCH=1257
+  [RL] QL Overrides: proactive_switch=0  protective_stay=410  override_rate=0.5%
+  [RL] QL Uncertain: 65843  Bootstrap skips: 8345
+  [RL] Ruptures: 0  Panic triggers: 0
+  [RL] Avg Reward: 49.21  (ETX component: -0.02  Stability bonus: 49.23)
+  [RL] Avg Delta-Tau: -158.3
+  [RL] State visits: URGENCY=0.0%  MINOR=99.3%  MAJOR=0.7%
+  [RL] Final Q-Table (update #717):
+         URGENCY : STAY=  +0  SWITCH=  +0  => STAY preferred
+         MINOR   : STAY=+337  SWITCH=  +0  => STAY preferred
+         MAJOR   : STAY=  +0  SWITCH=  +0  => STAY preferred
+  [RL] Q-Table total drift (first->last): 337
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 99.17% ± 0.00
+Average Latency        : 15.83 ms ± 0.00
+Average NPC            : 57.0 ± 0.0
+Average Control Ovhd   : 2465.0 ± 0.0 (DIO: 1875.0, DAO: 571.0, DIS: 19.0)
+Average Energy/Node    : 203852.18 mJ ± 0.00
+
+=== Q-LEARNING SUPERVISOR METRICS (TOPO 1) ===
+Avg QL Override Rate   : 0.5% ± 0.0
+  Proactive SWITCHes   : 0.0 ± 0.0
+  Protective STAYs     : 410.0 ± 0.0
+Avg Reward/cycle       : 49.21 ± 0.00
+  (positive = agent improving, near +50 = fully stable links)
+Rupture Events         : 0.0 ± 0.0
+Panic Monitor Triggers : 0.0 ± 0.0
+Avg Delta-Tau          : -158.3
+  (positive = agent consistently sees better candidates)
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 2301, Received: 2057 -> PDR: 89.40%
+  Avg Latency: 34.07 ms
+  NPC (Parent Changes): 12792
+  Total Overhead: 19392 (DIO: 3981, DAO: 15393, DIS: 18)
+  Avg Energy/Node: 204280.43 mJ
+  [RL] Updates: 27713  Decisions: 212186
+  [RL] LAYER1: STAY=200675 SWITCH=11511
+  [RL] QL Overrides: proactive_switch=9695  protective_stay=6771  override_rate=7.8%
+  [RL] QL Uncertain: 188365  Bootstrap skips: 7354
+  [RL] Ruptures: 235  Panic triggers: 1
+  [RL] Avg Reward: 46.41  (ETX component: 0.07  Stability bonus: 46.34)
+  [RL] Avg Delta-Tau: -161.4
+  [RL] State visits: URGENCY=0.0%  MINOR=98.1%  MAJOR=1.9%
+  [RL] Final Q-Table (update #717):
+         URGENCY : STAY=  +0  SWITCH=  +0  => STAY preferred
+         MINOR   : STAY=+337  SWITCH= -13  => STAY preferred
+         MAJOR   : STAY=  +0  SWITCH=  -5  => STAY preferred
+  [RL] Q-Table total drift (first->last): 355
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 89.40% ± 0.00
+Average Latency        : 34.07 ms ± 0.00
+Average NPC            : 12792.0 ± 0.0
+Average Control Ovhd   : 19392.0 ± 0.0 (DIO: 3981.0, DAO: 15393.0, DIS: 18.0)
+Average Energy/Node    : 204280.43 mJ ± 0.00
+
+=== Q-LEARNING SUPERVISOR METRICS (TOPO 2) ===
+Avg QL Override Rate   : 7.8% ± 0.0
+  Proactive SWITCHes   : 9695.0 ± 0.0
+  Protective STAYs     : 6771.0 ± 0.0
+Avg Reward/cycle       : 46.41 ± 0.00
+  (positive = agent improving, near +50 = fully stable links)
+Rupture Events         : 235.0 ± 0.0
+Panic Monitor Triggers : 1.0 ± 0.0
+Avg Delta-Tau          : -161.4
+  (positive = agent consistently sees better candidates)

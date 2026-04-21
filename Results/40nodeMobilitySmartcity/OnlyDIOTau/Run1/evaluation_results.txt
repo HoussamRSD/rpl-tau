@@ -1,0 +1,39 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\40nodeMobilitySmartcity\OnlyDIOTau\Run1
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 2301, Received: 2267 -> PDR: 98.52%
+  Avg Latency: 17.08 ms
+  NPC (Parent Changes): 76
+  Total Overhead: 2451 (DIO: 1880, DAO: 552, DIS: 19)
+  Avg Energy/Node: 203750.39 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 98.52% ± 0.00
+Average Latency        : 17.08 ms ± 0.00
+Average NPC            : 76.0 ± 0.0
+Average Control Ovhd   : 2451.0 ± 0.0 (DIO: 1880.0, DAO: 552.0, DIS: 19.0)
+Average Energy/Node    : 203750.39 mJ ± 0.00
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 2300, Received: 2049 -> PDR: 89.09%
+  Avg Latency: 25.23 ms
+  NPC (Parent Changes): 765
+  Total Overhead: 6654 (DIO: 4017, DAO: 2619, DIS: 18)
+  Avg Energy/Node: 203937.53 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 89.09% ± 0.00
+Average Latency        : 25.23 ms ± 0.00
+Average NPC            : 765.0 ± 0.0
+Average Control Ovhd   : 6654.0 ± 0.0 (DIO: 4017.0, DAO: 2619.0, DIS: 18.0)
+Average Energy/Node    : 203937.53 mJ ± 0.00

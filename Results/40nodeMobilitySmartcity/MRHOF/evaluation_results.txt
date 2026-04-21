@@ -1,0 +1,37 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\40nodeMobilitySmartcity\MRHOF
+Log files found: 2
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 2299, Received: 2263 -> PDR: 98.43%
+  Avg Latency: 16.33 ms
+  NPC (Parent Changes): 44
+  Total Overhead: 1975 (DIO: 1954, DAO: 2, DIS: 19)
+  Avg Energy/Node: 0.00 mJ
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 98.43% ± 0.00
+Average Latency        : 16.33 ms ± 0.00
+Average NPC            : 44.0 ± 0.0
+Average Control Ovhd   : 1975.0 ± 0.0 (DIO: 1954.0, DAO: 2.0, DIS: 19.0)
+Average Energy/Node    : 0.00 mJ ± 0.00
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 2298, Received: 2152 -> PDR: 93.65%
+  Avg Latency: 22.54 ms
+  NPC (Parent Changes): 145
+  Total Overhead: 2635 (DIO: 2587, DAO: 30, DIS: 18)
+  Avg Energy/Node: 0.00 mJ
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 93.65% ± 0.00
+Average Latency        : 22.54 ms ± 0.00
+Average NPC            : 145.0 ± 0.0
+Average Control Ovhd   : 2635.0 ± 0.0 (DIO: 2587.0, DAO: 30.0, DIS: 18.0)
+Average Energy/Node    : 0.00 mJ ± 0.00

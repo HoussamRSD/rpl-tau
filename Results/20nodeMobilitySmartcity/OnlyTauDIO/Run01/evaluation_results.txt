@@ -1,0 +1,20 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\20nodeMobilitySmartcity\RunDIO1
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1121, Received: 1096 -> PDR: 97.77%
+  Avg Latency: 16.38 ms
+  NPC (Parent Changes): 26
+  Total Overhead: 1206 (DIO: 926, DAO: 271, DIS: 9)
+  Avg Energy/Node: 203683.84 mJ
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 97.77% ± 0.00
+Average Latency        : 16.38 ms ± 0.00
+Average NPC            : 26.0 ± 0.0
+Average Control Ovhd   : 1206.0 ± 0.0 (DIO: 926.0, DAO: 271.0, DIS: 9.0)
+Average Energy/Node    : 203683.84 mJ ± 0.00

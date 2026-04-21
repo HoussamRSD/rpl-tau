@@ -1,0 +1,227 @@
+A la récéption d'un message DIO à partir d'un parent candidats contenant un Tau :
+
+1. On calcule Tau_cand apartenant à [0,1000] avec l'équation bien définit dans le code.
+
+2. maintenant on veut choisir un nouvaux parent;
+
+On applique un algorithme RL:
+
+Les etats : 10
+
+Ils represente la descritisation de Tau_cand du parent actuel en 10 etat par plage
+
+S1 = Tau_cand dans [0,100[ ......
+
+Ce Tau_cand represente le Tau_cand du parent actuel.
+
+
+
+Les action : meme chose 10 action
+
+Ils represente la descritisation de Tau_cand des parent candidats en 10 etat par plage
+
+Le but est de choisir une action c-à-d une plage par exemple on a choisit : A4 = [300,400[
+
+donc on va choisir un parent candidat qui a un Tau_cand apartennat à [300,400[
+
+dans cette plage de l'action : il se peut qu'il existe plusieurs parent candidats p1, p2, p3....
+
+tous ces parent ont des Tau_cand dans [300,400[
+
+mais dans le cas ou cette plage contient pas de parent on introduit un bit : ActiveAction qui sera mis à 0 pour nous dire que cette action ne contient aucun parent a choisir, donc le score de cette Action (colonne) sera freezed (pausé mais pas remis à 0) pour garder l'apprentissage en cas un autre parent candidats aura un Tau_cand dans cette action et revient de nouvaux active.
+
+Le reward et donné avec le temps de stbilité de parent; d'abord la mise à jours de la table Q sera lors de next DIO parent selection qaund on se déconecte et réconecte avec un autre parent , le temps de connexion avec le parent precedent vas etre une reward soit bon soit pas pour la Q-value précedente.
+
+A la reception d'un DIO :
+
+CAS1: si le DIO est reçu de meme parent actuel
+
+- calculer le nouvaux Tau_cand
+
+- calculer l'état S de ce Tau_cand (il appartient à quelle plage?)
+
+Si ( On a la meme etat que la precedente) : on fait rien
+
+Sinon :
+
+- A base de la tables des parent condidats, on calcule les action Active (contennat au moins un parent)
+
+- On choisit la meilleur action A en se basant sur las Q-value / exploration epsilon-greedy (grand au début et puis à chaque fois elle diminue)
+
+- Récupérer le temps total de connexion avec le parent acteul
+
+- calculer le reward de cycle précedent et mettre a jour la Q-value précedente.
+
+- choisir le parent dans l'action choisit qui a le meilleut Delta_RSSI(t) tel que :
+
+Delta_RSSI(t) = la différence entre le RSSI à l'instant t de la reception de DIO precedent de ce parent candidat et l'instat t de la rception de DIO actuel qui déclanche cette operation actuel.
+
+
+
+CAS2 : si le DIO est reçu de nimprote quel autre voisin (soit un parent candidat qui existe ou bien un nouvau)
+
+- calculer le nouvaux Tau_cand
+
+- calculer l'état S de ce Tau_cand (il appartient à quelle plage?)
+
+- A base de la tables des parent condidats, on calcule les action Active (contennat au moins un parent)
+
+- On choisit la meilleur action A en se basant sur las Q-value / exploration epsilon-greedy (grand au début et puis à chaque fois elle diminue)
+
+- Récupérer le temps total de connexion avec le parent acteul
+
+- calculer le reward de cycle précedent et mettre a jour la Q-value précedente.
+
+- choisir le parent dans l'action choisit qui a le meilleut Delta_RSSI(t) tel que :
+
+Delta_RSSI(t) = la différence entre le RSSI à l'instant t de la reception de DIO precedent de ce parent candidat et l'instat t de la rception de DIO actuel qui déclanche cette operation actuel.
+
+Remarque Générale :
+
+- Le parent actuel doit etre periodiquement verifié par RSSI, s'il le signl a devenu trés weak il faut chnager imediatement le parent.
+
+- A coté de la table des parents candidats on doit sauveguarder aussi pour chaque parent candidat :
+
+1. L'instant de réception de son DIO et le RSSI pour calculer après Delta_RSSI(t) et aussi pour detecter si ce parent a été échoué si aprés une période pas de DIO reçu de son part.
+
+2. L'instant de basculement vers le nouvaux parent pour calculer le reward basé sur la stabilité.
+
+
+
+voici l'algorithme : ALGORITHME : Réception_DIO(Voisin_V, DIO_reçu)
+
+
+
+1. Calculer le nouveau Tau_cand pour Voisin_V.
+
+2. Mettre à jour la Table_Candidats pour Voisin_V :
+
+     - Delta_RSSI(t) = DIO_reçu.RSSI - Voisin_V.dernier_rssi
+
+     - Voisin_V.dernier_rssi = DIO_reçu.RSSI
+
+     - Voisin_V.tau_cand = Nouveau Tau_cand
+
+     - Voisin_V.time_last_dio = Temps_Actuel()
+
+
+
+3. Déterminer le Contexte de Déclenchement :
+
+   SI (Voisin_V == Parent_Actuel) ALORS
+
+       Calculer Nouvel_Etat_S = Plage(Tau_cand_actuel)
+
+       SI (Nouvel_Etat_S == Parent_Actuel.etat_S) ALORS
+
+           Terminer (Pas de changement d'état, on ne fait rien).
+
+       SINON
+
+           Parent_Actuel.etat_S = Nouvel_Etat_S
+
+           Déclencher_Processus_RL()
+
+       FIN SI
+
+   SINON // CAS 2 : DIO d'un autre voisin
+
+       // Note : Voir suggestion plus bas sur le déclenchement abusif
+
+       Déclencher_Processus_RL()
+
+   FIN SI
+
+
+
+-------------------------------------------------------------------------
+
+PROCÉDURE : Déclencher_Processus_RL()
+
+
+
+1. Construction du Masque d'Actions :
+
+   Initialiser ActiveAction[10] = {0, 0, ..., 0}
+
+   POUR CHAQUE candidat C DANS Table_Candidats :
+
+       SI (Temps_Actuel() - C.time_last_dio < TIMEOUT) ALORS
+
+           Plage_A = Trouver_Plage(C.tau_cand)
+
+           ActiveAction[Plage_A] = 1
+
+       FIN SI
+
+   FIN POUR
+
+
+
+2. Prise de Décision (Epsilon-Greedy) :
+
+   Tirer un nombre aléatoire X entre 0 et 100
+
+   SI (X < Epsilon) ALORS
+
+       Action_Choisie = Action aléatoire parmi celles où ActiveAction == 1
+
+   SINON
+
+       Action_Choisie = Action A (où ActiveAction == 1) maximisant Q_Table[Parent_Actuel.etat_S][A]
+
+   FIN SI
+
+
+
+3. Sélection du Parent Physique (Tie-Break) :
+
+   Liste_Filtree = Tous les candidats dont le Tau_cand appartient à la plage de Action_Choisie.
+
+   Nouveau_Parent = Candidat de Liste_Filtree ayant le plus grand Delta_RSSI(t).
+
+
+
+4. Mise à jour de la Q-Table (Apprentissage) :
+
+   SI (Nouveau_Parent != Parent_Actuel) ALORS
+
+       Temps_Connexion = Temps_Actuel() - Parent_Actuel.time_attachment
+
+       Reward = Calculer_Reward(Temps_Connexion)
+
+       
+
+       // Mise à jour de la décision prise au cycle PRÉCÉDENT
+
+       Etat_Precedent = Parent_Actuel.etat_S_lors_du_dernier_choix
+
+       Action_Precedente = Plage(Parent_Actuel.tau_cand_lors_du_dernier_choix)
+
+       
+
+       Q_Table[Etat_Precedent][Action_Precedente] += Alpha * (Reward - Q_Table[Etat_Precedent][Action_Precedente])
+
+       
+
+       // Basculement effectif
+
+       Parent_Actuel = Nouveau_Parent
+
+       Parent_Actuel.time_attachment = Temps_Actuel()
+
+   FIN SI
+
+
+
+
+
+voici des remarque :
+
+1 :  Le CAS 2 ne devrait mettre à jour que la table des candidats (pour le Delta_RSSI). Le processus décisionnel RL ne devrait se déclencher que lors du CAS 1 (changement d'état du parent actuel) ou via un ctimer périodique (le Panic Monitor); concernant ce timer il faut a chaque fois verifier le RSSI et ETX est ce qu' ils sont bon, si c'est le cas ce n'est pas la peine de declancher tout le processus de RL. ( Il ya un mecanisme dans l'implementation actuel qui fait ca juste adapter le )
+
+2 : Fixer une limite maximale au reward. Exemple : Reward = MIN(Temps_Connexion / CONSTANTE, MAX_REWARD_VALUE). Ainsi, toute connexion stable au-delà de X minutes obtient la note maximale, sans faire exploser les mathématiques.
+
+3 : Ne fais jamais descendre ton $\epsilon$ jusqu'à zéro. Fixe un plancher (par exemple $\epsilon = 10\%$). Le nœud doit toujours garder une petite part d'exploration pour pouvoir s'adapter si la topologie physique du réseau change radicalement au cours du temps.
+
+4 : Concernant DIO_reçu.RSSI : le voisin n'écrit pas le RSSI à l'intérieur du message DIO qu'il envoie mais à l'arrivé de DIO le noeud mesure le RSSI.

@@ -1,0 +1,404 @@
+Random seed: 350000
+831983:37:Rime started with address 193.12.0.0.0.0.0.37
+843002:37:MAC c1:0c:00:00:00:00:00:25 Contiki 3.x started. Node id is set to 37.
+851641:37:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+864228:37:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0025
+870616:37:Starting 'UDP client process' 'collect common process'
+874398:37:UDP client process started
+879945:37:Client IPv6 addresses: aaaa::c30c:0:0:25
+882872:37:fe80::c30c:0:0:25
+886320:34:Rime started with address 193.12.0.0.0.0.0.34
+891269:37:Created a connection with the server :: local/remote port 8775/5688
+897339:34:MAC c1:0c:00:00:00:00:00:22 Contiki 3.x started. Node id is set to 34.
+905978:34:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+918565:34:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0022
+924086:22:Rime started with address 193.12.0.0.0.0.0.22
+924953:34:Starting 'UDP client process' 'collect common process'
+928735:34:UDP client process started
+934282:34:Client IPv6 addresses: aaaa::c30c:0:0:22
+935104:22:MAC c1:0c:00:00:00:00:00:16 Contiki 3.x started. Node id is set to 22.
+937209:34:fe80::c30c:0:0:22
+943743:22:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+945606:34:Created a connection with the server :: local/remote port 8775/5688
+956331:22:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0016
+962719:22:Starting 'UDP client process' 'collect common process'
+966501:22:UDP client process started
+972048:22:Client IPv6 addresses: aaaa::c30c:0:0:16
+972137:38:Rime started with address 193.12.0.0.0.0.0.38
+974975:22:fe80::c30c:0:0:16
+983156:38:MAC c1:0c:00:00:00:00:00:26 Contiki 3.x started. Node id is set to 38.
+983373:22:Created a connection with the server :: local/remote port 8775/5688
+991795:38:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1004382:38:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0026
+1010770:38:Starting 'UDP client process' 'collect common process'
+1011155:36:Rime started with address 193.12.0.0.0.0.0.36
+1014552:38:UDP client process started
+1020099:38:Client IPv6 addresses: aaaa::c30c:0:0:26
+1022174:36:MAC c1:0c:00:00:00:00:00:24 Contiki 3.x started. Node id is set to 36.
+1023026:38:fe80::c30c:0:0:26
+1030106:17:Rime started with address 193.12.0.0.0.0.0.17
+1030813:36:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1031423:38:Created a connection with the server :: local/remote port 8775/5688
+1035546:11:Rime started with address 193.12.0.0.0.0.0.11
+1041124:17:MAC c1:0c:00:00:00:00:00:11 Contiki 3.x started. Node id is set to 17.
+1043400:36:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0024
+1046532:11:MAC c1:0c:00:00:00:00:00:0b Contiki 3.x started. Node id is set to 11.
+1049763:17:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1049788:36:Starting 'UDP client process' 'collect common process'
+1053570:36:UDP client process started
+1055171:11:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1059117:36:Client IPv6 addresses: aaaa::c30c:0:0:24
+1061928:4:Rime started with address 193.12.0.0.0.0.0.4
+1062044:36:fe80::c30c:0:0:24
+1062351:17:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0011
+1067719:11:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:000b
+1068739:17:Starting 'UDP client process' 'collect common process'
+1069955:14:Rime started with address 193.12.0.0.0.0.0.14
+1070441:36:Created a connection with the server :: local/remote port 8775/5688
+1072521:17:UDP client process started
+1072694:4:MAC c1:0c:00:00:00:00:00:04 Contiki 3.x started. Node id is set to 4.
+1074152:11:Starting 'UDP client process' 'collect common process'
+1077934:11:UDP client process started
+1078068:17:Client IPv6 addresses: aaaa::c30c:0:0:11
+1080941:14:MAC c1:0c:00:00:00:00:00:0e Contiki 3.x started. Node id is set to 14.
+1080995:17:fe80::c30c:0:0:11
+1081283:4:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1083301:11:Client IPv6 addresses: aaaa::c30c:0:0:b
+1085992:11:fe80::c30c:0:0:b
+1089393:17:Created a connection with the server :: local/remote port 8775/5688
+1089580:14:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1093818:4:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0004
+1094369:11:Created a connection with the server :: local/remote port 8775/5688
+1100252:4:Starting 'UDP client process' 'collect common process'
+1102128:14:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:000e
+1104034:4:UDP client process started
+1108561:14:Starting 'UDP client process' 'collect common process'
+1109399:4:Client IPv6 addresses: aaaa::c30c:0:0:4
+1112089:4:fe80::c30c:0:0:4
+1112343:14:UDP client process started
+1117710:14:Client IPv6 addresses: aaaa::c30c:0:0:e
+1120401:14:fe80::c30c:0:0:e
+1120468:4:Created a connection with the server :: local/remote port 8775/5688
+1128778:14:Created a connection with the server :: local/remote port 8775/5688
+1136882:20:Rime started with address 193.12.0.0.0.0.0.20
+1147900:20:MAC c1:0c:00:00:00:00:00:14 Contiki 3.x started. Node id is set to 20.
+1156539:20:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1169127:20:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0014
+1175515:20:Starting 'UDP client process' 'collect common process'
+1179297:20:UDP client process started
+1184844:20:Client IPv6 addresses: aaaa::c30c:0:0:14
+1186736:1:Rime started with address 193.12.0.0.0.0.0.1
+1187771:20:fe80::c30c:0:0:14
+1196169:20:Created a connection with the server :: local/remote port 8775/5688
+1197502:1:MAC c1:0c:00:00:00:00:00:01 Contiki 3.x started. Node id is set to 1.
+1206091:1:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1218627:1:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0001
+1225060:1:Starting 'UDP server process' 'collect common process'
+1226401:1:I am sink!
+1228818:1:UDP server started
+1233010:1:created a new RPL dag
+1238405:1:Server IPv6 addresses: aaaa::c30c:0:0:1
+1239701:1:aaaa::1
+1242391:1:fe80::c30c:0:0:1
+1252168:1:Created a server connection with remote address :: local/remote port 5688/8775
+1255111:8:Rime started with address 193.12.0.0.0.0.0.8
+1255156:15:Rime started with address 193.12.0.0.0.0.0.15
+1258597:40:Rime started with address 193.12.0.0.0.0.0.40
+1264148:6:Rime started with address 193.12.0.0.0.0.0.6
+1265877:8:MAC c1:0c:00:00:00:00:00:08 Contiki 3.x started. Node id is set to 8.
+1266142:15:MAC c1:0c:00:00:00:00:00:0f Contiki 3.x started. Node id is set to 15.
+1269615:40:MAC c1:0c:00:00:00:00:00:28 Contiki 3.x started. Node id is set to 40.
+1274466:8:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1274781:15:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1274914:6:MAC c1:0c:00:00:00:00:00:06 Contiki 3.x started. Node id is set to 6.
+1278254:40:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1279896:23:Rime started with address 193.12.0.0.0.0.0.23
+1283503:6:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1287001:8:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0008
+1287329:15:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:000f
+1290842:40:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0028
+1290914:23:MAC c1:0c:00:00:00:00:00:17 Contiki 3.x started. Node id is set to 23.
+1293435:8:Starting 'UDP client process' 'collect common process'
+1293762:15:Starting 'UDP client process' 'collect common process'
+1296038:6:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0006
+1297217:8:UDP client process started
+1297230:40:Starting 'UDP client process' 'collect common process'
+1297544:15:UDP client process started
+1299553:23:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1301012:40:UDP client process started
+1302472:6:Starting 'UDP client process' 'collect common process'
+1302582:8:Client IPv6 addresses: aaaa::c30c:0:0:8
+1302911:15:Client IPv6 addresses: aaaa::c30c:0:0:f
+1305272:8:fe80::c30c:0:0:8
+1305602:15:fe80::c30c:0:0:f
+1306254:6:UDP client process started
+1306559:40:Client IPv6 addresses: aaaa::c30c:0:0:28
+1309486:40:fe80::c30c:0:0:28
+1311619:6:Client IPv6 addresses: aaaa::c30c:0:0:6
+1312141:23:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0017
+1313651:8:Created a connection with the server :: local/remote port 8775/5688
+1313979:15:Created a connection with the server :: local/remote port 8775/5688
+1314309:6:fe80::c30c:0:0:6
+1317884:40:Created a connection with the server :: local/remote port 8775/5688
+1318529:23:Starting 'UDP client process' 'collect common process'
+1322311:23:UDP client process started
+1322688:6:Created a connection with the server :: local/remote port 8775/5688
+1323868:39:Rime started with address 193.12.0.0.0.0.0.39
+1327858:23:Client IPv6 addresses: aaaa::c30c:0:0:17
+1330785:23:fe80::c30c:0:0:17
+1334887:39:MAC c1:0c:00:00:00:00:00:27 Contiki 3.x started. Node id is set to 39.
+1339183:23:Created a connection with the server :: local/remote port 8775/5688
+1343526:39:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1353414:32:Rime started with address 193.12.0.0.0.0.0.32
+1355592:5:Rime started with address 193.12.0.0.0.0.0.5
+1356113:39:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0027
+1362501:39:Starting 'UDP client process' 'collect common process'
+1364148:18:Rime started with address 193.12.0.0.0.0.0.18
+1364433:32:MAC c1:0c:00:00:00:00:00:20 Contiki 3.x started. Node id is set to 32.
+1366283:39:UDP client process started
+1366358:5:MAC c1:0c:00:00:00:00:00:05 Contiki 3.x started. Node id is set to 5.
+1371830:39:Client IPv6 addresses: aaaa::c30c:0:0:27
+1373072:32:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1374757:39:fe80::c30c:0:0:27
+1374947:5:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1375166:18:MAC c1:0c:00:00:00:00:00:12 Contiki 3.x started. Node id is set to 18.
+1383154:39:Created a connection with the server :: local/remote port 8775/5688
+1383805:18:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1385342:35:Rime started with address 193.12.0.0.0.0.0.35
+1385659:32:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0020
+1387482:5:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0005
+1392047:32:Starting 'UDP client process' 'collect common process'
+1393916:5:Starting 'UDP client process' 'collect common process'
+1395829:32:UDP client process started
+1396361:35:MAC c1:0c:00:00:00:00:00:23 Contiki 3.x started. Node id is set to 35.
+1396393:18:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0012
+1397558:25:Rime started with address 193.12.0.0.0.0.0.25
+1397698:5:UDP client process started
+1401376:32:Client IPv6 addresses: aaaa::c30c:0:0:20
+1402781:18:Starting 'UDP client process' 'collect common process'
+1403063:5:Client IPv6 addresses: aaaa::c30c:0:0:5
+1404303:32:fe80::c30c:0:0:20
+1405000:35:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1405753:5:fe80::c30c:0:0:5
+1406563:18:UDP client process started
+1408576:25:MAC c1:0c:00:00:00:00:00:19 Contiki 3.x started. Node id is set to 25.
+1412110:18:Client IPv6 addresses: aaaa::c30c:0:0:12
+1412700:32:Created a connection with the server :: local/remote port 8775/5688
+1414132:5:Created a connection with the server :: local/remote port 8775/5688
+1415037:18:fe80::c30c:0:0:12
+1417215:25:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1417587:35:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0023
+1423435:18:Created a connection with the server :: local/remote port 8775/5688
+1423975:35:Starting 'UDP client process' 'collect common process'
+1427757:35:UDP client process started
+1429803:25:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0019
+1433304:35:Client IPv6 addresses: aaaa::c30c:0:0:23
+1436191:25:Starting 'UDP client process' 'collect common process'
+1436231:35:fe80::c30c:0:0:23
+1439973:25:UDP client process started
+1444628:35:Created a connection with the server :: local/remote port 8775/5688
+1445520:25:Client IPv6 addresses: aaaa::c30c:0:0:19
+1445965:10:Rime started with address 193.12.0.0.0.0.0.10
+1448447:25:fe80::c30c:0:0:19
+1456845:25:Created a connection with the server :: local/remote port 8775/5688
+1456951:10:MAC c1:0c:00:00:00:00:00:0a Contiki 3.x started. Node id is set to 10.
+1459395:7:Rime started with address 193.12.0.0.0.0.0.7
+1465590:10:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1470161:7:MAC c1:0c:00:00:00:00:00:07 Contiki 3.x started. Node id is set to 7.
+1478138:10:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:000a
+1478750:7:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1484571:10:Starting 'UDP client process' 'collect common process'
+1487745:16:Rime started with address 193.12.0.0.0.0.0.16
+1488353:10:UDP client process started
+1491285:7:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0007
+1493720:10:Client IPv6 addresses: aaaa::c30c:0:0:a
+1496411:10:fe80::c30c:0:0:a
+1497719:7:Starting 'UDP client process' 'collect common process'
+1498763:16:MAC c1:0c:00:00:00:00:00:10 Contiki 3.x started. Node id is set to 16.
+1501501:7:UDP client process started
+1504788:10:Created a connection with the server :: local/remote port 8775/5688
+1506866:7:Client IPv6 addresses: aaaa::c30c:0:0:7
+1507402:16:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1509556:7:fe80::c30c:0:0:7
+1516871:2:Rime started with address 193.12.0.0.0.0.0.2
+1517935:7:Created a connection with the server :: local/remote port 8775/5688
+1519990:16:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0010
+1526212:26:Rime started with address 193.12.0.0.0.0.0.26
+1526378:16:Starting 'UDP client process' 'collect common process'
+1527637:2:MAC c1:0c:00:00:00:00:00:02 Contiki 3.x started. Node id is set to 2.
+1530160:16:UDP client process started
+1533399:3:Rime started with address 193.12.0.0.0.0.0.3
+1535707:16:Client IPv6 addresses: aaaa::c30c:0:0:10
+1536226:2:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1537231:26:MAC c1:0c:00:00:00:00:00:1a Contiki 3.x started. Node id is set to 26.
+1538634:16:fe80::c30c:0:0:10
+1544165:3:MAC c1:0c:00:00:00:00:00:03 Contiki 3.x started. Node id is set to 3.
+1545870:26:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1547032:16:Created a connection with the server :: local/remote port 8775/5688
+1548761:2:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0002
+1552754:3:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1555195:2:Starting 'UDP client process' 'collect common process'
+1555231:33:Rime started with address 193.12.0.0.0.0.0.33
+1558459:26:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:001a
+1558977:2:UDP client process started
+1560280:29:Rime started with address 193.12.0.0.0.0.0.29
+1564342:2:Client IPv6 addresses: aaaa::c30c:0:0:2
+1564846:26:Starting 'UDP client process' 'collect common process'
+1565289:3:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0003
+1566250:33:MAC c1:0c:00:00:00:00:00:21 Contiki 3.x started. Node id is set to 33.
+1567032:2:fe80::c30c:0:0:2
+1568628:26:UDP client process started
+1571299:29:MAC c1:0c:00:00:00:00:00:1d Contiki 3.x started. Node id is set to 29.
+1571723:3:Starting 'UDP client process' 'collect common process'
+1574177:26:Client IPv6 addresses: aaaa::c30c:0:0:1a
+1574889:33:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1575411:2:Created a connection with the server :: local/remote port 8775/5688
+1575505:3:UDP client process started
+1577105:26:fe80::c30c:0:0:1a
+1579938:29:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1580870:3:Client IPv6 addresses: aaaa::c30c:0:0:3
+1583560:3:fe80::c30c:0:0:3
+1585499:26:Created a connection with the server :: local/remote port 8775/5688
+1587476:33:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0021
+1591939:3:Created a connection with the server :: local/remote port 8775/5688
+1592527:29:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:001d
+1593864:33:Starting 'UDP client process' 'collect common process'
+1597646:33:UDP client process started
+1598914:29:Starting 'UDP client process' 'collect common process'
+1602696:29:UDP client process started
+1603193:33:Client IPv6 addresses: aaaa::c30c:0:0:21
+1606120:33:fe80::c30c:0:0:21
+1608245:29:Client IPv6 addresses: aaaa::c30c:0:0:1d
+1610425:31:Rime started with address 193.12.0.0.0.0.0.31
+1611173:29:fe80::c30c:0:0:1d
+1614517:33:Created a connection with the server :: local/remote port 8775/5688
+1615866:9:Rime started with address 193.12.0.0.0.0.0.9
+1619567:29:Created a connection with the server :: local/remote port 8775/5688
+1621445:31:MAC c1:0c:00:00:00:00:00:1f Contiki 3.x started. Node id is set to 31.
+1626632:9:MAC c1:0c:00:00:00:00:00:09 Contiki 3.x started. Node id is set to 9.
+1630085:31:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1635221:9:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1642672:31:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:001f
+1642882:28:Rime started with address 193.12.0.0.0.0.0.28
+1647756:9:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0009
+1649059:31:Starting 'UDP client process' 'collect common process'
+1652841:31:UDP client process started
+1653901:28:MAC c1:0c:00:00:00:00:00:1c Contiki 3.x started. Node id is set to 28.
+1654190:9:Starting 'UDP client process' 'collect common process'
+1657972:9:UDP client process started
+1658390:31:Client IPv6 addresses: aaaa::c30c:0:0:1f
+1661318:31:fe80::c30c:0:0:1f
+1662540:28:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1663337:9:Client IPv6 addresses: aaaa::c30c:0:0:9
+1666027:9:fe80::c30c:0:0:9
+1666492:30:Rime started with address 193.12.0.0.0.0.0.30
+1669711:31:Created a connection with the server :: local/remote port 8775/5688
+1674406:9:Created a connection with the server :: local/remote port 8775/5688
+1675129:28:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:001c
+1676917:24:Rime started with address 193.12.0.0.0.0.0.24
+1677512:30:MAC c1:0c:00:00:00:00:00:1e Contiki 3.x started. Node id is set to 30.
+1681516:28:Starting 'UDP client process' 'collect common process'
+1685298:28:UDP client process started
+1686152:30:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1687935:24:MAC c1:0c:00:00:00:00:00:18 Contiki 3.x started. Node id is set to 24.
+1690847:28:Client IPv6 addresses: aaaa::c30c:0:0:1c
+1693775:28:fe80::c30c:0:0:1c
+1696574:24:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1698739:30:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:001e
+1702169:28:Created a connection with the server :: local/remote port 8775/5688
+1705126:30:Starting 'UDP client process' 'collect common process'
+1708908:30:UDP client process started
+1709162:24:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0018
+1714457:30:Client IPv6 addresses: aaaa::c30c:0:0:1e
+1715550:24:Starting 'UDP client process' 'collect common process'
+1717018:12:Rime started with address 193.12.0.0.0.0.0.12
+1717385:30:fe80::c30c:0:0:1e
+1719332:24:UDP client process started
+1724879:24:Client IPv6 addresses: aaaa::c30c:0:0:18
+1725778:30:Created a connection with the server :: local/remote port 8775/5688
+1727806:24:fe80::c30c:0:0:18
+1728004:12:MAC c1:0c:00:00:00:00:00:0c Contiki 3.x started. Node id is set to 12.
+1736204:24:Created a connection with the server :: local/remote port 8775/5688
+1736643:12:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1749191:12:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:000c
+1755624:12:Starting 'UDP client process' 'collect common process'
+1759406:12:UDP client process started
+1764773:12:Client IPv6 addresses: aaaa::c30c:0:0:c
+1767464:12:fe80::c30c:0:0:c
+1775638:27:Rime started with address 193.12.0.0.0.0.0.27
+1775841:12:Created a connection with the server :: local/remote port 8775/5688
+1785424:21:Rime started with address 193.12.0.0.0.0.0.21
+1786657:27:MAC c1:0c:00:00:00:00:00:1b Contiki 3.x started. Node id is set to 27.
+1795296:27:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1796442:21:MAC c1:0c:00:00:00:00:00:15 Contiki 3.x started. Node id is set to 21.
+1805081:21:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1807885:27:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:001b
+1813580:19:Rime started with address 193.12.0.0.0.0.0.19
+1814272:27:Starting 'UDP client process' 'collect common process'
+1817058:13:Rime started with address 193.12.0.0.0.0.0.13
+1817669:21:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0015
+1818054:27:UDP client process started
+1823603:27:Client IPv6 addresses: aaaa::c30c:0:0:1b
+1824057:21:Starting 'UDP client process' 'collect common process'
+1824598:19:MAC c1:0c:00:00:00:00:00:13 Contiki 3.x started. Node id is set to 19.
+1826531:27:fe80::c30c:0:0:1b
+1827839:21:UDP client process started
+1828044:13:MAC c1:0c:00:00:00:00:00:0d Contiki 3.x started. Node id is set to 13.
+1833237:19:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1833386:21:Client IPv6 addresses: aaaa::c30c:0:0:15
+1834925:27:Created a connection with the server :: local/remote port 8775/5688
+1836313:21:fe80::c30c:0:0:15
+1836683:13:CSMA ContikiMAC, channel check rate 8 Hz, radio channel 26
+1844711:21:Created a connection with the server :: local/remote port 8775/5688
+1845825:19:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:0013
+1849231:13:Tentative link-local IPv6 address fe80:0000:0000:0000:c30c:0000:0000:000d
+1851426:37:Sending a DIS to 
+1852213:19:Starting 'UDP client process' 'collect common process'
+1855664:13:Starting 'UDP client process' 'collect common process'
+1855995:19:UDP client process started
+1859446:13:UDP client process started
+1861542:19:Client IPv6 addresses: aaaa::c30c:0:0:13
+1864469:19:fe80::c30c:0:0:13
+1864813:13:Client IPv6 addresses: aaaa::c30c:0:0:d
+1867504:13:fe80::c30c:0:0:d
+1872867:19:Created a connection with the server :: local/remote port 8775/5688
+1875881:13:Created a connection with the server :: local/remote port 8775/5688
+1905763:34:Sending a DIS to 
+1943889:22:Sending a DIS to 
+1991939:38:Sending a DIS to 
+2030853:36:Sending a DIS to 
+2049550:17:Sending a DIS to 
+2054990:11:Sending a DIS to 
+2081942:4:Sending a DIS to 
+2089808:14:Sending a DIS to 
+2156686:20:Sending a DIS to 
+2274929:15:Sending a DIS to 
+2275126:8:Sending a DIS to 
+2278400:40:Sending a DIS to 
+2284102:6:Sending a DIS to 
+2299699:23:Sending a DIS to 
+2343751:39:Sending a DIS to 
+2373217:32:Sending a DIS to 
+2375471:5:Sending a DIS to 
+2383592:18:Sending a DIS to 
+2404785:35:Sending a DIS to 
+2417362:25:Sending a DIS to 
+2465711:10:Sending a DIS to 
+2480116:7:Sending a DIS to 
+2507549:16:Sending a DIS to 
+2536825:2:Sending a DIS to 
+2546095:26:Sending a DIS to 
+2553353:3:Sending a DIS to 
+2577089:33:Sending a DIS to 
+2580021:29:Sending a DIS to 
+2630165:31:Sending a DIS to 
+2637560:9:Sending a DIS to 
+2662326:28:Sending a DIS to 
+2686374:30:Sending a DIS to 
+2696721:24:Sending a DIS to 
+2736791:12:Sending a DIS to 
+2795442:27:Sending a DIS to 
+2807644:21:Sending a DIS to 
+2833245:19:Sending a DIS to 
+2836831:13:Sending a DIS to 
+4513554:1:Sending a multicast-DIO with rank 256

@@ -1,0 +1,21 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\20nodeMobilitySmartcity\OnlyTauDIO-RL-Pact-Pcand\Run1
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1121, Received: 1095 -> PDR: 97.68%
+  Avg Latency: 14.70 ms
+  NPC (Parent Changes): 15
+  Total Overhead: 1170 (DIO: 877, DAO: 284, DIS: 9)
+  Avg Energy/Node: 203730.90 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 97.68% ± 0.00
+Average Latency        : 14.70 ms ± 0.00
+Average NPC            : 15.0 ± 0.0
+Average Control Ovhd   : 1170.0 ± 0.0 (DIO: 877.0, DAO: 284.0, DIS: 9.0)
+Average Energy/Node    : 203730.90 mJ ± 0.00
