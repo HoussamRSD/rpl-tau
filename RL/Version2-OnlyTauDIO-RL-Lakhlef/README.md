@@ -30,8 +30,8 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 
 ---
 
-### 2. Fix NPC Explosion (Dual Parent Selection Conflict) — `46cded8`
-**Commit:** `46cded8` — *fix: eliminate dual parent selection conflict (NPC 1310->expected ~80)*
+### 2. Fix NPC Explosion (Dual Parent Selection Conflict) — `2e5f42e`
+**Commit:** `2e5f42e` — *fix: eliminate dual parent selection conflict (NPC 1310->expected ~80)*
 
 **Problem:** NPC exploded from 81 → 1310 (16×) due to two independent parent selection engines fighting each other:
 1. The RL agent selects parent A via `rpl_rl_on_dio_received()`
