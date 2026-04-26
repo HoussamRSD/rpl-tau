@@ -1280,8 +1280,17 @@ best_parent(rpl_dag_t *dag, int fresh_only)
 rpl_parent_t *
 rpl_select_parent(rpl_dag_t *dag)
 {
-  /* Look for best parent (regardless of freshness) */
-  rpl_parent_t *best = best_parent(dag, 0);
+  /* In the RL-enabled version, the RL agent (via rpl_rl_on_dio_received)
+   * and the Panic Monitor are the sole decision makers for parent changes.
+   * If we already have a valid preferred parent, DO NOT let best_parent()
+   * override it, as that causes massive ping-pong during periodic timer updates.
+   * We only use best_parent() to find a parent if we currently have none. */
+  rpl_parent_t *best;
+  if(dag->preferred_parent != NULL) {
+    best = dag->preferred_parent;
+  } else {
+    best = best_parent(dag, 0);
+  }
   
 
   if(best != NULL) {

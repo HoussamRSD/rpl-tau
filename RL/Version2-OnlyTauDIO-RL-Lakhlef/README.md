@@ -44,3 +44,16 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 | `rpl-dag.c` | L2028 | `rpl_process_parent_event(instance, p)` → `dag->rank = rpl_rank_via_parent(dag->preferred_parent)` |
 | `rpl-rl-agent.c` | L345 (learning commit) | `rpl_process_parent_event(dag->instance, new_parent)` → `dag->rank = rpl_rank_via_parent(new_parent)` |
 | `rpl-rl-agent.c` | L447 (production commit) | Same replacement |
+
+---
+
+### 3. Fix Background Timer NPC Inflation (Periodic Overrides) — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *fix: prevent periodic timer from overriding RL agent parent choice*
+
+**Problem:** Even after fixing the immediate DIO handler, NPC was still 551 (while the RL agent only did 7 switches). The background timer `rpl_recalculate_ranks()` was firing every few seconds, calling `rpl_process_parent_event()`, which eventually called `rpl_select_parent()`. This function invoked the standard OF-TAU `best_parent()` logic, which disagreed with the RL agent's choice and overrode it, causing ongoing background ping-pong.
+
+**Fix:** Modified `rpl_select_parent()` to respect the existing preferred parent. If the RL agent or Panic Monitor has set a valid parent, `rpl_select_parent()` returns it directly without calling `best_parent()`. This fully isolates the RL agent as the sole authority for parent handoffs.
+
+| File | Location | Change |
+|---|---|---|
+| `rpl-dag.c` | L1283 | If `dag->preferred_parent != NULL`, skip `best_parent()` and return `dag->preferred_parent` directly. |
