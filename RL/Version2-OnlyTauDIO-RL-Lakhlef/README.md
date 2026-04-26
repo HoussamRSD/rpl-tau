@@ -47,8 +47,8 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 
 ---
 
-### 3. Fix Background Timer NPC Inflation (Periodic Overrides) — `<PENDING>`
-**Commit:** `<will be filled after commit>` — *fix: prevent periodic timer from overriding RL agent parent choice*
+### 3. Fix Background Timer NPC Inflation (Periodic Overrides) — `45de358`
+**Commit:** `45de358` — *fix: prevent periodic timer from overriding RL agent parent choice*
 
 **Problem:** Even after fixing the immediate DIO handler, NPC was still 551 (while the RL agent only did 7 switches). The background timer `rpl_recalculate_ranks()` was firing every few seconds, calling `rpl_process_parent_event()`, which eventually called `rpl_select_parent()`. This function invoked the standard OF-TAU `best_parent()` logic, which disagreed with the RL agent's choice and overrode it, causing ongoing background ping-pong.
 
