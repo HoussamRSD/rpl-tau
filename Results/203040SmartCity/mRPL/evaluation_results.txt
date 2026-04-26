@@ -1,0 +1,57 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\mRPL
+Log files found: 3
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 13661, Received: 9394 -> PDR: 68.77%
+  Avg Latency: 43.24 ms
+  NPC (Parent Changes): 1
+  Total Overhead: 523 (DIO: 10, DAO: 138, DIS: 375)
+  Avg Energy/Node: 203569.56 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 68.77% ± 0.00
+Average Latency        : 43.24 ms ± 0.00
+Average NPC            : 1.0 ± 0.0
+Average Control Ovhd   : 523.0 ± 0.0 (DIO: 10.0, DAO: 138.0, DIS: 375.0)
+Average Energy/Node    : 203569.56 mJ ± 0.00
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 20851, Received: 12386 -> PDR: 59.40%
+  Avg Latency: 81.56 ms
+  NPC (Parent Changes): 0
+  Total Overhead: 1290 (DIO: 116, DAO: 331, DIS: 843)
+  Avg Energy/Node: 203581.43 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 59.40% ± 0.00
+Average Latency        : 81.56 ms ± 0.00
+Average NPC            : 0.0 ± 0.0
+Average Control Ovhd   : 1290.0 ± 0.0 (DIO: 116.0, DAO: 331.0, DIS: 843.0)
+Average Energy/Node    : 203581.43 mJ ± 0.00
+
+==================================================
+      EVALUATION FOR TOPOLOGY 3
+==================================================
+File: TOPO-3-RS-1.log
+  Sent: 28041, Received: 22757 -> PDR: 81.16%
+  Avg Latency: 206.31 ms
+  NPC (Parent Changes): 0
+  Total Overhead: 1575 (DIO: 236, DAO: 540, DIS: 799)
+  Avg Energy/Node: 203664.47 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 3 (1 simulations) ===
+Average PDR            : 81.16% ± 0.00
+Average Latency        : 206.31 ms ± 0.00
+Average NPC            : 0.0 ± 0.0
+Average Control Ovhd   : 1575.0 ± 0.0 (DIO: 236.0, DAO: 540.0, DIS: 799.0)
+Average Energy/Node    : 203664.47 mJ ± 0.00

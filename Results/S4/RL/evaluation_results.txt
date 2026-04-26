@@ -1,0 +1,21 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\S4\RL
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 5835, Received: 1293 -> PDR: 22.16%
+  Avg Latency: 27.99 ms
+  NPC (Parent Changes): 41726
+  Total Overhead: 121686 (DIO: 53804, DAO: 67824, DIS: 58)
+  Avg Energy/Node: 206036.15 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 22.16% ± 0.00
+Average Latency        : 27.99 ms ± 0.00
+Average NPC            : 41726.0 ± 0.0
+Average Control Ovhd   : 121686.0 ± 0.0 (DIO: 53804.0, DAO: 67824.0, DIS: 58.0)
+Average Energy/Node    : 206036.15 mJ ± 0.00

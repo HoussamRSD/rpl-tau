@@ -3,7 +3,7 @@ Log files found: 2
 --------------------------------------------------
 
 ==================================================
-      EVALUATION FOR TOPOLOGY 1
+      EVALUATION FOR TOPOLOGY 1 100*100
 ==================================================
 File: TOPO-1-RS-1.log
   Sent: 2301, Received: 2267 -> PDR: 98.52%
@@ -21,7 +21,7 @@ Average Control Ovhd   : 2451.0 ± 0.0 (DIO: 1880.0, DAO: 552.0, DIS: 19.0)
 Average Energy/Node    : 203750.39 mJ ± 0.00
 
 ==================================================
-      EVALUATION FOR TOPOLOGY 2
+      EVALUATION FOR TOPOLOGY 2 150*150
 ==================================================
 File: TOPO-2-RS-1.log
   Sent: 2300, Received: 2049 -> PDR: 89.09%

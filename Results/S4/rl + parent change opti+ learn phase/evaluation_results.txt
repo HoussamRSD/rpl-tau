@@ -1,0 +1,21 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\S4\rl + parent change opti+ learn phase
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 5838, Received: 39 -> PDR: 0.67%
+  Avg Latency: 31.71 ms
+  NPC (Parent Changes): 34197
+  Total Overhead: 114691 (DIO: 51357, DAO: 63277, DIS: 57)
+  Avg Energy/Node: 205216.32 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 0.67% ± 0.00
+Average Latency        : 31.71 ms ± 0.00
+Average NPC            : 34197.0 ± 0.0
+Average Control Ovhd   : 114691.0 ± 0.0 (DIO: 51357.0, DAO: 63277.0, DIS: 57.0)
+Average Energy/Node    : 205216.32 mJ ± 0.00

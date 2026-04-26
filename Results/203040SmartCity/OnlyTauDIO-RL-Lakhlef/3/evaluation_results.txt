@@ -1,0 +1,21 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\3
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1120, Received: 1111 -> PDR: 99.20%
+  Avg Latency: 14.57 ms
+  NPC (Parent Changes): 1169
+  Total Overhead: 2624 (DIO: 1067, DAO: 1548, DIS: 9)
+  Avg Energy/Node: 203732.06 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 99.20% ± 0.00
+Average Latency        : 14.57 ms ± 0.00
+Average NPC            : 1169.0 ± 0.0
+Average Control Ovhd   : 2624.0 ± 0.0 (DIO: 1067.0, DAO: 1548.0, DIS: 9.0)
+Average Energy/Node    : 203732.06 mJ ± 0.00

@@ -1,0 +1,57 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\4+LearningPhase
+Log files found: 3
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1120, Received: 1111 -> PDR: 99.20%
+  Avg Latency: 14.57 ms
+  NPC (Parent Changes): 1169
+  Total Overhead: 2624 (DIO: 1067, DAO: 1548, DIS: 9)
+  Avg Energy/Node: 203732.06 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 99.20% ± 0.00
+Average Latency        : 14.57 ms ± 0.00
+Average NPC            : 1169.0 ± 0.0
+Average Control Ovhd   : 2624.0 ± 0.0 (DIO: 1067.0, DAO: 1548.0, DIS: 9.0)
+Average Energy/Node    : 203732.06 mJ ± 0.00
+
+==================================================
+      EVALUATION FOR TOPOLOGY 2
+==================================================
+File: TOPO-2-RS-1.log
+  Sent: 1710, Received: 1662 -> PDR: 97.19%
+  Avg Latency: 17.66 ms
+  NPC (Parent Changes): 1059
+  Total Overhead: 3155 (DIO: 1636, DAO: 1506, DIS: 13)
+  Avg Energy/Node: 203758.60 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 2 (1 simulations) ===
+Average PDR            : 97.19% ± 0.00
+Average Latency        : 17.66 ms ± 0.00
+Average NPC            : 1059.0 ± 0.0
+Average Control Ovhd   : 3155.0 ± 0.0 (DIO: 1636.0, DAO: 1506.0, DIS: 13.0)
+Average Energy/Node    : 203758.60 mJ ± 0.00
+
+==================================================
+      EVALUATION FOR TOPOLOGY 3
+==================================================
+File: TOPO-3-RS-1.log
+  Sent: 2299, Received: 2275 -> PDR: 98.96%
+  Avg Latency: 17.61 ms
+  NPC (Parent Changes): 891
+  Total Overhead: 3617 (DIO: 2161, DAO: 1437, DIS: 19)
+  Avg Energy/Node: 203798.07 mJ
+  [RL] No Q-Learning data found (QL not active or V2 without RL)
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 3 (1 simulations) ===
+Average PDR            : 98.96% ± 0.00
+Average Latency        : 17.61 ms ± 0.00
+Average NPC            : 891.0 ± 0.0
+Average Control Ovhd   : 3617.0 ± 0.0 (DIO: 2161.0, DAO: 1437.0, DIS: 19.0)
+Average Energy/Node    : 203798.07 mJ ± 0.00
