@@ -1,0 +1,20 @@
+Directory: E:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\8-PDRRecoveryTuning
+Log files found: 1
+--------------------------------------------------
+
+==================================================
+      EVALUATION FOR TOPOLOGY 1
+==================================================
+File: TOPO-1-RS-1.log
+  Sent: 1121, Received: 1050 -> PDR: 93.67%
+  Avg Latency: 13.78 ms
+  NPC (Parent Changes): 12
+  Total Overhead: 1132 (DIO: 855, DAO: 268, DIS: 9)
+  Avg Energy/Node: 203563.30 mJ
+--------------------------------------------------
+=== AVERAGE FOR TOPOLOGY 1 (1 simulations) ===
+Average PDR            : 93.67% ± 0.00
+Average Latency        : 13.78 ms ± 0.00
+Average NPC            : 12.0 ± 0.0
+Average Control Ovhd   : 1132.0 ± 0.0 (DIO: 855.0, DAO: 268.0, DIS: 9.0)
+Average Energy/Node    : 203563.30 mJ ± 0.00
