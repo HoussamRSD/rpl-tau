@@ -412,18 +412,9 @@ rpl_rl_trigger(rpl_dag_t *dag)
 
     /* Gate 3 — Physical hysteresis */
     if(current != NULL) {
-      int16_t  delta_tau  = (int16_t)new_parent->tau_cand
-                          - (int16_t)current->tau_cand;
-      int16_t  delta_rssi = (int16_t)new_parent->rl_last_rssi
-                          - (int16_t)current->rl_last_rssi;
-      uint16_t cur_etx    = rpl_get_parent_link_metric(current);
-      uint16_t new_etx    = rpl_get_parent_link_metric(new_parent);
-      int16_t  delta_etx  = (int16_t)cur_etx - (int16_t)new_etx;
-
-      int current_still_acceptable =
-        (current->rl_last_rssi > (int16_t)RL_RSSI_WEAK_THRESHOLD) &&
-        (cur_etx               < (uint16_t)RL_ETX_WEAK_THRESHOLD);
-
+      uint16_t cur_etx;
+      uint16_t new_etx;
+      int current_still_acceptable;
       int16_t delta_tau;
       int16_t delta_rssi;
       uint32_t cur_etx_raw;
@@ -438,12 +429,19 @@ rpl_rl_trigger(rpl_dag_t *dag)
       current->tau_cand = calculate_candidate_score(current);
 
       /* 2. Calculate physical differences */
-      delta_tau  = (int16_t)v->tau_cand - (int16_t)current->tau_cand;
-      delta_rssi = (int16_t)v->rl_last_rssi - (int16_t)current->rl_last_rssi;
+      delta_tau  = (int16_t)new_parent->tau_cand - (int16_t)current->tau_cand;
+      delta_rssi = (int16_t)new_parent->rl_last_rssi - (int16_t)current->rl_last_rssi;
+      
+      cur_etx    = rpl_get_parent_link_metric(current);
+      new_etx    = rpl_get_parent_link_metric(new_parent);
+
+      current_still_acceptable =
+        (current->rl_last_rssi > (int16_t)RL_RSSI_WEAK_THRESHOLD) &&
+        (cur_etx               < (uint16_t)RL_ETX_WEAK_THRESHOLD);
       
       /* 3. Apply MRHOF Secret 4: Squared ETX */
       cur_etx_raw = cur_etx;
-      v_etx_raw   = rpl_get_parent_link_metric(v);
+      v_etx_raw   = new_etx;
       
       cur_etx_sq = (cur_etx_raw * cur_etx_raw) / LINK_STATS_ETX_DIVISOR;
       v_etx_sq   = (v_etx_raw * v_etx_raw) / LINK_STATS_ETX_DIVISOR;
