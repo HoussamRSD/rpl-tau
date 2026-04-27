@@ -424,24 +424,34 @@ rpl_rl_trigger(rpl_dag_t *dag)
         (current->rl_last_rssi > (int16_t)RL_RSSI_WEAK_THRESHOLD) &&
         (cur_etx               < (uint16_t)RL_ETX_WEAK_THRESHOLD);
 
+      int16_t delta_tau;
+      int16_t delta_rssi;
+      uint32_t cur_etx_raw;
+      uint32_t v_etx_raw;
+      uint32_t cur_etx_sq;
+      uint32_t v_etx_sq;
+      int32_t delta_etx_sq;
+      int32_t confidence;
+      int candidate_clearly_better;
+
       /* 1. Recalculate fresh TAU for the current parent to prevent stale comparison */
       current->tau_cand = calculate_candidate_score(current);
 
       /* 2. Calculate physical differences */
-      int16_t delta_tau  = (int16_t)v->tau_cand - (int16_t)current->tau_cand;
-      int16_t delta_rssi = (int16_t)v->rl_last_rssi - (int16_t)current->rl_last_rssi;
+      delta_tau  = (int16_t)v->tau_cand - (int16_t)current->tau_cand;
+      delta_rssi = (int16_t)v->rl_last_rssi - (int16_t)current->rl_last_rssi;
       
       /* 3. Apply MRHOF Secret 4: Squared ETX */
-      uint32_t cur_etx_raw = cur_etx;
-      uint32_t v_etx_raw   = rpl_get_parent_link_metric(v);
+      cur_etx_raw = cur_etx;
+      v_etx_raw   = rpl_get_parent_link_metric(v);
       
-      uint32_t cur_etx_sq = (cur_etx_raw * cur_etx_raw) / LINK_STATS_ETX_DIVISOR;
-      uint32_t v_etx_sq   = (v_etx_raw * v_etx_raw) / LINK_STATS_ETX_DIVISOR;
+      cur_etx_sq = (cur_etx_raw * cur_etx_raw) / LINK_STATS_ETX_DIVISOR;
+      v_etx_sq   = (v_etx_raw * v_etx_raw) / LINK_STATS_ETX_DIVISOR;
       
-      int32_t delta_etx_sq = (int32_t)cur_etx_sq - (int32_t)v_etx_sq; /* Positive if V is better */
+      delta_etx_sq = (int32_t)cur_etx_sq - (int32_t)v_etx_sq; /* Positive if V is better */
 
       /* 4. Calculate Composite Confidence Score */
-      int32_t confidence = (int32_t)delta_tau;
+      confidence = (int32_t)delta_tau;
       confidence += (delta_rssi * 2);
       if (delta_etx_sq < 0) {
           confidence += (delta_etx_sq * 2); /* Double penalty for worse ETX */
@@ -450,7 +460,7 @@ rpl_rl_trigger(rpl_dag_t *dag)
       }
 
       /* 5. Final Decision */
-      int candidate_clearly_better = (confidence > (int32_t)RL_HYSTERESIS_TAU);
+      candidate_clearly_better = (confidence > (int32_t)RL_HYSTERESIS_TAU);
 
       if(current_still_acceptable && !candidate_clearly_better) {
         current->rl_state_S = new_state;
@@ -534,24 +544,34 @@ rpl_rl_on_dio_received(rpl_dag_t *dag, rpl_parent_t *v, int16_t measured_rssi)
       (current_rssi < (int16_t)RL_RSSI_WEAK_THRESHOLD) ||
       (current_etx  > (uint16_t)RL_ETX_WEAK_THRESHOLD);
 
+    int16_t delta_tau;
+    int16_t delta_rssi;
+    uint32_t cur_etx_raw;
+    uint32_t v_etx_raw;
+    uint32_t cur_etx_sq;
+    uint32_t v_etx_sq;
+    int32_t delta_etx_sq;
+    int32_t confidence;
+    int candidate_is_much_better;
+
     /* 1. Recalculate fresh TAU for the current parent to prevent stale comparison */
     current->tau_cand = calculate_candidate_score(current);
 
     /* 2. Calculate physical differences */
-    int16_t delta_tau  = (int16_t)v->tau_cand - (int16_t)current->tau_cand;
-    int16_t delta_rssi = (int16_t)v->rl_last_rssi - (int16_t)current_rssi;
+    delta_tau  = (int16_t)v->tau_cand - (int16_t)current->tau_cand;
+    delta_rssi = (int16_t)v->rl_last_rssi - (int16_t)current_rssi;
     
     /* 3. Apply MRHOF Secret 4: Squared ETX */
-    uint32_t cur_etx_raw = current_etx;
-    uint32_t v_etx_raw   = rpl_get_parent_link_metric(v);
+    cur_etx_raw = current_etx;
+    v_etx_raw   = rpl_get_parent_link_metric(v);
     
-    uint32_t cur_etx_sq = (cur_etx_raw * cur_etx_raw) / LINK_STATS_ETX_DIVISOR;
-    uint32_t v_etx_sq   = (v_etx_raw * v_etx_raw) / LINK_STATS_ETX_DIVISOR;
+    cur_etx_sq = (cur_etx_raw * cur_etx_raw) / LINK_STATS_ETX_DIVISOR;
+    v_etx_sq   = (v_etx_raw * v_etx_raw) / LINK_STATS_ETX_DIVISOR;
     
-    int32_t delta_etx_sq = (int32_t)cur_etx_sq - (int32_t)v_etx_sq; /* Positive if V is better */
+    delta_etx_sq = (int32_t)cur_etx_sq - (int32_t)v_etx_sq; /* Positive if V is better */
 
     /* 4. Calculate Composite Confidence Score */
-    int32_t confidence = (int32_t)delta_tau;
+    confidence = (int32_t)delta_tau;
     confidence += (delta_rssi * 2);
     if (delta_etx_sq < 0) {
         confidence += (delta_etx_sq * 2); /* Double penalty for worse ETX */
@@ -560,7 +580,7 @@ rpl_rl_on_dio_received(rpl_dag_t *dag, rpl_parent_t *v, int16_t measured_rssi)
     }
 
     /* 5. Final Decision */
-    int candidate_is_much_better = (confidence > (int32_t)RL_HYSTERESIS_TAU);
+    candidate_is_much_better = (confidence > (int32_t)RL_HYSTERESIS_TAU);
 
     if(current_is_weak || candidate_is_much_better) {
       printf("[RL] Triggering on DIO. weak=%d, much_better=%d. \n",
