@@ -144,3 +144,26 @@ Additionally, Cooja was previously limited to 1.5GB of RAM, risking crashes duri
 | `rpl-rl-agent.c` | Line 512 | Gate 1 `candidate_is_much_better` now uses the exact same strict AND logic to wake up. |
 
 **Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\12-WayBetterLogicFix`
+
+---
+
+### 9. Advanced "Fuzzy" Candidate Evaluation & Fresh TAU Sync — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *refactor: implement fuzzy composite score and synchronize current parent TAU*
+
+**Problem:** Both strict AND logic and loose OR logic for candidate evaluation proved flawed in dynamic mobility environments. Furthermore, comparing a fresh DIO candidate's TAU against the current parent's TAU was inherently biased, as the current parent's TAU was calculated during its *last* DIO, meaning it was stale and did not reflect real-time link degradation.
+
+**Fix:** 
+1. Refactored `calculate_candidate_score` in `rpl-of-tau.c` to be externally accessible.
+2. In `rpl-rl-agent.c`, the current parent's TAU is now forcefully recalculated using real-time local ETX before any comparison.
+3. Replaced rigid `AND` gates with a continuous **Composite Confidence Score**:
+   - Base score is `delta_tau`.
+   - Modulated by RSSI trend (+/- points).
+   - Weighted heavily by **Squared ETX** differences (MRHOF Secret 4). Worse candidates receive a double penalty, instantly blocking bad links, while perfectly equal ETX (e.g. 1.0 vs 1.0) does not mathematically lock the agent if TAU is superior.
+
+| File | Fix | Effect |
+|---|---|---|
+| `rpl-of-tau.c` | Line 121 | Removed `static` keyword from `calculate_candidate_score`. |
+| `rpl-rl-agent.c` | Line 421 | Gate 3 now uses Fresh TAU recalculation + Fuzzy Composite Score. |
+| `rpl-rl-agent.c` | Line 507 | Gate 1 Case B now uses Fresh TAU recalculation + Fuzzy Composite Score. |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\14-FuzzyCompositeScoreFix`

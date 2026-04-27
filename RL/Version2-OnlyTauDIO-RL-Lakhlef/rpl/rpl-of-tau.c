@@ -118,7 +118,7 @@ parent_link_metric(rpl_parent_t *p)
  * Utilise ETX et RSSI mesures localement + le tau_parent recu dans le DIO.
  * NE tient PAS compte de RE ni QL (etat local du noeud, pas du parent).
  */
-static uint16_t
+uint16_t
 calculate_candidate_score(rpl_parent_t *p)
 {
   if(p == NULL) return 0;
