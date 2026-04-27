@@ -89,17 +89,17 @@
 
 /* Gate 2: Minimum Q-gain (×10 stored format) to justify a switch */
 #ifndef RL_MIN_SWITCH_GAIN
-#define RL_MIN_SWITCH_GAIN      5   /* = 0.5 in real units */
+#define RL_MIN_SWITCH_GAIN      3   /* = 0.3 in real units */
 #endif
 
 /* Gate 3: Minimum TAU advantage for candidate to justify switch */
 #ifndef RL_HYSTERESIS_TAU
-#define RL_HYSTERESIS_TAU       75
+#define RL_HYSTERESIS_TAU       40
 #endif
 
 /* Gate 3: Minimum RSSI advantage in dBm */
 #ifndef RL_HYSTERESIS_RSSI
-#define RL_HYSTERESIS_RSSI      5
+#define RL_HYSTERESIS_RSSI      3
 #endif
 
 /* Gate 3: Minimum ETX improvement (in raw link-stats units) */

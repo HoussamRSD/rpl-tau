@@ -59,3 +59,20 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 | `rpl-dag.c` | L1283 | If `dag->preferred_parent != NULL`, skip `best_parent()` and return `dag->preferred_parent` directly. |
 
 **Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\7-finalNPCFix`
+
+---
+
+### 4. PDR Recovery Tuning (Relaxing Hysteresis) — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *perf: tune RL parameters for better PDR reactivity*
+
+**Problem:** After completely isolating the RL agent in `7-finalNPCFix`, the network became extremely stable (NPC dropped from 551 to 12). However, this extreme stickiness caused the PDR to drop from 99% to ~93.6%, because nodes were holding onto their parents for too long when links degraded instead of jumping ship to a better neighbor.
+
+**Fix:** Relaxed the Q-Learning and physical hysteresis thresholds to make the RL agent slightly more reactive, aiming to find the sweet spot between absolute stability and high packet delivery ratios.
+
+| File | Parameter | Old Value | New Value | Effect |
+|---|---|---|---|---|
+| `rpl-rl-agent.h` | `RL_MIN_SWITCH_GAIN` | 5 | 3 | Agent requires less predicted Q-gain to switch |
+| `rpl-rl-agent.h` | `RL_HYSTERESIS_TAU` | 75 | 40 | Agent reacts quicker to physical TAU advantages |
+| `rpl-rl-agent.h` | `RL_HYSTERESIS_RSSI` | 5 | 3 | Smaller RSSI gap needed to confirm the switch |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\8-PDRRecoveryTuning`
