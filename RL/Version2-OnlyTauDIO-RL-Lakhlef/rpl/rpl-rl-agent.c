@@ -420,8 +420,8 @@ rpl_rl_trigger(rpl_dag_t *dag)
         (cur_etx               < (uint16_t)RL_ETX_WEAK_THRESHOLD);
 
       int candidate_clearly_better =
-        (delta_tau  > (int16_t)RL_HYSTERESIS_TAU)  &&
-        (delta_rssi > (int16_t)RL_HYSTERESIS_RSSI) &&
+        (delta_tau  > (int16_t)RL_HYSTERESIS_TAU)  ||
+        (delta_rssi > (int16_t)RL_HYSTERESIS_RSSI) ||
         (delta_etx  > (int16_t)RL_HYSTERESIS_ETX);
 
       if(current_still_acceptable && !candidate_clearly_better) {

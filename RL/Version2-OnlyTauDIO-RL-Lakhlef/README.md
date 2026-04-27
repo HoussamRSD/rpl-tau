@@ -76,3 +76,21 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 | `rpl-rl-agent.h` | `RL_HYSTERESIS_RSSI` | 5 | 3 | Smaller RSSI gap needed to confirm the switch |
 
 **Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\8-PDRRecoveryTuning`
+
+---
+
+### 5. Gate 3 Hysteresis Logic Fix (`OR` instead of `AND`) — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *fix: change hysteresis logic to OR and resolve compilation cache issue*
+
+**Problem:** The previous run (`8-PDRRecoveryTuning`) yielded the exact same results as `7-finalNPCFix`. This was caused by two issues:
+1. **Compilation Caching:** Cooja did not recompile the `.c` files when only `rpl-rl-agent.h` was changed, running the old binary.
+2. **Logic Bug:** The code in `rpl-rl-agent.c` required a candidate to have better TAU, **AND** better RSSI, **AND** better ETX (`&&`). If ETX was already 1.0, it was mathematically impossible to improve it, blocking the RL agent from switching parents entirely.
+
+**Fix:** Changed `&&` to `||` in `rpl-rl-agent.c`. Now, if a candidate is significantly better in *any* of the key metrics (TAU, RSSI, or ETX), the agent is permitted to switch.
+*Note: Users must run `make clean` before reloading the simulation to ensure changes take effect!*
+
+| File | Fix | Effect |
+|---|---|---|
+| `rpl-rl-agent.c` | Line 423 | `candidate_clearly_better` now uses `||` (OR) instead of `&&` (AND). |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\9-Gate3LogicFix`
