@@ -147,8 +147,8 @@ Additionally, Cooja was previously limited to 1.5GB of RAM, risking crashes duri
 
 ---
 
-### 9. Advanced "Fuzzy" Candidate Evaluation & Fresh TAU Sync — `<PENDING>`
-**Commit:** `<will be filled after commit>` — *refactor: implement fuzzy composite score and synchronize current parent TAU*
+### 9. Advanced "Fuzzy" Candidate Evaluation & Fresh TAU Sync — `ee2908e`
+**Commit:** `ee2908e` — *refactor: implement fuzzy composite score and synchronize current parent TAU*
 
 **Problem:** Both strict AND logic and loose OR logic for candidate evaluation proved flawed in dynamic mobility environments. Furthermore, comparing a fresh DIO candidate's TAU against the current parent's TAU was inherently biased, as the current parent's TAU was calculated during its *last* DIO, meaning it was stale and did not reflect real-time link degradation.
 
