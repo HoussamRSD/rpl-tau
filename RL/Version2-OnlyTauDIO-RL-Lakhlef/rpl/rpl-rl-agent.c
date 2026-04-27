@@ -506,9 +506,13 @@ rpl_rl_on_dio_received(rpl_dag_t *dag, rpl_parent_t *v, int16_t measured_rssi)
       (current_rssi < (int16_t)RL_RSSI_WEAK_THRESHOLD) ||
       (current_etx  > (uint16_t)RL_ETX_WEAK_THRESHOLD);
 
-    if(current_is_weak) {
-      printf("[RL] Current parent weak (rssi=%d, etx=%u). Triggering.\n",
-             (int)current_rssi, current_etx);
+    /* Wake up if the candidate is significantly better, even if current is healthy */
+    int candidate_is_much_better = 
+      (v->tau_cand > current->tau_cand + (uint16_t)RL_HYSTERESIS_TAU);
+
+    if(current_is_weak || candidate_is_much_better) {
+      printf("[RL] Triggering on DIO. weak=%d, much_better=%d. \n",
+             current_is_weak, candidate_is_much_better);
       rpl_rl_trigger(dag);
     }
     /* else: candidate table updated, nothing more needed */

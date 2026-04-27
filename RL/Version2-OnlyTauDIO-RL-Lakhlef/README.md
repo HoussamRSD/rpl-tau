@@ -94,3 +94,18 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 | `rpl-rl-agent.c` | Line 423 | `candidate_clearly_better` now uses `||` (OR) instead of `&&` (AND). |
 
 **Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\9-Gate3LogicFix`
+
+---
+
+### 6. Gate 1 Proactive Routing Fix — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *fix: wake up RL agent for better candidates even if current parent is healthy*
+
+**Problem:** Even after fixing Gate 3 and recompiling, the RL agent was never running. Analysis of Gate 1 (Case B) revealed a strict rule: if the current parent was "healthy" (RSSI > -85 and ETX < 3), the agent completely ignored all DIOs from other neighbors to save CPU. This effectively disabled proactive routing, forcing the agent to stay with its first parent until it physically drove out of range. 
+
+**Fix:** Modified Gate 1 in `rpl-rl-agent.c` to wake up the RL agent if either the current parent is weak, OR the new candidate's TAU score is significantly better than the current parent's (`candidate_is_much_better = v->tau_cand > current->tau_cand + RL_HYSTERESIS_TAU`).
+
+| File | Fix | Effect |
+|---|---|---|
+| `rpl-rl-agent.c` | Line 512 | RL Agent now triggers proactively for better candidates, re-enabling optimal path finding. |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\10-Gate1ProactiveFix`
