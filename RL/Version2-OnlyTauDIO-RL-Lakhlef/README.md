@@ -131,8 +131,8 @@ Additionally, Cooja was previously limited to 1.5GB of RAM, risking crashes duri
 
 ---
 
-### 8. Strict "Way Better" Candidate Evaluation Fix — `<PENDING>`
-**Commit:** `<will be filled after commit>` — *refactor: implement strict candidate evaluation with ETX safeguard*
+### 8. Strict "Way Better" Candidate Evaluation Fix — `23e61d3`
+**Commit:** `23e61d3` — *refactor: implement strict candidate evaluation with ETX safeguard*
 
 **Problem:** Run 11 dropped PDR to 91.61% because the `OR` logic introduced in Run 10 caused too many parent switches (NPC = 51). However, the original `AND` logic from Run 7 caused the agent to lock up (NPC = 12, PDR = 93%) because it required candidates to have a *strictly better* ETX than the current parent. If the current parent had a perfect ETX (1.0), it was mathematically impossible for candidates to be "better", freezing the agent.
 
