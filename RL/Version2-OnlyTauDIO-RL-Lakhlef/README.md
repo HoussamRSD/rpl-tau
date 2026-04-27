@@ -79,8 +79,8 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 
 ---
 
-### 5. Gate 3 Hysteresis Logic Fix (`OR` instead of `AND`) — `<PENDING>`
-**Commit:** `<will be filled after commit>` — *fix: change hysteresis logic to OR and resolve compilation cache issue*
+### 5. Gate 3 Hysteresis Logic Fix (`OR` instead of `AND`) — `30c88ab`
+**Commit:** `30c88ab` — *fix: change hysteresis logic to OR and resolve compilation cache issue*
 
 **Problem:** The previous run (`8-PDRRecoveryTuning`) yielded the exact same results as `7-finalNPCFix`. This was caused by two issues:
 1. **Compilation Caching:** Cooja did not recompile the `.c` files when only `rpl-rl-agent.h` was changed, running the old binary.
