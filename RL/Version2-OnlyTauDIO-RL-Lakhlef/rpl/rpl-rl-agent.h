@@ -94,7 +94,7 @@
 
 /* Gate 3: Minimum TAU advantage for candidate to justify switch */
 #ifndef RL_HYSTERESIS_TAU
-#define RL_HYSTERESIS_TAU       40
+#define RL_HYSTERESIS_TAU       20
 #endif
 
 /* Gate 3: Minimum RSSI advantage in dBm */

@@ -21,7 +21,7 @@ if [ -f "COOJA.testlog" ]; then
   rm COOJA.testlog
 fi
 
-java -mx1536m -jar ../dist/cooja.jar -nogui=$TEST.csc
+java -mx6144m -jar ../dist/cooja.jar -nogui=$TEST.csc
 
 
 if [ -f "COOJA.log" ]; then

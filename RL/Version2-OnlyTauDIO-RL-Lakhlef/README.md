@@ -109,3 +109,22 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 | `rpl-rl-agent.c` | Line 512 | RL Agent now triggers proactively for better candidates, re-enabling optimal path finding. |
 
 **Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\10-Gate1ProactiveFix`
+
+---
+
+### 7. Tuning for 99% PDR Recovery — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *chore: tune hysteresis for higher PDR and increase Cooja RAM*
+
+**Problem:** The proactive fix successfully woke up the agent, recovering PDR from 93.67% to 95.18%. However, to push it closer to the 99% mark while retaining a reasonable NPC, the agent needs to be slightly more eager to switch to better paths before the current link degrades further.
+Additionally, Cooja was previously limited to 1.5GB of RAM, risking crashes during heavy mobility simulations.
+
+**Fix:** 
+1. Lowered `RL_HYSTERESIS_TAU` in `rpl-rl-agent.h` to make the agent switch routes more quickly when a moderately better path appears.
+2. Increased Cooja Java RAM allocation in `Tunnel/RUN_TEST` from 1536MB to 6144MB (6GB) to improve stability during long simulations.
+
+| File | Parameter | Old Value | New Value | Reason |
+|---|---|---|---|---|
+| `rpl-rl-agent.h` | `RL_HYSTERESIS_TAU` | 40 | 20 | Agent reacts even quicker to physical TAU advantages, recovering more packets before link loss. |
+| `Tunnel/RUN_TEST` | `java -mx...` | `1536m` | `6144m` | Give Cooja 6GB of RAM to prevent OutOfMemory crashes. |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\11-PDR99Tuning`
