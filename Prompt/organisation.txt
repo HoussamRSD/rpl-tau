@@ -1,9 +1,7 @@
 I want you in every change you do.
-1. Document it in a read me file of the version that wee are working on
-2. commit and push to github
-3. Write the name of the commit in the readme file besides the changement , so as if I want to return to this state where I have done these changes I know the naame of the commit.
+Document it in a read me file of the version that wee are working on
+Commit locally.
+Write the name of the commit in the readme file besides the changement , so as if I want to return to this state where I have done these changes I know the naame of the commit.
 this thing is from now and on.
-4. create a folder to paste the logs of this version inside this file 
-"Results\203040SmartCity\<The Name of the actual version>" and say in the same readme file that results will be in this folder.
+create a folder to paste the logs of this version inside this file "Results\203040SmartCity\<The Name of the actual version>" and say in the same readme file that results will be in this folder.
 This folder and the logs should be commited.
-so at the end every thing will be commited 
