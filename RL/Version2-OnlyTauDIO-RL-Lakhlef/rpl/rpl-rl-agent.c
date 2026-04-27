@@ -420,9 +420,9 @@ rpl_rl_trigger(rpl_dag_t *dag)
         (cur_etx               < (uint16_t)RL_ETX_WEAK_THRESHOLD);
 
       int candidate_clearly_better =
-        (delta_tau  > (int16_t)RL_HYSTERESIS_TAU)  ||
-        (delta_rssi > (int16_t)RL_HYSTERESIS_RSSI) ||
-        (delta_etx  > (int16_t)RL_HYSTERESIS_ETX);
+        (delta_tau  > (int16_t)RL_HYSTERESIS_TAU)  &&
+        (delta_rssi > 0) &&
+        (delta_etx  >= 0);
 
       if(current_still_acceptable && !candidate_clearly_better) {
         current->rl_state_S = new_state;
@@ -507,8 +507,14 @@ rpl_rl_on_dio_received(rpl_dag_t *dag, rpl_parent_t *v, int16_t measured_rssi)
       (current_etx  > (uint16_t)RL_ETX_WEAK_THRESHOLD);
 
     /* Wake up if the candidate is significantly better, even if current is healthy */
+    int16_t delta_tau  = (int16_t)v->tau_cand - (int16_t)current->tau_cand;
+    int16_t delta_rssi = (int16_t)v->rl_last_rssi - (int16_t)current_rssi;
+    int16_t delta_etx  = (int16_t)current_etx - (int16_t)rpl_get_parent_link_metric(v);
+
     int candidate_is_much_better = 
-      (v->tau_cand > current->tau_cand + (uint16_t)RL_HYSTERESIS_TAU);
+      (delta_tau > (int16_t)RL_HYSTERESIS_TAU) &&
+      (delta_rssi > 0) &&
+      (delta_etx >= 0);
 
     if(current_is_weak || candidate_is_much_better) {
       printf("[RL] Triggering on DIO. weak=%d, much_better=%d. \n",

@@ -128,3 +128,19 @@ Additionally, Cooja was previously limited to 1.5GB of RAM, risking crashes duri
 | `Tunnel/RUN_TEST` | `java -mx...` | `1536m` | `6144m` | Give Cooja 6GB of RAM to prevent OutOfMemory crashes. |
 
 **Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\11-PDR99Tuning`
+
+---
+
+### 8. Strict "Way Better" Candidate Evaluation Fix — `<PENDING>`
+**Commit:** `<will be filled after commit>` — *refactor: implement strict candidate evaluation with ETX safeguard*
+
+**Problem:** Run 11 dropped PDR to 91.61% because the `OR` logic introduced in Run 10 caused too many parent switches (NPC = 51). However, the original `AND` logic from Run 7 caused the agent to lock up (NPC = 12, PDR = 93%) because it required candidates to have a *strictly better* ETX than the current parent. If the current parent had a perfect ETX (1.0), it was mathematically impossible for candidates to be "better", freezing the agent.
+
+**Fix:** Refactored Gate 1 and Gate 3 in `rpl-rl-agent.c` to use a strict unified `AND` rule, as requested: The candidate must have better TAU, better RSSI, AND... **equal or better ETX** (`delta_etx >= 0`). This perfectly balances stability (by requiring multiple improvements) without mathematically locking the agent when the link is perfect.
+
+| File | Fix | Effect |
+|---|---|---|
+| `rpl-rl-agent.c` | Line 423 | Gate 3 `candidate_clearly_better` now uses strict AND logic with `>= 0` ETX. |
+| `rpl-rl-agent.c` | Line 512 | Gate 1 `candidate_is_much_better` now uses the exact same strict AND logic to wake up. |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\12-WayBetterLogicFix`
