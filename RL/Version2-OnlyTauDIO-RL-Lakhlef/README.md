@@ -62,8 +62,8 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 
 ---
 
-### 4. PDR Recovery Tuning (Relaxing Hysteresis) — `<PENDING>`
-**Commit:** `<will be filled after commit>` — *perf: tune RL parameters for better PDR reactivity*
+### 4. PDR Recovery Tuning (Relaxing Hysteresis) — `5357eed`
+**Commit:** `5357eed` — *perf: tune RL parameters for better PDR reactivity*
 
 **Problem:** After completely isolating the RL agent in `7-finalNPCFix`, the network became extremely stable (NPC dropped from 551 to 12). However, this extreme stickiness caused the PDR to drop from 99% to ~93.6%, because nodes were holding onto their parents for too long when links degraded instead of jumping ship to a better neighbor.
 
