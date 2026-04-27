@@ -112,8 +112,8 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 
 ---
 
-### 7. Tuning for 99% PDR Recovery — `<PENDING>`
-**Commit:** `<will be filled after commit>` — *chore: tune hysteresis for higher PDR and increase Cooja RAM*
+### 7. Tuning for 99% PDR Recovery — `86efb2a`
+**Commit:** `86efb2a` — *chore: tune hysteresis for higher PDR and increase Cooja RAM*
 
 **Problem:** The proactive fix successfully woke up the agent, recovering PDR from 93.67% to 95.18%. However, to push it closer to the 99% mark while retaining a reasonable NPC, the agent needs to be slightly more eager to switch to better paths before the current link degrades further.
 Additionally, Cooja was previously limited to 1.5GB of RAM, risking crashes during heavy mobility simulations.
