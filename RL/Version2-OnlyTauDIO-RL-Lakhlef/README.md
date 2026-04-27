@@ -57,3 +57,5 @@ Sends only Tau in DIO messages. Best baseline result: 98% PDR (20-node SmartCity
 | File | Location | Change |
 |---|---|---|
 | `rpl-dag.c` | L1283 | If `dag->preferred_parent != NULL`, skip `best_parent()` and return `dag->preferred_parent` directly. |
+
+**Results:** Simulation logs for this version are stored in `e:\3emeAnneeEMP\PFE\Implémentation\Results\203040SmartCity\OnlyTauDIO-RL-Lakhlef\7-finalNPCFix`
